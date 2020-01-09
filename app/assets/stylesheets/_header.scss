@@ -1,0 +1,173 @@
+.header {
+  height:100px;
+  width:100%;
+  background-color: gray;
+}
+
+.header-upper {
+  height:50px;
+  background-color: blue;
+  display:flex;
+  justify-content: center;
+}
+
+.header-upper__mercari {
+  width:200px;
+  background-color: green;
+  display:flex;
+}
+
+.header-upper__mercari__logo {
+  height:30px;
+  width:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-upper__mercari__text {
+  font-size:40px;
+  line-height:50px;
+}
+
+.header-upper__find {
+  width:850px;
+  height:30px;
+  margin-top:8px;
+  border:1px solid;
+  border-radius: 5px;
+  display:flex;
+  justify-content: center;
+}
+
+.header-upper__find__text {
+  line-height:30px;
+  width:810px;
+}
+
+.header-upper__find__logo {
+  width:30px;
+  height:30px;
+  background-color: white;
+}
+
+
+.header-lower {
+  height:50px;
+  background-color: red;
+  display:flex;
+  justify-content: center;
+}
+
+.header-lower-left {
+  width:350px;
+  display:flex;
+}
+
+.header-lower-left__category {
+  width:200px;
+  background-color: orange;
+  display:flex;
+}
+
+.header-lower-left__category__logo {
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-lower-left__category__text {
+  line-height:50px;
+}
+
+.header-lower-left__bland {
+  width:200px;
+  background-color: red;
+  display:flex;
+}
+
+.header-lower-left__bland__logo {
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-lower-left__bland__text {
+  line-height:50px;
+}
+
+.header-lower-right {
+  width:600px;
+  margin-left: 100px;
+  background-color: gray;
+  display:flex;
+}
+
+.header-lower-right__like {
+  width:200px;
+  background-color: green;
+  display:flex;
+}
+
+.header-lower-right__like__logo {
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-lower-right__like__text {
+  line-height:50px;
+}
+
+.header-lower-right__info {
+  width:120px;
+  background-color: blue;
+  display:flex;
+}
+
+.header-lower-right__info__logo {
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-lower-right__info__text {
+  line-height:50px;
+}
+
+.header-lower-right__todo {
+  width:150px;
+  background-color: red;
+  display:flex;
+}
+
+.header-lower-right__todo__logo {
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-lower-right__todo__text {
+  line-height:50px;
+}
+
+.header-lower-right__mypage {
+  width:150px;
+  background-color: green;
+  display:flex;
+}
+
+.header-lower-right__mypage__logo {
+  width:30px;
+  height:30px;
+  margin-top:10px;
+  background-color: white;
+}
+
+.header-lower-right__mypage__text{
+  line-height:50px;
+}
