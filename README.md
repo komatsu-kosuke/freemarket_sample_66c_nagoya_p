@@ -1,24 +1,186 @@
-# README
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+### Association
+- has_one :profile
+- has_one :creditcard
+- has_many :products
+- has_many :likes
+- has_many :tradings
+- has_many :coments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## profileテーブル
+|Column|Type|Options|
+|------|----|-------|
+|firstname|string|null: false|
+|familyname|string|null: false|
+|firstname_kana|string|null: false|
+|familyname_kana|string|null: false|
+|birthyear|string|null: false|
+|birthmonth|string|null: false|
+|birthday|string|null: false|
+|phonenumber|string|null: false|
+|zipcode|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|district|string|null: false|
+|building|string|null: false|
+|users_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_name|string|null: false|
+|description|string|null: false|
+|price|string|null: false|
+|brand|string|null: false|
+|users_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|product_status_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: false, foreign_key: true|
+|size_id|integer|null: false, foreign_key: true|
+### Association
+- has_one :shipping
+- has_one :order
+- has_many :likes
+- has_many :coments
+- has_many :images
+- belongs_to :user
+- belongs_to :product_status
+- belongs_to :brand
+- belongs_to :size
+- belongs_to :category
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## shippingテーブル
+|Column|Type|Options|
+|------|----|-------|
+|method|string|null: false|
+|shippig_price|string|null: false|
+|period_before_shipping|string|null: false|
+|prefecture_from|string|null: false|
+|fee_burden|string|null: false|
+|products_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :product
 
-* Deployment instructions
 
-* ...
+
+## creditcardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|cardnumber|string|null: false|
+|users_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+
+
+
+## products_imageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|products_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :product
+
+
+
+## products_statusテーブル
+|Column|Type|Options|
+|------|----|-------|
+|status|string|null: false|
+### Association
+- has_many :products
+
+
+
+## brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand_name|string|null: false|
+### Association
+- has_many :products
+
+
+
+## sizeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size|string|null: false|
+### Association
+- has_many :products
+
+
+
+## categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false|
+### Association
+- has_many :products
+
+
+
+## likeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|users_id|integer|null: false, foreign_key: true|
+|products_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :product
+
+
+
+## comentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|coment|string|null: false|
+|users_id|integer|null: false, foreign_key: true|
+|products_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :product
+
+
+
+## orderテーブル
+|Column|Type|Options|
+|------|----|-------|
+|status|string|null: false|
+|products_id|integer|null: false, foreign_key: true|
+|trading_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :product
+- belongs_to :trading
+
+
+
+## tradingテーブル
+|Column|Type|Options|
+|------|----|-------|
+### Association
+- has_many :orders
+- has_many :reviews
+- belongs_to :user
+
+
+
+## reviewテーブル
+|Column|Type|Options|
+|------|----|-------|
+|review|string|null: false|
+|trading_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :trading
