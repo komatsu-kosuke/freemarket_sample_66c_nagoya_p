@@ -21,11 +21,11 @@
 |familyname|string|null: false|
 |firstname_kana|string|null: false|
 |familyname_kana|string|null: false|
-|birthyear|string|null: false|
-|birthmonth|string|null: false|
-|birthday|string|null: false|
-|phonenumber|string|null: false|
-|zipcode|string|null: false|
+|birthyear|integer|null: false|
+|birthmonth|integer|null: false|
+|birthday|integer|null: false|
+|phonenumber|integer|null: false|
+|zipcode|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |district|string|null: false|
@@ -42,7 +42,7 @@
 |product_name|string|null: false|
 |description|string|null: false|
 |price|string|null: false|
-|brand|string|null: false|
+|brand|string|null: true|
 |users_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |product_status_id|integer|null: false, foreign_key: true|
@@ -79,7 +79,7 @@
 ## creditcardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|cardnumber|string|null: false|
+|cardnumber|integer|null: true|
 |users_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -108,7 +108,7 @@
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string|null: false|
+|brand_name|string|null: true|
 ### Association
 - has_many :products
 
@@ -117,7 +117,7 @@
 ## sizeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|size|string|null: false|
+|size|string|null: true|
 ### Association
 - has_many :products
 
@@ -126,7 +126,7 @@
 ## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false|
+|category|string|null: true|
 ### Association
 - has_many :products
 
@@ -146,7 +146,7 @@
 ## comentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|coment|string|null: false|
+|coment|string|null: true|
 |users_id|integer|null: false, foreign_key: true|
 |products_id|integer|null: false, foreign_key: true|
 ### Association
@@ -170,6 +170,7 @@
 ## tradingテーブル
 |Column|Type|Options|
 |------|----|-------|
+|users_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :orders
 - has_many :reviews
