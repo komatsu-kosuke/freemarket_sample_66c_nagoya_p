@@ -10,7 +10,7 @@
 - has_many :products
 - has_many :likes
 - has_many :tradings
-- has_many :coments
+- has_many :comments
 - has_many :address
 
 
@@ -26,7 +26,7 @@
 |birthmonth|integer|null: false|
 |birthday|integer|null: false|
 |phonenumber|integer|null: false|
-|users_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -39,7 +39,7 @@
 |city|string|null: false|
 |district|string|null: false|
 |building|string|null: false|
-|users_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -50,12 +50,11 @@
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_name|string|null: false|
+|name|string|null: false|
 |description|string|null: false|
 |price|string|null: false|
-|brand|string|null: true|
 |status|string|null: false|
-|users_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false, foreign_key: true|
@@ -80,7 +79,7 @@
 |period_before_shipping|string|null: false|
 |prefecture_from|string|null: false|
 |fee_burden|string|null: false|
-|products_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
 
@@ -90,7 +89,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |cardnumber|integer|null: true|
-|users_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -100,7 +99,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|products_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
 
@@ -136,8 +135,8 @@
 ## likeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|users_id|integer|null: false, foreign_key: true|
-|products_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
@@ -148,8 +147,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |coment|string|null: true|
-|users_id|integer|null: false, foreign_key: true|
-|products_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
@@ -160,7 +159,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |status|string|null: false|
-|products_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 |trading_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
@@ -171,7 +170,7 @@
 ## tradingテーブル
 |Column|Type|Options|
 |------|----|-------|
-|users_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :orders
 - has_many :reviews
