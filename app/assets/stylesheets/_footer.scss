@@ -1,0 +1,143 @@
+.footer {
+  height: 700px;
+  background-color: gray;
+}
+
+.footer-upper {
+  height: 200px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: red;
+} 
+
+.footer-upper__border {
+  height: 200px;
+  width: 450px;
+  margin-left: 320px;
+  background-color: white;
+}
+
+.footer-upper__border__text-1 {
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.footer-upper__border__text-2 {
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.footer-upper__border__frame {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.footer-upper__border__frame__mercari {
+  height: 80px;
+  width: 80px;
+  margin-top: 10px;
+  background-color:blue;
+  border-radius: 20px;
+}
+
+.footer-upper__border__frame__apple {
+  height: 50px;
+  width: 140px;
+  margin-top: 25px;
+  background-color: green;
+  border-radius: 5px;
+}
+
+.footer-upper__border__frame__google {
+  height: 50px;
+  width: 140px;
+  margin-top: 25px;
+  background-color: yellow;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+.footer-lower {
+  height: 400px;
+  background-color: rgb(32, 31, 31);
+  display: flex;
+  justify-content: center;
+}
+
+.footer-lower__frame {
+  width: 180px;
+  color: white;
+  margin-right: 40px;
+}
+
+.footer-lower__frame__text {
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+}
+
+.footer-lower__frame__link {
+  color: rgb(201, 199, 199);
+  font-size: 12px;
+  height: 33px;
+}
+
+.footer-lower__frame__link-2 {
+  color: rgb(201, 199, 199);
+  font-size: 12px;
+  height: 55px;
+}
+
+.footer-lower__frame__policy {
+  margin-top: 130px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer-lower__frame__logo {
+  margin-top:20px;
+  display: flex;
+}
+
+.footer-lower__frame__twitter {
+  height: 30px;
+  width: 30px;
+  margin-right: 30px;
+  background-color: white;
+}
+
+.footer-lower__frame__facebook {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+}
+
+.footer-lower__frame__mercari {
+  margin-top: 50px;
+  display: flex;
+}
+
+.footer-lower__frame__mercari__logo {
+  height: 35px;
+  width: 35px;
+  background-color: white;
+}
+
+.footer-lower__frame__mercari__text {
+  height: 35px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 35px;
+  margin-left: 10px;
+}
