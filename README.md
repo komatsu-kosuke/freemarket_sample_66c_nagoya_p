@@ -11,6 +11,7 @@
 - has_many :likes
 - has_many :tradings
 - has_many :coments
+- has_many :address
 
 
 
@@ -25,6 +26,14 @@
 |birthmonth|integer|null: false|
 |birthday|integer|null: false|
 |phonenumber|integer|null: false|
+|users_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |zipcode|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -36,6 +45,8 @@
 
 
 
+
+
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -43,9 +54,9 @@
 |description|string|null: false|
 |price|string|null: false|
 |brand|string|null: true|
+|status|string|null: false|
 |users_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
-|product_status_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 |size_id|integer|null: false, foreign_key: true|
 ### Association
@@ -55,7 +66,6 @@
 - has_many :coments
 - has_many :images
 - belongs_to :user
-- belongs_to :product_status
 - belongs_to :brand
 - belongs_to :size
 - belongs_to :category
@@ -93,15 +103,6 @@
 |products_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
-
-
-
-## products_statusテーブル
-|Column|Type|Options|
-|------|----|-------|
-|status|string|null: false|
-### Association
-- has_many :products
 
 
 
