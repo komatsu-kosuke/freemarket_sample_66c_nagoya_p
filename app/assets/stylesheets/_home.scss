@@ -1,0 +1,211 @@
+
+// ↓キャンペーンスライド
+
+
+.image-slide {
+  height: 400px;
+  width: 100%;
+  background-color: yellow;
+}
+
+// ↓いいねした商品
+
+
+.like-things {
+  height: 240px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  background-color: gray;
+  &__frame {
+    height: 180px;
+    width: 1000px;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: white;
+    &__text {
+      height: 40px;
+      line-height: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      &-1 {
+        color: rgb(45, 128, 196);
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+    &__info {
+      height: 140px;
+      background-color: red;
+      display: flex;
+      justify-content: space-between;
+      &__product {
+        width: 140px;
+        height: 140px;
+        background-color: yellow;
+      }
+    }
+  }
+}
+
+
+// ↓人気のカテゴリー
+
+.category {
+  height: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: white;
+  &-border {
+    height:100px;
+    width:600px;
+    margin: 0 auto;
+    &__text {
+      font-size: 25px;
+      height: 60px;
+      line-height: 60px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__frame {
+      display:flex;
+      justify-content: space-between;
+      &__things {
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+
+// ↓レディース新着アイテム
+
+.ladynew {
+  height:600px;
+  background-color: gray;
+  padding-top: 50px;
+  &-border {
+    height: 600px;
+    width: 1060px;
+    margin: 0 auto;
+    background-color: white;
+    &__text {
+      height: 60px;
+      line-height: 60px;
+      color: black;
+      font-size: 23px;
+      font-weight: bold;
+      background-color: red;
+      display: flex;
+      justify-content: space-between;
+      &-1 {
+        color: rgb(45, 128, 196);
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+    &__frame {
+      height:250px;
+      margin-bottom: 15px;
+      background-color: gray;
+      display: flex;
+      justify-content: space-between;
+      &__things {
+        width: 180px;
+        background-color: green;
+        &-image {
+          height: 200px;
+          background-color: blue;
+        }
+      // &-text {
+        // 内容決まったら書き加える
+      // }
+      }
+    }
+  }
+}
+
+.ladynew-end {
+  height:600px;
+  background-color: gray;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &-border {
+    height: 600px;
+    width: 1060px;
+    margin: 0 auto;
+    background-color: white;
+    &__text {
+      height: 60px;
+      line-height: 60px;
+      color: black;
+      font-size: 23px;
+      font-weight: bold;
+      background-color: red;
+      display: flex;
+      justify-content: space-between;
+      &-1 {
+        color: rgb(45, 128, 196);
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+    &__frame {
+      height:250px;
+      margin-bottom: 15px;
+      background-color: gray;
+      display: flex;
+      justify-content: space-between;
+      &__things {
+        width: 180px;
+        background-color: green;
+        &-image {
+          height: 200px;
+          background-color: blue;
+        }
+        // &-text {
+          // 内容決まったら書き加える
+        // }
+      }
+    }
+  }
+}
+
+
+// ↓出品ボタン
+
+
+.sell-btn {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  color: white;
+  background-color: red;
+  top: calc(100% - 180px);
+  left: calc(100% - 180px);
+  position: absolute;
+  position: fixed;
+  &__text {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: center;
+  }
+  &__icon {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  overflow: scroll;
+}
