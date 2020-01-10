@@ -6,6 +6,7 @@
   height: 400px;
   width: 100%;
   background-color: yellow;
+  background: url("slide.jpg") center top/cover no-repeat;
 }
 
 // ↓いいねした商品
@@ -16,7 +17,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100%;
-  background-color: gray;
+  background-color: rgb(248, 247, 247);
   &__frame {
     height: 180px;
     width: 1000px;
@@ -37,14 +38,31 @@
       }
     }
     &__info {
-      height: 140px;
-      background-color: red;
+      height: 150px;
       display: flex;
       justify-content: space-between;
       &__product {
-        width: 140px;
-        height: 140px;
-        background-color: yellow;
+        width: 150px;
+        height: 50px;
+        padding-top: 100px;
+        background: url("ringo.jpg") center top/cover no-repeat;
+        &__frame {
+          line-height: 30px;
+          height: 30px;
+          width: 80px;
+          background-color:rgba(0, 0, 0, 0.404);
+          font-size: 20px;
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+          display: flex;
+          justify-content: center;
+          &__logo {
+            color: white;
+          }
+          &__price {
+            color: white;
+          }
+        }
       }
     }
   }
@@ -88,20 +106,18 @@
 
 .ladynew {
   height:600px;
-  background-color: gray;
+  background-color: rgb(248, 247, 247);
   padding-top: 50px;
   &-border {
     height: 600px;
     width: 1060px;
     margin: 0 auto;
-    background-color: white;
     &__text {
       height: 60px;
       line-height: 60px;
       color: black;
       font-size: 23px;
       font-weight: bold;
-      background-color: red;
       display: flex;
       justify-content: space-between;
       &-1 {
@@ -113,19 +129,39 @@
     &__frame {
       height:250px;
       margin-bottom: 15px;
-      background-color: gray;
+      background-color: rgb(248, 247, 247);
       display: flex;
       justify-content: space-between;
       &__things {
-        width: 180px;
-        background-color: green;
+        width: 200px;
+        background-color: white;
         &-image {
-          height: 200px;
-          background-color: blue;
+          height: 50px;
+          padding-top: 130px;
+          background: url("ringo.jpg") center top/cover no-repeat;
+          &__frame {
+            line-height: 30px;
+            height: 30px;
+            width: 80px;
+            background-color:rgba(0, 0, 0, 0.404);
+            font-size: 20px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            display: flex;
+            justify-content: center;
+            &__logo {
+              color: white;
+              margin-right: 5px;
+            }
+            &__price {
+              color: white;
+            }
+          }
         }
-      // &-text {
-        // 内容決まったら書き加える
-      // }
+      &-text {
+        padding: 10px;
+        font-size: 15px;
+      }
       }
     }
   }
@@ -133,21 +169,19 @@
 
 .ladynew-end {
   height:600px;
-  background-color: gray;
+  background-color: rgb(248, 247, 247);
   padding-top: 50px;
   padding-bottom: 50px;
   &-border {
     height: 600px;
     width: 1060px;
     margin: 0 auto;
-    background-color: white;
     &__text {
       height: 60px;
       line-height: 60px;
       color: black;
       font-size: 23px;
       font-weight: bold;
-      background-color: red;
       display: flex;
       justify-content: space-between;
       &-1 {
@@ -159,19 +193,21 @@
     &__frame {
       height:250px;
       margin-bottom: 15px;
-      background-color: gray;
+      background-color: rgb(248, 247, 247);
       display: flex;
       justify-content: space-between;
       &__things {
         width: 180px;
-        background-color: green;
+        background-color: white;
         &-image {
-          height: 200px;
-          background-color: blue;
+          height: 50px;
+          padding-top: 130px;
+          background: url("ringo.jpg") center top/cover no-repeat;
         }
-        // &-text {
-          // 内容決まったら書き加える
-        // }
+        &-text {
+          padding: 10px;
+          font-size: 15px;
+        }
       }
     }
   }
@@ -197,8 +233,8 @@
     margin-top: 25px;
     text-align: center;
   }
-  &__icon {
-    background-color: white;
+  .fas.fa-camera {
+    font-size: 50px;
     height: 50px;
     width: 50px;
     margin-left: 50px;
