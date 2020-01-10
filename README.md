@@ -62,7 +62,7 @@
 - has_one :shipping
 - has_one :order
 - has_many :likes
-- has_many :coments
+- has_many :comments
 - has_many :images
 - belongs_to :user
 - belongs_to :brand
@@ -75,7 +75,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |method|string|null: false|
-|shippig_price|string|null: false|
+|shipping_price|string|null: false|
 |period_before_shipping|string|null: false|
 |prefecture_from|string|null: false|
 |fee_burden|string|null: false|
@@ -108,7 +108,7 @@
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_name|string|null: true|
+|name|string|null: true|
 ### Association
 - has_many :products
 
@@ -143,10 +143,10 @@
 
 
 
-## comentsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|coment|string|null: true|
+|comment|string|null: true|
 |user_id|integer|null: false, foreign_key: true|
 |product_id|integer|null: false, foreign_key: true|
 ### Association
