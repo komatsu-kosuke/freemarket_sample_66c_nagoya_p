@@ -1,20 +1,23 @@
 // ↓パンくずゾーン
 
 .pan {
-  height: 60px;
+  height: 50px;
   width: 100%;
-  background-color: yellow;
+  background-color: white;
+  border-top: 0.5px solid;
+  border-top-color: rgb(248, 247, 247);
+  border-bottom: 2px solid;
+  border-bottom-color: rgba(128, 128, 128, 0.411);
   display: flex;
-}
-
-.pan__text {
-  line-height: 60px;
-  font-size: 15px;
-  padding-left: 200px;
-  &-1 {
-    margin-left: 10px;
-    line-height: 60px;
+  &__text {
+    line-height: 50px;
     font-size: 15px;
+    padding-left: 200px;
+    &-1 {
+      margin-left: 10px;
+      line-height: 50px;
+      font-size: 15px;
+    }
   }
 }
 
@@ -112,12 +115,12 @@
     &__back {
       height: 160px;
       padding-top: 40px;
-      background-color: green;
+      background: url("profile2.jpg") center top/cover no-repeat;;
       &__image {
-        height: 60px;
-        width: 60px;
+        height: 70px;
+        width: 70px;
         border-radius: 50%;
-        background-color: white;
+        background: url("ringo.jpg") center top/cover no-repeat;
         margin: 0 auto;
       }
       &__name {
@@ -162,7 +165,7 @@
         &__image {
           height: 50px;
           width: 50px;
-          background-color: green;
+          background: url("ringo.jpg") center top/cover no-repeat;
         }
         &__things {
           margin-left: 15px;

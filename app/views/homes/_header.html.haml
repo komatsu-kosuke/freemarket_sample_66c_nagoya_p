@@ -31,14 +31,8 @@
           .header-lower-right__mypage__logo
           .header-lower-right__mypage__text マイページ
       - else
-        .header-lower-right__todo
-          %i.fas.fa-check
-          .header-lower-right__todo__text
-            = link_to "新規登録", new_user_registration_path
-        .header-lower-right__mypage
-          .header-lower-right__mypage__logo
-          .header-lower-right__mypage__text
-            = link_to "ログイン", new_user_session_path
+        = link_to "新規会員登録", new_user_registration_path, class: "header-lower-right__new"
+        = link_to "ログイン", new_user_session_path, class: "header-lower-right__login"
 
 
 
