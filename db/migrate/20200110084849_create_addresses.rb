@@ -6,7 +6,7 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :city, null: false
       t.string :district, null: false
       t.string :building, null: false
-      t.references :user, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
