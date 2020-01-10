@@ -16,15 +16,32 @@
         %i.fas.fa-tags
         .header-lower-left__bland__text ブランドから探す
     .header-lower-right
-      .header-lower-right__like
-        %i.far.fa-heart
-        .header-lower-right__like__text いいね！一覧
-      .header-lower-right__info
-        %i.far.fa-bell
-        .header-lower-right__info__text お知らせ
-      .header-lower-right__todo
-        %i.fas.fa-check
-        .header-lower-right__todo__text やることリスト
-      .header-lower-right__mypage
-        .header-lower-right__mypage__logo
-        .header-lower-right__mypage__text マイページ
+      - if user_signed_in?
+        .header-lower-right__like
+          %i.far.fa-heart
+          .header-lower-right__like__text いいね！一覧
+        .header-lower-right__info
+          %i.far.fa-bell
+          .header-lower-right__info__text お知らせ
+        .header-lower-right__todo
+          %i.fas.fa-check
+          .header-lower-right__todo__text
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        .header-lower-right__mypage
+          .header-lower-right__mypage__logo
+          .header-lower-right__mypage__text マイページ
+      - else
+        .header-lower-right__todo
+          %i.fas.fa-check
+          .header-lower-right__todo__text
+            = link_to "新規登録", new_user_registration_path
+        .header-lower-right__mypage
+          .header-lower-right__mypage__logo
+          .header-lower-right__mypage__text
+            = link_to "ログイン", new_user_session_path
+
+
+
+-# 28行目やることリスト
+-# 35行目やることリスト
+-# 38行目マイページ
