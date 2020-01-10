@@ -26,6 +26,7 @@
 |birthmonth|integer|null: false|
 |birthday|integer|null: false|
 |phonenumber|integer|null: false|
+|user_description|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
