@@ -1,0 +1,241 @@
+
+.header-frame {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  padding-top: 50px;
+}
+
+.header-frame__market {
+  height: 50px;
+  width: 170px;
+  margin:0 auto;
+  background: url("fmarket_logo_red.svg") center top/cover no-repeat;
+}
+
+.main-new {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+}
+
+.main-frame {
+  height: 100%;
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  &__text {
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(230, 228, 228);
+  }
+  &__image {
+    padding: 40px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(230, 228, 228);
+    &__text {
+      display: flex;
+      &__trading {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__btn {
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        height: 20px;
+        width: 40px;
+        background-color: red;
+        margin-left: 10px;
+        line-height: 20px;
+        border-radius: 2px;
+        text-align: center;
+      }
+    }
+    &__upload {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    &__up {
+      height: 100px;
+      width: 100%;
+      background-color: rgb(236, 235, 235);
+      border:1px dashed;
+      border-color: rgb(206, 206, 206);
+      justify-content: center;
+      padding-top: 50px;
+      &__image {
+        font-size: 15px;
+        text-align: center;
+      }
+    }
+  }
+  &__product {
+    padding: 40px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(230, 228, 228);
+    &__name {
+      height: 130px;
+      &__border {
+        display: flex;
+        &__text {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__btn {
+          color: white;
+          font-size: 14px;
+          font-weight: bold;
+          height: 20px;
+          width: 40px;
+          background-color: red;
+          margin-left: 10px;
+          line-height: 20px;
+          border-radius: 2px;
+          text-align: center;
+        }
+      }
+      &__input {
+        height: 50px;
+        width: 100%;
+        color: rgb(189, 189, 189);
+        border: 1px solid;
+        border-color: rgb(189, 189, 189);
+        border-radius: 5px;
+        margin-top: 5px;
+        line-height: 50px;
+      }
+    }
+    &__info {
+      height: 160px;
+      &__border {
+        display: flex;
+        &__text {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__btn {
+          color: white;
+          font-size: 14px;
+          font-weight: bold;
+          height: 20px;
+          width: 40px;
+          background-color: red;
+          margin-left: 10px;
+          line-height: 20px;
+          border-radius: 2px;
+          text-align: center;
+        }
+      }
+      &__input {
+        height: 140px;
+        width: 100%;
+        color: rgb(189, 189, 189);
+        border: 1px solid;
+        border-color: rgb(189, 189, 189);
+        margin-top: 5px;
+        line-height: 50px;
+      }
+    }
+  }
+  &__show {
+    padding: 40px;
+    display: flex;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(230, 228, 228);
+    &__left {
+      width: 200px;
+      font-size: 15px;
+      font-weight: bold;
+      color: rgb(161, 161, 161);
+    }
+    &__right {
+      height: 100%;
+      width: 420px;
+      &__category {
+        display: flex;
+        &__text {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        &__btn {
+          color: white;
+          font-size: 14px;
+          font-weight: bold;
+          height: 20px;
+          width: 40px;
+          background-color: red;
+          margin-left: 10px;
+          line-height: 20px;
+          border-radius: 2px;
+          text-align: center;
+        }
+      }
+      &__input {
+        height: 50px;
+        width: 100%;
+        color: rgb(189, 189, 189);
+        border: 1px solid;
+        border-color: rgb(189, 189, 189);
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        align-items: center;
+        &__ten {
+          margin-left: 10px;
+        }
+        .fas.fa-chevron-down {
+          margin-right: 10px;
+        }
+      }
+      &__input__end {
+        height: 50px;
+        width: 100%;
+        color: rgb(189, 189, 189);
+        border: 1px solid;
+        border-color: rgb(189, 189, 189);
+        border-radius: 5px;
+        margin-top: 5px;
+      }
+    }
+  }
+  &__deli {
+    padding: 40px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(230, 228, 228);
+    display: flex;
+    &__left {
+      width: 200px;
+      display: flex;
+      &__text {
+        font-size: 15px;
+        font-weight: bold;
+        color: rgb(161, 161, 161);
+      }
+      &__logo {
+        height: 15px;
+        width: 15px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 5px;
+        line-height: 15px;
+        border-radius: 50%;
+        background-color: rgb(0, 162, 255);
+      }
+    }
+    &__right {
+      height: 100%;
+      width: 420px;
+    }
+  }
+}
+
