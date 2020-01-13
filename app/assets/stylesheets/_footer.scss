@@ -16,18 +16,25 @@
         justify-content: space-between;
         width: 392px;
         &__mercari {
-          height: 70px;
-          width: 70px;
+          background-color: white;
+          height: 60px;
+          width: 55px;
           margin-top: 14px;
-          background-color:blue;
-          border-radius: 10px;
-          background: url("mercari.png") center top/cover no-repeat;
+          margin-left: 3px;
+          padding-top: 8px;
+          padding-left: 15px;
+          border-radius: 15px;
+          &__image {
+            height: 50px;
+            width: 40px;
+            border-radius: 10px;
+            background: url("logo_red.svg") center top/cover no-repeat;
+          }
         }
         &__apple {
           height: 40px;
           width: 140px;
           margin-top: 25px;
-          background-color: green;
           border-radius: 5px;
           border: 1px solid;
           border-color: white;
@@ -37,7 +44,6 @@
           height: 40px;
           width: 140px;
           margin-top: 25px;
-          background-color: yellow;
           border-radius: 5px;
           border: 1px solid;
           border-color: white;
@@ -98,8 +104,8 @@
         display: flex;
         &__logo {
           height: 35px;
-          width: 35px;
-          background: url("mercari-logo.png") center top/cover no-repeat;
+          width: 30px;
+          background: url("logo_white.svg") center top/cover no-repeat;
         }
         &__text {
           height: 35px;
