@@ -1,0 +1,160 @@
+.single-header {
+  width: 100%;
+  height: 128px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-header-box {
+  width: 30%;
+  height: 70px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-header-box__logo {
+  width: 50px;
+  height: 50px;
+  background: url("mercari-b-gray.png") center top/cover no-repeat;
+}
+.single-header-box__text {
+  font-size: 30px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-family: 'Hiragino Maru Gothic ProN',fantasy;
+  letter-spacing: 0.05em;
+   & a {
+     text-decoration: none;
+     color: black;
+   }
+}
+
+// -----------main-------------
+.single-main {
+  width: 100%;
+  height: 384px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+.single-main__box {
+  height: 384px;
+  width: 700px;
+  background-color: white;
+}
+.single-main__box-top {
+  width: 100%;
+  height: 97px;
+  border-bottom: solid 0.5px whitesmoke;
+  color: rgba(0, 0, 0, 0.76);
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-main__box-bottom {
+  width: 100%;
+  height: 246px;
+  background-color: white;
+}
+.single-main__box-bottom__mail {
+  width: 343px;
+  height: 50px;
+  color: white;
+  background-color: #dc143ce8;
+  margin-top: 40px;
+  margin-left: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+.single-main__box-bottom__logo {
+  margin-left: 16px;
+  font-size: 20px;
+}
+.single-main__box-bottom__text {
+  margin-right: 90px;
+  font-size: 13.5px;
+}
+.single-main__box-bottom__facebook {
+  width: 343px;
+  height: 50px;
+  color: white;
+  background-color: #193770e0;
+  margin-top: 17px;
+  margin-left: 180px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.single-main__box-bottom__text_f {
+  margin-right: 110px;
+  font-size: 12.5px;
+}
+.single-main__box-bottom__google {
+  width: 343px;
+  height: 50px;
+  border: solid 0.5px #696969ee;
+  margin-top: 17px;
+  margin-left: 180px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.single-main__box-bottom__text_g {
+  margin-right: 120px;
+  font-size: 12.5px;
+}
+
+// -----------footer------------
+.single-footer {
+  height: 280px;
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+.single-footer-box {
+  width: 30%;
+  height: 280px;
+  background-color: whitesmoke;
+}
+.single-footer-box-top {
+  width: 100%;
+  height: 30px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 95px;
+  margin-bottom: 25px;
+}
+.single-footer-box_text {
+  margin-right: 12px;
+}
+.single-footer-box-bottom {
+  width: 100%;
+  height: 75px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+.single-footer-box-bottom_logo {
+  width: 75px;
+  height: 75px;
+  background-color: whitesmoke;
+  background: url("mercarilogo-gray.png") center top/cover no-repeat;
+  color: #a9a9a9
+}
+.single-footer-box-bottom_license {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+}
