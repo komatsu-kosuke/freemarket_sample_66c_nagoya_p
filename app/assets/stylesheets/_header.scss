@@ -7,19 +7,12 @@
     display:flex;
     justify-content: center;
     &__mercari {
-      width:200px;
+      width: 170px;
+      height: 50px;
+      line-height: 50px;
       display:flex;
-      &__logo {
-        height:30px;
-        width:30px;
-        margin-top:10px;
-        background: url("mercari.png") center top/cover no-repeat;
-      }
-      &__text {
-        font-size: 30px;
-        margin-left: 10px;
-        line-height:50px;
-      }
+      background: url("fmarket_logo_red.svg") center top/cover no-repeat;
+      margin-right: 20px;
     }
     &__find {
       width:850px;
@@ -45,11 +38,11 @@
     height: 50px;
     display:flex;
     &-left {
-      width: 300px;
+      width: 350px;
       margin-left: 200px;
       display:flex;
       &__category {
-        width:200px;
+        width: 200px;
         display:flex;
         .fas.fa-list {
           color: red;
@@ -64,7 +57,7 @@
       }
       &__bland {
         width:200px;
-        margin-left: 10px;
+        margin-left: 20px;
         display:flex;
         .fas.fa-tags {
           color: red;
@@ -80,7 +73,7 @@
     }
     &-right {
       width: 600px;
-      margin-left: 200px;
+      margin-left: 145px;
       display:flex;
       &__like {
         width:140px;
