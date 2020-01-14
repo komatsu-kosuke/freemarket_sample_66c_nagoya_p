@@ -1,6 +1,4 @@
-.single-header
-  .single-header-box
-    .single-header-box__logo
+= render "header"
     
 .single-main
   .single-main__box
@@ -10,8 +8,7 @@
       .single-main__box-bottom__mail
         .single-main__box-bottom__logo
           %i.far.fa-envelope
-        .single-main__box-bottom__text
-          -# = link_to ""
+        = link_to '/signup/registration', class: 'single-main__box-bottom__text' do
           メールアドレスで登録する
       .single-main__box-bottom__facebook
         .single-main__box-bottom__logo
@@ -24,16 +21,4 @@
         .single-main__box-bottom__text_g
           Googleで登録する
 
-.single-footer
-  .single-footer-box
-    .single-footer-box-top
-      .single-footer-box_text
-        プライバシーポリシー
-      .single-footer-box_text
-        Fmarket利用規約
-      .single-footer-box_text
-        特定商取引に関する表記
-    .single-footer-box-bottom
-      .single-footer-box-bottom_logo
-    .single-footer-box-bottom_license
-      ©︎ Mercari, inc.
+= render "footer"
