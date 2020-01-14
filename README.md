@@ -15,7 +15,7 @@
 
 
 
-## profileテーブル
+## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |firstname|string|null: false|
@@ -32,14 +32,14 @@
 - belongs_to :user
 
 
-## addressテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |zipcode|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |district|string|null: false|
-|building|string|null: false|
+|building|string||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -52,7 +52,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|description|string|null: false|
+|description|text|null: false|
 |price|string|null: false|
 |status|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
@@ -72,7 +72,7 @@
 
 
 
-## shippingテーブル
+## shippingsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |method|string|null: false|
@@ -86,7 +86,7 @@
 
 
 
-## creditcardテーブル
+## creditcardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |cardnumber|integer|null: true|
@@ -96,7 +96,7 @@
 
 
 
-## products_imageテーブル
+## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -106,34 +106,34 @@
 
 
 
-## brandテーブル
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: true|
+|name|string||
 ### Association
 - has_many :products
 
 
 
-## sizeテーブル
+## sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|size|string|null: true|
+|size|string||
 ### Association
 - has_many :products
 
 
 
-## categoryテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: true|
+|category|string||
 ### Association
 - has_many :products
 
 
 
-## likeテーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -147,7 +147,7 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|string|null: true|
+|text|string||
 |user_id|integer|null: false, foreign_key: true|
 |product_id|integer|null: false, foreign_key: true|
 ### Association
@@ -156,7 +156,7 @@
 
 
 
-## orderテーブル
+## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |status|string|null: false|
@@ -168,10 +168,11 @@
 
 
 
-## tradingテーブル
+## tradingsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :orders
 - has_many :reviews
@@ -179,7 +180,7 @@
 
 
 
-## reviewテーブル
+## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |review|string|null: false|
