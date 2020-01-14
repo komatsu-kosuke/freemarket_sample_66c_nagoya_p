@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :products
   has_many :address
 
+  validates :nickname, presence: true
 end
