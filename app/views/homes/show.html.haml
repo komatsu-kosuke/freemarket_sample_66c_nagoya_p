@@ -3,9 +3,9 @@
     .sell-btn__text 出品
     %i.fas.fa-camera
 = render "header"
-.pan
-  .pan__text メルカリ
-  .pan__text-1 > マイページ
+
+- breadcrumb :mypage, class: "breadcrumbs"
+= breadcrumbs pretext: "",separator: " &rsaquo; "
 
 .mypage
   = render "side-bar"
