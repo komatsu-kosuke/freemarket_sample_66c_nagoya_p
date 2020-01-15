@@ -1,4 +1,8 @@
 = render "header"
+
+- breadcrumb :mypage, class: "breadcrumbs"
+= breadcrumbs pretext: "",separator: " &rsaquo; "
+
 .mypage
   = render "side-bar"
     
