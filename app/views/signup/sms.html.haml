@@ -1,0 +1,11 @@
+= render "header"
+.single-main
+  .single-main__box
+    .single-main__box-top
+      電話番号の確認
+    = form_for(@user,url: adress_signup_index_path, method: :get) do |f|
+      .single-main__box-bottom
+        = f.text_field :phonenumber, { class: "second-main__box-bottom__form", placeholder: '例) 09012345678' }
+      = f.submit "次へ進む", class: "second-main__box-bottom__next-btn"
+      
+= render "footer"

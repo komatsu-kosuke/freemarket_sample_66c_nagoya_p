@@ -190,11 +190,109 @@
   align-items: center;
 }
 .second-main__box-bottom {
-  width: 72%;
-  height: 900px;
-  background-color: red;
-  padding: 50px 100px;
+  width: 50%;
+  height: 1300px;
+  background-color: white;
+  padding: 40px 180px 400px 180px;
 }
 .second-main__box-bottom__inner {
+  width: 100%;
+  height: 100%;
+}
+.second-main__box-bottom__text {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.808);
+}
+.second-main__box-bottom__must {
+  width: 35px;
+  height: 18px;
+  background-color: red;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.second-main__box-bottom__any {
+  width: 35px;
+  height: 18px;
+  background-color: gray;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.second-main__box-bottom__form {
+  width: 89%;
+  height: 30px;
+  background-color: white;
+  border: solid 0.5px #d3d3d3;
+  border-radius: 2px;
+  padding: 10px 20px;
   
+}
+.second-main__box-bottom__cortion {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  color: #c0c0c0;
+}
+.second-main__box-bottom__form-under {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.second-main__box-bottom__check {
+  width: 100%;
+  height: 50px;
+  background-color: yellowgreen;
+  margin-bottom: 30px;
+}
+.second-main__box-bottom__human {
+  width: 100%;
+  height: 100px;
+  background-color: yellowgreen;
+  margin-bottom: 30px;
+}
+.second-main__box-bottom__h-title {
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.808);
+}
+.second-main__box-bottom__h-text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.808);
+}
+.second-main__box-bottom__text-next {
+  width: 100%;
+  height: 50px;
+  background-color: yellowgreen;
+}
+.second-main__box-bottom__next-btn {
+  width: 100%;
+  height: 50px;
+  background-color: #dc143ce8;
+  color: white;
+  font-size: 13px;
+}
+.second-main__box-bottom__form-d {
+  width: 37%;
+  height: 30px;
+  background-color: white;
+  border: solid 0.5px #d3d3d3;
+  border-radius: 2px;
+  padding: 10px 20px;
 }

@@ -1,14 +1,7 @@
 class Profile < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   with_options presence: true do
-    validates :firstname
-    validates :familyname
-    validates :firstname_kana
-    validates :familyname_kana	
-    validates :birthyear
-    validates :birthmonth
-    validates :birthday
-    validates :phonenumber, uniqueness: true
     validates :user_description	
+  end
 end

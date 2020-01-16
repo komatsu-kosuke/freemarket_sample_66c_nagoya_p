@@ -4,30 +4,67 @@
   .second-main__box
     .second-main__box-top
       会員情報入力
-    .second-main__box-bottom
-      .second-main__box-bottom__inner
--# %h2 Sign up
--# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
--#   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     - if @minimum_password_length
--#       %em
--#         (#{@minimum_password_length} characters minimum)
--#     %br/
--#     = f.password_field :password, autocomplete: "new-password"
--#   .field
--#     = f.label :password_confirmation
--#     %br/
--#     = f.password_field :password_confirmation, autocomplete: "new-password"
--#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
+    = form_for(@user,url: sms_signup_index_path, method: :get) do |f|
+      .second-main__box-bottom
+        .second-main__box-bottom__inner
+          .second-main__box-bottom__text
+            ニックネーム
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :nickname, { class: "second-main__box-bottom__form", placeholder: '例) メルカリ太郎' }
+          .second-main__box-bottom__text
+            メールアドレス
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.email_field :email, { class: "second-main__box-bottom__form", placeholder: 'PC・携帯どちらでも可' }
+          .second-main__box-bottom__text
+            パスワード
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.password_field :password, { class: "second-main__box-bottom__form", placeholder: '6文字以上' }
+          .second-main__box-bottom__text
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.password_field :encrypted_password, { class: "second-main__box-bottom__form", placeholder: '6文字以上' }
+          .second-main__box-bottom__cortion
+            ※英字と数字の両方を含めて設定してください
+          .second-main__box-bottom__check
+            チェックボックスつける
+          .second-main__box-bottom__human
+            .second-main__box-bottom__h-title
+              本人確認
+            .second-main__box-bottom__h-text
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .second-main__box-bottom__text
+            お名前(全角)
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :familyname, { class: "second-main__box-bottom__form", placeholder: '例) 山田' }
+            = f.text_field :firstname, { class: "second-main__box-bottom__form", placeholder: '例) 太郎' }
+          .second-main__box-bottom__text
+            お名前(カナ)
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :familyname_kana, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
+            = f.text_field :firstname_kana, { class: "second-main__box-bottom__form", placeholder: '例) タロウ' }
+          .second-main__box-bottom__text
+            生年月日
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :birthyear, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
+            = f.text_field :birthmonth, { class: "second-main__box-bottom__form", placeholder: '例) タロウ' }
+            = f.text_field :birthday, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
 
-
+        .second-main__box-bottom__text-next
+          「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+        .second-main__box-bottom__next-btn
+          = f.submit "次へ進む", class: "second-main__box-bottom__next-btn"
 
 
