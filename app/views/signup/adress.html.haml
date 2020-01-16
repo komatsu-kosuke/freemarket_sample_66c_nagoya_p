@@ -1,0 +1,41 @@
+= render "header"
+
+.second-main
+  .second-main__box
+    .second-main__box-top
+      会員情報入力
+    = form_for(@address, url: signup_index_path, method: :post) do |f|
+      .second-main__box-bottom
+        .second-main__box-bottom__inner
+          .second-main__box-bottom__text
+            郵便番号
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :zipcode, { class: "second-main__box-bottom__form", placeholder: '例) 123-4567' }
+          .second-main__box-bottom__text
+            都道府県
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :prefecture, { class: "second-main__box-bottom__form", placeholder: '三重県' }
+          .second-main__box-bottom__text
+            市区町村
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :city, { class: "second-main__box-bottom__form", placeholder: '例) 四日市市曙町' }
+          .second-main__box-bottom__text
+            番地
+            .second-main__box-bottom__must
+              必須
+          .second-main__box-bottom__form-under
+            = f.text_field :district, { class: "second-main__box-bottom__form", placeholder: '例) 7-13-2' }
+          .second-main__box-bottom__text
+            建物名
+            .second-main__box-bottom__any
+              任意
+          .second-main__box-bottom__form-under
+            = f.text_field :building, { class: "second-main__box-bottom__form", placeholder: '例) 栄センタービル' }
+        = f.submit "次へ進む", class: "second-main__box-bottom__next-btn"
+= render "footer"

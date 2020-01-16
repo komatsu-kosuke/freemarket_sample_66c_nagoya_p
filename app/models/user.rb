@@ -12,9 +12,18 @@ class User < ApplicationRecord
   has_many :comments
   has_many :address
 
-  with_options presence: true do
-    validates :name
-    validates :email, uniqueness: true
-    validates :address
-  end
+  # with_options presence: true do
+  #   validates :nickname
+  #   validates :email, uniqueness: true
+  #   validates :address
+  #   validates :firstname
+  #   validates :familyname
+  #   validates :firstname_kana
+  #   validates :familyname_kana	
+  #   validates :birthyear
+  #   validates :birthmonth
+  #   validates :birthday
+  #   validates :phonenumber, uniqueness: true
+  # end
+  
 end

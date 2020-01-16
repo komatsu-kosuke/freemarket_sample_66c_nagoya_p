@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "city", null: false
     t.string "district", null: false
     t.string "building", null: false
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_addresses_on_users_id"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -99,14 +99,6 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "firstname", null: false
-    t.string "familyname", null: false
-    t.string "firstname_kana", null: false
-    t.string "familyname_kana", null: false
-    t.integer "birthyear", null: false
-    t.integer "birthmonth", null: false
-    t.integer "birthday", null: false
-    t.integer "phonenumber", null: false
     t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -150,16 +142,22 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "nickname"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "firstname", null: false
+    t.string "familyname", null: false
+    t.string "firstname_kana", null: false
+    t.string "familyname_kana", null: false
+    t.integer "birthyear", null: false
+    t.integer "birthmonth", null: false
+    t.integer "birthday", null: false
+    t.integer "phonenumber", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users", column: "users_id"
+  add_foreign_key "addresses", "users"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "creditcards", "users"

@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'homes#index'
 
-  resources :signup, only: [:index] do
+  resources :signup, only: [:index, :create] do
     collection do
       get 'registration'
+      get 'sms'
+      get 'adress'
     end
   end
 
