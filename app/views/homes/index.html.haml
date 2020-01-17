@@ -1,5 +1,5 @@
 .wrapper
-  .sell-btn
+  = link_to new_trading_path, class: 'sell-btn' do
     .sell-btn__text 出品
     %i.fas.fa-camera
   = render "header"

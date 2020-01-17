@@ -33,7 +33,6 @@
      color: black;
    }
 }
-
 // -----------main-------------
 .single-main {
   width: 100%;
@@ -68,7 +67,7 @@
   width: 343px;
   height: 50px;
   color: white;
-  background-color: #dc143ce8;
+  background-color: #DC143CE8;
   margin-top: 40px;
   margin-left: 180px;
   display: flex;
@@ -88,7 +87,7 @@
   width: 343px;
   height: 50px;
   color: white;
-  background-color: #193770e0;
+  background-color: #193770E0;
   margin-top: 17px;
   margin-left: 180px;
   border-radius: 5px;
@@ -103,7 +102,7 @@
 .single-main__box-bottom__google {
   width: 343px;
   height: 50px;
-  border: solid 0.5px #696969ee;
+  border: solid 0.5px #696969EE;
   margin-top: 17px;
   margin-left: 180px;
   border-radius: 5px;
@@ -115,7 +114,6 @@
   margin-right: 120px;
   font-size: 12.5px;
 }
-
 // -----------footer------------
 .single-footer {
   height: 280px;
@@ -154,16 +152,13 @@
   height: 75px;
   background-color: whitesmoke;
   background: url("logo_gray.svg") center top/cover no-repeat;
-  color: #a9a9a9
+  color: #A9A9A9
 }
 .single-footer-box-bottom_license {
   display: flex;
   justify-content: center;
   font-size: 13px;
 }
-
-
-
 // --------------STEP2----------------
 .second-main {
   width: 100%;

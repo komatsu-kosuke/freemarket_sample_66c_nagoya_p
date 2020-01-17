@@ -1,103 +1,104 @@
 .header-frame
-  .header-frame__market
+  =link_to "", root_path, class: "header-frame__market"
+
 .main-new
   .main-frame
-    .main-frame__infomation 商品の情報を入力
-    .main-frame__image
-      .main-frame__image__text
-        .main-frame__image__text__trading 出品画像
-        .main-frame__image__text__btn 必須
-      .main-frame__image__upload 最大10枚までアップロードできます
-      .main-frame__image__up
-        .main-frame__image__up__image ドラッグアンドドロップ
-        .main-frame__image__up__image またはクリックしてファイルをアップロード
-    .main-frame__product
-      .main-frame__product__name
-        .main-frame__product__name__border
-          .main-frame__product__name__border__text 商品名
-          .main-frame__product__name__border__btn 必須
-        .main-frame__product__name__input 商品名（必須 40文字まで）
-      .main-frame__product__info
-        .main-frame__product__info__border
-          .main-frame__product__info__border__text 商品の説明
-          .main-frame__product__info__border__btn 必須
-        .main-frame__product__info__input 商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）
-    .main-frame__show
-      .main-frame__show__left 商品の詳細
-      .main-frame__show__right
-        .main-frame__show__right__category
-          .main-frame__show__right__category__text カテゴリー
-          .main-frame__show__right__category__btn 必須
-        .main-frame__show__right__input
-          .main-frame__show__right__input__ten ---
-          %i.fas.fa-chevron-down
-        .main-frame__show__right__category
-          .main-frame__show__right__category__text 商品の状態
-          .main-frame__show__right__category__btn 必須
-        .main-frame__show__right__input__end
-          .main-frame__show__right__input__ten ---
-          %i.fas.fa-chevron-down
-    .main-frame__deli
-      .main-frame__deli__left 
-        .main-frame__deli__left__text 配送について
-        .main-frame__deli__left__logo ？
-      .main-frame__deli__right
-        .main-frame__show__right__category
-          .main-frame__show__right__category__text 配送料の負担
-          .main-frame__show__right__category__btn 必須
-        .main-frame__show__right__input
-          .main-frame__show__right__input__ten ---
-          %i.fas.fa-chevron-down
-        .main-frame__show__right__category
-          .main-frame__show__right__category__text 発送元の地域
-          .main-frame__show__right__category__btn 必須
-        .main-frame__show__right__input
-          .main-frame__show__right__input__ten ---
-          %i.fas.fa-chevron-down
-        .main-frame__show__right__category
-          .main-frame__show__right__category__text 発送までの日数
-          .main-frame__show__right__category__btn 必須
-        .main-frame__show__right__input__end
-          .main-frame__show__right__input__ten ---
-          %i.fas.fa-chevron-down
-    .main-frame__price
-      .main-frame__price__left
-        .main-frame__price__left__text 販売価格(300〜9,999,999)
-        .main-frame__price__left__logo ？
-      .main-frame__price__right
-        .main-frame__price__right__border
-          .main-frame__price__right__border__left
-            .main-frame__price__right__border__left__text 価格
-            .main-frame__price__right__border__left__btn 必須
-          .main-frame__price__right__border__right
-            .main-frame__price__right__border__right__text ￥
-            .main-frame__price__right__border__right__input 例）300
-        .main-frame__price__right__com
-          .main-frame__price__right__com__left 販売手数料(10%)
-          .main-frame__price__right__com__right
-            .main-frame__price__right__com__right__text -
-            .main-frame__price__right__com__right__en
-        .main-frame__price__right__gain
-          .main-frame__price__right__gain__left 販売利益
-          .main-frame__price__right__gain__right
-            .main-frame__price__right__gain__right__text ￥
-            .main-frame__price__right__gain__right__price
-    .main-frame__text
-      .main-frame__text__info
-        .main-frame__text__info__link 禁止されている出品
-        .main-frame__text__info__ten 、
-        .main-frame__text__info__link 行為
-        .main-frame__text__info__ten を必ずご確認ください
-      .main-frame__text__info
-        .main-frame__text__info__ten またブランド品でシリアルナンバー等がある場合はご記載ください。
-        .main-frame__text__info__link 偽ブランドの販売
-        .main-frame__text__info__ten は犯罪であ
-      .main-frame__text__info り処罰される可能性があります
-      .main-frame__text__info
-        .main-frame__text__info__ten また、出品をもちまして
-        .main-frame__text__info__link 加盟店規約
-        .main-frame__text__info__ten に同意したことになります。
-    .main-frame__btn 出品する
-    .main-frame__back 
-    
-    
+    = form_for(@product, url: trading_index_path) do |f|
+      .main-frame__infomation 商品の情報を入力
+      .main-frame__image
+        = f.fields_for :products_images do |i|
+          .main-frame__image__text
+            .main-frame__image__text__trading 出品画像
+            .main-frame__image__text__btn 必須
+          .main-frame__image__upload 最大10枚までアップロードできます
+          = i.file_field :image, :placeholder => "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "main-frame__image__up"
+      .main-frame__product
+        .main-frame__product__name
+          .main-frame__product__name__border
+            .main-frame__product__name__border__text 商品名
+            .main-frame__product__name__border__btn 必須
+          = f.text_field :name, :placeholder => "商品名",class: "main-frame__product__name__input"
+        .main-frame__product__info
+          .main-frame__product__info__border
+            .main-frame__product__info__border__text 商品の説明
+            .main-frame__product__info__border__btn 必須
+          = f.text_area :description, :placeholder => '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわ   せやすいのでおすすめです。', class: "main-frame__product__info__input"
+      .main-frame__show
+        .main-frame__show__left 商品の詳細
+        .main-frame__show__right
+          .main-frame__show__right__category
+            .main-frame__show__right__category__text カテゴリー
+            .main-frame__show__right__category__btn 必須
+          = f.select :category_id, [['レディース',1],['メンズ',2],['ベビー・キッズ',3],['インテリア・住まい・小物',4],['本・音楽・ゲーム',5],['おもちゃ・ホビー・グッズ',6],['コスメ・香水・美容',7],['家電・スマホ・カメラ',8],['スポーツ・レジャー',9],['ハンドメイド',10],['チケット',11],['自動車・オートバイ',12],['その他',13]], {:prompt => "---"}, {class: "category"}
+          .main-frame__show__right__category
+            .main-frame__show__right__category__text 商品の状態
+            .main-frame__show__right__category__btn 必須
+          = f.select :status, ["新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"], {:prompt => "---"}, {class: "category__end"}
+      .main-frame__deli
+        .main-frame__deli__left 
+          .main-frame__deli__left__text 配送について
+          .main-frame__deli__left__logo ？
+        .main-frame__deli__right
+          = f.fields_for :shipping do |i|
+            .main-frame__show__right__category
+              .main-frame__show__right__category__text 配送料の負担
+              .main-frame__show__right__category__btn 必須
+            = i.select :fee_burden, ["送料込み(出品者負担)","着払い(購入者負担)"], {:prompt => "---"}, {class: "category"}
+            .main-frame__show__right__category
+              .main-frame__show__right__category__text 発送元の地域
+              .main-frame__show__right__category__btn 必須
+            = i.collection_select :prefecture_from, Prefecture.all, :id, :name, {prompt: "---"}, {class: "category"}
+            .main-frame__show__right__category
+              .main-frame__show__right__category__text 発送までの日数
+              .main-frame__show__right__category__btn 必須
+            = i.select :period_before_shipping, ["1~2日で発送","2~3日で発送","4~7日で発送"], {:prompt => "---"}, {class: "category__end"}
+      .main-frame__price
+        .main-frame__price__left
+          .main-frame__price__left__text 販売価格(300〜9,999,999)
+          .main-frame__price__left__logo ？
+        .main-frame__price__center
+          .main-frame__price__center__top
+            .main-frame__price__center__top__left 価格
+            .main-frame__price__center__top__btn 必須
+          .main-frame__price__center__middle 販売手数料(10%)
+          .main-frame__price__center__bottom 販売利益
+        .main-frame__price__right
+          %form{:oninput => "opt1.value = product_price.value * 0.1"}
+            .main-frame__price__right__top1
+              .main-frame__price__right__top
+                .main-frame__price__right__top__text ￥
+                = f.text_field :price, class: "main-frame__price__right__top__input"
+              .main-frame__price__right__middle
+                %output{:name => "opt1"}
+            .main-frame__price__right__bottom
+              %output{:name => "opt2"}
+      .main-frame__text
+        .main-frame__text__info
+          .main-frame__text__info__link 禁止されている出品
+          .main-frame__text__info__ten 、
+          .main-frame__text__info__link 行為
+          .main-frame__text__info__ten を必ずご確認ください
+        .main-frame__text__info
+          .main-frame__text__info__ten またブランド品でシリアルナンバー等がある場合はご記載ください。
+          .main-frame__text__info__link 偽ブランドの販売
+          .main-frame__text__info__ten は犯罪であ
+        .main-frame__text__info り処罰される可能性があります
+        .main-frame__text__info
+          .main-frame__text__info__ten また、出品をもちまして
+          .main-frame__text__info__link 加盟店規約
+          .main-frame__text__info__ten に同意したことになります。
+      = f.submit "出品する", class: "main-frame__btn", form: "new_product"
+      = link_to "もどる", homes_path, class: "main-frame__back"
+.single-footer
+  .single-footer-box
+    .single-footer-box-top
+      .single-footer-box_text
+        プライバシーポリシー
+      .single-footer-box_text
+        Fmarket利用規約
+      .single-footer-box_text
+        特定商取引に関する表記
+    .single-footer-box-bottom
+      .single-footer-box-bottom_logo
+    .single-footer-box-bottom_license
+      ©︎ Mercari, inc.
