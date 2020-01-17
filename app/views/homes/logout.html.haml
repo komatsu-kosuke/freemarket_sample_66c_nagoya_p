@@ -1,0 +1,16 @@
+.wraper
+  .sell-btn
+    .sell-btn__text 出品
+    %i.fas.fa-camera
+= render "header"
+
+- breadcrumb :mypage, class: "breadcrumbs"
+= breadcrumbs pretext: "",separator: " &rsaquo; "
+
+.mypage
+  = render "side-bar"
+  - if user_signed_in?
+    .logout-main
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-main__box"
+  
+= render "footer"

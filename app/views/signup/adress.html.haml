@@ -3,10 +3,10 @@
 .second-main
   .second-main__box
     .second-main__box-top
-      会員情報入力
+      住所入力
     = form_for(@address, url: signup_index_path, method: :post) do |f|
-      .second-main__box-bottom
-        .second-main__box-bottom__inner
+      .second-main__box-bottom-address
+        .second-main__box-bottom__inner-address
           .second-main__box-bottom__text
             郵便番号
             .second-main__box-bottom__must
@@ -37,5 +37,5 @@
               任意
           .second-main__box-bottom__form-under
             = f.text_field :building, { class: "second-main__box-bottom__form", placeholder: '例) 栄センタービル' }
-        = f.submit "次へ進む", class: "second-main__box-bottom__next-btn"
+          = f.submit "登録完了", class: "second-main__box-bottom__next-btn"
 = render "footer"
