@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.index ["trading_id"], name: "index_orders_on_trading_id"
   end
 
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
@@ -122,8 +129,8 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "method", null: false
-    t.string "shipping_price", null: false
+    t.string "method"
+    t.string "shipping_price"
     t.string "period_before_shipping", null: false
     t.string "prefecture_from", null: false
     t.string "fee_burden", null: false
