@@ -1,18 +1,38 @@
 = render "signup/header"
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+
+.login-main
+  .login-main__box 
+    .login-main__box-inner
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-main__top
+          .login-main__top__text
+            アカウントをお持ちでない方はこちら
+          .login-main__top__login
+            新規会員登録
+        .login-main__sns
+          .login-main__sns__f
+            .login-main__sns__f__icon
+              %i.fab.fa-facebook-square
+            .login-main__sns__f__text
+              Facebookでログイン
+          .login-main__sns__g
+            .login-main__sns__g__icon
+            .login-main__sns__g__text
+              googleでログイン
+        .login-main__form
+          .login-main__form__mail
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "login-main__form__m", placeholder: 'メールアドレス'
+          .login-main__form__pass
+            = f.password_field :password, autocomplete: "current-password", class: "login-main__form__p", placeholder: 'パスワード'
+          .login-main__form__recapcha
+          .login-main__form__btn
+            = f.submit "ログイン", class: "login-main__form-btn__2"
+          .login-main__form__forget
+            パスワードをお忘れの方
+= render "signup/footer"
+
+-# 後から使うかもしれないのでコメントアウトしておきます
+-# - if devise_mapping.rememberable?
+-#   .field
+-#     = f.check_box :remember_me
+-#     = f.label :remember_me

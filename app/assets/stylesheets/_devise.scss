@@ -388,6 +388,169 @@
 // -----------login--------------
 .login-main {
   width: 100%;
-  height: 100%;
-  background-color: yellow;
+  height: 750px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.76);
+  &__box {
+    width: 32%;
+    height: 750px;
+    background-color: white
+  }
+  &__box-inner {
+    width: 100%;
+    height: 750px;
+  }
+}
+.login-main__top {
+  width: 100%;
+  height: 110px;
+  background-color: white;
+  border-bottom: solid 0.5px whitesmoke;
+  padding-top: 40px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 13px;
+  &__text {
+    width: 70%;
+    height: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  &__login {
+    width: 70%;
+    height: 45px;
+    background-color: #00bfff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: white
+  }
+}
+
+.login-main__sns {
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  padding-top: 30px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-size: 13px;
+  &__f {
+    width: 70%;
+    height: 50px;
+    background-color:  #193770E0;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__icon {
+      width: 60px;
+      height: 40px;
+      font-size: 30px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__text {
+      width: 200px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      margin-right: 60px;
+      color: white;
+    }
+  }
+}
+.login-main__sns__g {
+  width: 70%;
+  height: 50px;
+  border: solid 0.5px #696969EE;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.76);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("google-icon.png") center top/cover no-repeat;
+    margin-left: 18px;
+  }
+  &__text {
+    width: 200px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: 60px;
+    color: rgba(0, 0, 0, 0.76);
+  }
+}
+
+
+.login-main__form {
+  width: 100%;
+  height: 336px;
+  margin-top: 30px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-size: 16px;
+  &__mail {
+    width: 70%;
+    height: 45px;
+    background-color: red;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+}
+.login-main__form__m {
+  width: 93%;
+  height: 45px;
+  padding: 0 10px;
+}
+.login-main__form__pass {
+  width: 70%;
+  height: 45px;
+  background-color: blue;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.login-main__form__p {
+  width: 93%;
+  height: 45px;
+  padding: 0 10px;
+}
+.login-main__form__recapcha {
+  width: 300px;
+  height: 60px;
+  background: url("recapcha.png") center top/cover no-repeat;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.login-main__form__btn {
+  width: 70%;
+  height: 45px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.login-main__form-btn__2 {
+  width: 100%;
+  height: 50px;
+  background-color: #DC143CE8;
+  color: white;
+  font-size: 13px;
+}
+.login-main__form__forget {
+  width: 50%;
+  height: 2px;
+  color: #00bfff;
+  font-size: 13px;
+  margin-left: 70px;
 }
