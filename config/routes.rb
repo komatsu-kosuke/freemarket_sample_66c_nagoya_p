@@ -16,11 +16,12 @@ Rails.application.routes.draw do
       get "profile"
       get "logout" 
       get "credit"
+      get "credit_register"
     end
   end
 
   resources :accounts, only: [:index] do
-    member do
+    collection do
       get "listing"
       get "listing_progress"
       get "completed"
