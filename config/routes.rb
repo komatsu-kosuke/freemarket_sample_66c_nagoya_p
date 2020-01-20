@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   end
   
   resources :trading, only: [:new, :create, :edit, :update]
+  resources :products, only: [:index, :show]
 end
 
 
