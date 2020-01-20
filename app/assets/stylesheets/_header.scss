@@ -37,9 +37,10 @@
   &-lower {
     height: 50px;
     display:flex;
+    justify-content: center;
     &-left {
       width: 350px;
-      margin-left: 200px;
+      margin-right: 90px;
       display:flex;
       &__category {
         width: 200px;
@@ -73,8 +74,8 @@
     }
     &-right {
       width: 600px;
-      margin-left: 145px;
       display:flex;
+      justify-content: flex-end;
       &__like {
         width:140px;
         display:flex;
@@ -138,7 +139,6 @@
         }
       }
       &__new {
-        margin-left: 335px;
         margin-top: 5px;
         height: 30px;
         width: 120px;

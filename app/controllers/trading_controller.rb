@@ -9,7 +9,6 @@ class TradingController < ApplicationController
 
   def create
     Product.create(product_params)
-    redirect_to root_path
   end
 
   private

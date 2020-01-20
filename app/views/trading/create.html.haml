@@ -1,0 +1,25 @@
+.header-frame
+  =link_to "", root_path, class: "header-frame__market"
+
+.main-new
+  .main-frame
+    .main-create 出品が完了しました
+    .main-create2__bottom
+      .main-create2__bottom__text あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+      = link_to "続けて出品する", new_trading_path, class: "main-create2__bottom__btn"
+      = link_to "商品ページへ行ってシェアする", "/", class: "main-create2__bottom__share"
+    
+
+.single-footer
+  .single-footer-box
+    .single-footer-box-top
+      .single-footer-box_text
+        プライバシーポリシー
+      .single-footer-box_text
+        Fmarket利用規約
+      .single-footer-box_text
+        特定商取引に関する表記
+    .single-footer-box-bottom
+      .single-footer-box-bottom_logo
+    .single-footer-box-bottom_license
+      ©︎ Mercari, inc.

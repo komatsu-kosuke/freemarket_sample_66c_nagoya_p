@@ -7,12 +7,26 @@ class HomesController < ApplicationController
   end
 
   def show
+    # @user = User.find(params[:id])
   end
 
-  def new
+  def edit
+    # @user = User.find(params[:id])
   end
+
+  # def update
+  #   @user = Users.find(params[:id])
+  #   user.update(user_params)
+  #   redirect_to root_path
+  # end
+
 
   def profile
+    # @user = User.find(user_params)
   end
   
+  # private 
+  # def user_params
+  #   params.require(:user).permit(:nickname, :email, :firstname, :familyname, :firstname_kana, :familyname_kana, :descript, :birthyaer, :birthmonth, :birthday, :phonenumber)
+  # end
 end

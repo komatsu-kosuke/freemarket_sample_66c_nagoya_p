@@ -11,8 +11,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :homes, only: [:index, :show]
-    get "profile" => "homes#profile"
+  resources :homes, only: [:index, :show, :edit, :update] do
+    collection do
+      get "profile"
+      get "logout"
+    end
+  end
   resources :trading, only: [:new, :create, :edit, :update]
 end
 

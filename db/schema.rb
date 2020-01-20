@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "familyname", null: false
     t.string "firstname_kana", null: false
     t.string "familyname_kana", null: false
+    t.string "description"
     t.integer "birthyear", null: false
     t.integer "birthmonth", null: false
     t.integer "birthday", null: false
@@ -162,6 +163,8 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "users"
