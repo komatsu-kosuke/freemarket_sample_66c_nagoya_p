@@ -4,25 +4,30 @@ class HomesController < ApplicationController
     # @products_image.image="#{@product.id}.jpg"
     # image=params[:image_file]
     # File.binwrite("public/#{@user.image_name}", image.read)
+    # 商品一覧のサーバーサイドは未実装のため
   end
 
   def show
     # @user = User.find(params[:id])
+    # サーバーサイド未実装のため
   end
 
   def edit
     # @user = User.find(params[:id])
+    # サーバーサイド未実装のため
   end
 
   # def update
   #   @user = Users.find(params[:id])
   #   user.update(user_params)
   #   redirect_to root_path
+  # サーバーサイド未実装のため
   # end
 
 
   def profile
     # @user = User.find(user_params)
+    # サーバーサイド未実装のため
   end
  
   def logout
@@ -45,4 +50,5 @@ class HomesController < ApplicationController
   # def user_params
   #   params.require(:user).permit(:nickname, :email, :firstname, :familyname, :firstname_kana, :familyname_kana, :descript, :birthyaer, :birthmonth, :birthday, :phonenumber)
   # end
+  # サーバーサイド未実装のため
 end
