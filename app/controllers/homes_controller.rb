@@ -18,4 +18,13 @@ class HomesController < ApplicationController
   def logout
   end
 
+  def credit
+  end
+
+  def listings
+  end
+
+  def listing
+  end
+  
 end
