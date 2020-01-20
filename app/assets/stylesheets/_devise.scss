@@ -1,6 +1,8 @@
 
 
-// -------------STEP1----------------
+// -------------header----------------
+
+
 .single-header {
   width: 100%;
   height: 128px;
@@ -34,6 +36,8 @@
    }
 }
 // -----------main-------------
+
+
 .single-main {
   width: 100%;
   height: 384px;
@@ -74,6 +78,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  text-decoration: none;
 }
 .single-main__box-bottom__logo {
   margin-left: 16px;
@@ -115,6 +120,8 @@
   font-size: 12.5px;
 }
 // -----------footer------------
+
+
 .single-footer {
   height: 280px;
   width: 100%;
@@ -186,7 +193,7 @@
 }
 .second-main__box-bottom {
   width: 50%;
-  height: 1300px;
+  height: 1100px;
   background-color: white;
   padding: 40px 180px 400px 180px;
 }
@@ -254,13 +261,11 @@
 .second-main__box-bottom__check {
   width: 100%;
   height: 50px;
-  background-color: yellowgreen;
   margin-bottom: 30px;
 }
 .second-main__box-bottom__human {
   width: 100%;
   height: 100px;
-  background-color: yellowgreen;
   margin-bottom: 30px;
 }
 .second-main__box-bottom__h-title {
@@ -271,10 +276,19 @@
   font-size: 14px;
   color: rgba(0, 0, 0, 0.808);
 }
+.second-main__box-bottom__text-1 {
+  width: 100%;
+  height: 70px;
+  font-size: 14px;
+  color: #c0c0c0;
+}
 .second-main__box-bottom__text-next {
   width: 100%;
   height: 50px;
-  background-color: yellowgreen;
+  margin-bottom: 30px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
 }
 .second-main__box-bottom__next-btn {
   width: 100%;
@@ -283,11 +297,260 @@
   color: white;
   font-size: 13px;
 }
-.second-main__box-bottom__form-d {
-  width: 37%;
-  height: 30px;
+.second-main__box-bottom__text-2 {
+  width: 100%;
+  height: 70px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  color: skyblue
+}
+.second-main__box-bottom__text-3 {
+  width: 92%;
+  height: 50px;
+  background-color: #f5f5f5;
+  font-size: 11px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: slategray;
+  display: flex;
+  align-items: center;
+}
+
+
+// -----------STEP3---------------
+
+
+.phone-main__box-bottom {
+  width: 100%;
+  height: 384px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+.phone-main__box-bottom__inner {
+  width: 100%;
+  height: 245px;
   background-color: white;
-  border: solid 0.5px #d3d3d3;
-  border-radius: 2px;
-  padding: 10px 20px;
+  padding: 20px 120px;
+}
+.phone-main__box-bottom__next {
+  width: 100%;
+  height: 50px;
+  background-color: tomato;
+  margin-top: 20px;
+}
+.phone-main__box-bottom__inner__text {
+  color: rgba(0, 0, 0, 0.76);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.phone-main__box-bottom__inner__text-1 {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.76);
+}
+
+
+// -----------STEP4--------------
+
+
+.second-main__box-bottom-address {
+  width: 100%;
+  height: 750px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.second-main__box-bottom__inner-address {
+  width: 60%;
+  height: 750px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// -------------create画面--------------
+.create-text {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  & a {
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.76);
+  }
+}
+// -----------login--------------
+.login-main {
+  width: 100%;
+  height: 750px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.76);
+  &__box {
+    width: 32%;
+    height: 750px;
+    background-color: white
+  }
+  &__box-inner {
+    width: 100%;
+    height: 750px;
+  }
+}
+.login-main__top {
+  width: 100%;
+  height: 110px;
+  background-color: white;
+  border-bottom: solid 0.5px whitesmoke;
+  padding-top: 40px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 13px;
+  &__text {
+    width: 70%;
+    height: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  &__login {
+    width: 70%;
+    height: 45px;
+    background-color: #00bfff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: white
+  }
+}
+
+.login-main__sns {
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  padding-top: 30px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-size: 13px;
+  &__f {
+    width: 70%;
+    height: 50px;
+    background-color:  #193770E0;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__icon {
+      width: 60px;
+      height: 40px;
+      font-size: 30px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__text {
+      width: 200px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      margin-right: 60px;
+      color: white;
+    }
+  }
+}
+.login-main__sns__g {
+  width: 70%;
+  height: 50px;
+  border: solid 0.5px #696969EE;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.76);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("google-icon.png") center top/cover no-repeat;
+    margin-left: 18px;
+  }
+  &__text {
+    width: 200px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: 60px;
+    color: rgba(0, 0, 0, 0.76);
+  }
+}
+
+
+.login-main__form {
+  width: 100%;
+  height: 336px;
+  margin-top: 30px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  font-size: 16px;
+  &__mail {
+    width: 70%;
+    height: 45px;
+    background-color: red;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+}
+.login-main__form__m {
+  width: 93%;
+  height: 45px;
+  padding: 0 10px;
+}
+.login-main__form__pass {
+  width: 70%;
+  height: 45px;
+  background-color: blue;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.login-main__form__p {
+  width: 93%;
+  height: 45px;
+  padding: 0 10px;
+}
+.login-main__form__recapcha {
+  width: 300px;
+  height: 60px;
+  background: url("recapcha.png") center top/cover no-repeat;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.login-main__form__btn {
+  width: 70%;
+  height: 45px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.login-main__form-btn__2 {
+  width: 100%;
+  height: 50px;
+  background-color: #DC143CE8;
+  color: white;
+  font-size: 13px;
+}
+.login-main__form__forget {
+  width: 50%;
+  height: 2px;
+  color: #00bfff;
+  font-size: 13px;
+  margin-left: 70px;
 }

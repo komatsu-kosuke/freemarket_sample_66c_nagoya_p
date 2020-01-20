@@ -4,10 +4,10 @@
     .single-main__box-top
       新規会員登録
     .single-main__box-bottom
-      .single-main__box-bottom__mail
+      = link_to '/signup/registration', class: 'single-main__box-bottom__mail' do
         .single-main__box-bottom__logo
           %i.far.fa-envelope
-        = link_to '/signup/registration', class: 'single-main__box-bottom__text' do
+        .single-main__box-bottom__text
           メールアドレスで登録する
       .single-main__box-bottom__facebook
         .single-main__box-bottom__logo

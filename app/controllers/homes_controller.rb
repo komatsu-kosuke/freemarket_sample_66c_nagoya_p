@@ -24,6 +24,22 @@ class HomesController < ApplicationController
   def profile
     # @user = User.find(user_params)
   end
+ 
+  def logout
+  end
+
+  def credit
+  end
+
+  def credit_register
+  end
+
+  def listings
+  end
+
+  def listing
+  end
+  
   
   # private 
   # def user_params

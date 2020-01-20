@@ -1,0 +1,14 @@
+.wraper
+  .sell-btn
+    .sell-btn__text 出品
+    %i.fas.fa-camera
+= render "homes/header"
+
+- breadcrumb :mypage, class: "breadcrumbs"
+= breadcrumbs pretext: "",separator: " &rsaquo; "
+
+.mypage
+  = render "homes/side-bar"
+  
+  
+= render "homes/footer"
