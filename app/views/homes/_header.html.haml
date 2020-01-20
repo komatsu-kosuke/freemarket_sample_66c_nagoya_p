@@ -27,7 +27,8 @@
             = link_to "ログアウト", destroy_user_session_path, method: :delete
         .header-lower-right__mypage
           .header-lower-right__mypage__logo
-          .header-lower-right__mypage__text マイページ
+          .header-lower-right__mypage__text
+            = link_to 'マイページ', "homes/show"
       - else
         = link_to "新規会員登録", signup_index_path, class: "header-lower-right__new"
         = link_to "ログイン", new_user_session_path, class: "header-lower-right__login"

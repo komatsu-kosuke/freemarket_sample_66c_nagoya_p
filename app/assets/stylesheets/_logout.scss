@@ -1,0 +1,19 @@
+.logout-main {
+  width: 700px;
+  height: 200px;
+  background-color: white;
+  margin-left: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__box {
+    width: 350px;
+    height: 60px;
+    background-color: #dc143ce8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+  }
+}

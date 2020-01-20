@@ -26,6 +26,7 @@
           .second-main__box-bottom__form-under
             = f.password_field :password, { class: "second-main__box-bottom__form", placeholder: '6文字以上' }
           .second-main__box-bottom__text
+            パスワード（確認）
             .second-main__box-bottom__must
               必須
           .second-main__box-bottom__form-under
@@ -33,7 +34,8 @@
           .second-main__box-bottom__cortion
             ※英字と数字の両方を含めて設定してください
           .second-main__box-bottom__check
-            チェックボックスつける
+            = f.check_box :remember_me
+            パスワードを表示する
           .second-main__box-bottom__human
             .second-main__box-bottom__h-title
               本人確認
@@ -61,10 +63,19 @@
             = f.text_field :birthyear, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
             = f.text_field :birthmonth, { class: "second-main__box-bottom__form", placeholder: '例) タロウ' }
             = f.text_field :birthday, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
+          .second-main__box-bottom__text-1
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .second-main__box-bottom__text-next
+            「次へ進む」のボタンを押すことにより
+            %br
+            利用規約に同意したものとみなします
+          .second-main__box-bottom__next-btn
+            = f.submit "次へ進む", class: "second-main__box-bottom__next-btn"
+          .second-main__box-bottom__text-2
+            本人情報の登録について>
+          .second-main__box-bottom__text-3
+            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
 
-        .second-main__box-bottom__text-next
-          「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-        .second-main__box-bottom__next-btn
-          = f.submit "次へ進む", class: "second-main__box-bottom__next-btn"
+= render "footer"
 
 
