@@ -21,6 +21,9 @@ class HomesController < ApplicationController
   def credit
   end
 
+  def credit_register
+  end
+
   def listings
   end
 

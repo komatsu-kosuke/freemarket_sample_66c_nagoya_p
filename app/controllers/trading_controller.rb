@@ -8,8 +8,7 @@ class TradingController < ApplicationController
 
 
   def create
-    Product.create(product_params)
-    redirect_to root_path
+    @product = Product.create(product_params)
   end
 
   private
