@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :homes, only: [:index, :show]
     get "profile" => "homes#profile"
   resources :trading, only: [:new, :create, :edit, :update]
+  resources :products, only: [:index, :show]
 end
 
 

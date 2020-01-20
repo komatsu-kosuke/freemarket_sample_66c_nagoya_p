@@ -1,0 +1,113 @@
+= render "homes/header"
+.wrapper
+  .product_main
+    .product_main_contents
+      .product_main_contents_title
+        Xlarge パーカー
+      .product_main_contents_main
+        .product_main_contents_main_left
+          .product_main_contents_main_left_top
+            .product_main_contents_main_left_top_t
+          .product_main_contents_main_left_bottom
+            .product_main_contents_main_left_bottom_1
+            .product_main_contents_main_left_bottom_1
+            .product_main_contents_main_left_bottom_1
+            .product_main_contents_main_left_bottom_1
+            .product_main_contents_main_left_bottom_1
+        .product_main_contents_main_right
+          .product_main_contents_main_right_1
+            .product_main_contents_main_right_1_l
+              出品者
+            .product_main_contents_main_right_1_r
+              団長
+          .product_main_contents_main_right_2
+            .product_main_contents_main_right_2_l
+              カテゴリー
+            .product_main_contents_main_right_2_r
+              レディース
+              果物
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              ブランド
+            .product_main_contents_main_right_3_r
+              フジりんご
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              商品のサイズ
+            .product_main_contents_main_right_3_r
+              M
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              商品の状態
+            .product_main_contents_main_right_3_r
+              目立った傷汚れなし
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              配送料の負担
+            .product_main_contents_main_right_3_r
+              送料込み(出品者負担)
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              配送の方法
+            .product_main_contents_main_right_3_r
+              らくらくメルカリ便
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              配送元地域
+            .product_main_contents_main_right_3_r
+              青森県
+          .product_main_contents_main_right_3
+            .product_main_contents_main_right_3_l
+              発送日の目安
+            .product_main_contents_main_right_4_r
+              ４〜7日で発送
+
+      .product_main_contents_price
+        .product_main_contents_price_a
+          ¥
+        .product_main_contents_price_money
+          3,000
+        .product_main_contents_price_tax
+          (税込)
+        .product_main_contents_price_fee
+          送料込み
+      .product_main_contents_text
+      .product_main_contents_buy_btn        
+        = link_to "購入画面に進む"
+      .product_main_contents_description
+        本日(1/15)大幅値下げ！
+        基本中の基本、ロンドントラディションのキャメルブラウンのダッフルコートです。
+        サイズ表記は8というタグが中にありますが、いつもMを着ている私が着ると、前を開けて着るには良い感じのシルエット、前のタッセルを全部留めるとタイトめなので、Sとしておきます。
+      .product_main_contents_item_btn
+        .product_main_contents_item_btn_left
+          .product_main_contents_item_btn_left_like
+            ♡ いいね！4
+          .product_main_contents_item_btn_left_report
+            %i.far.fa-flag 不適切な商品の報告
+        .product_main_contents_item_btn_right
+          %i.fas.fa-lockあんしん・あんぜんへの取り組み
+
+    .product_main_center
+      .product_main_center_caution
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      .product_main_center_text
+        = text_field_tag "family-name", "コメント",{class: "text"} 
+      .product_main_center_btn
+        = link_to " コメントする"
+    .product_main_next
+      .product_main_next_l
+        < 次の商品
+      .product_main_next_r
+        次の商品 >
+    .product_main_sns
+      .product_main_sns_box
+        .product_main_sns_box_face
+          %i.fab.fa-facebook-square
+        .product_main_sns_box_twitter
+          %i.fab.fa-twitter-square
+        .product_main_sns_box_line
+          %i.fab.fa-line
+
+
+
+= render "homes/footer"
