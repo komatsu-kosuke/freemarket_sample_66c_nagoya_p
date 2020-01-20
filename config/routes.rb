@@ -15,8 +15,18 @@ Rails.application.routes.draw do
     collection do
       get "profile"
       get "logout" 
+      get "credit"
     end
   end
+
+  resources :accounts, only: [:index] do
+    member do
+      get "listing"
+      get "listing_progress"
+      get "completed"
+    end
+  end
+  
   resources :trading, only: [:new, :create, :edit, :update]
 end
 
