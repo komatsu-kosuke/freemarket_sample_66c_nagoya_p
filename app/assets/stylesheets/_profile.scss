@@ -1,0 +1,59 @@
+.profile {
+  margin-left: 50px;
+  height: 100%;
+  width: 700px;
+  padding-bottom: 50px;
+  background-color: rgb(248, 247, 247);
+  &__text {
+    height: 50px;
+    background-color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+  }
+  &__frame {
+    height: 70px;
+    background: url("profile2.jpg") center top/cover no-repeat;
+    background-color: white;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    &__icon {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background-color: red;
+      margin-right: 10px;
+    }
+    &__name {
+      height: 50px;
+      margin-top: 5px;
+      width: 200px;
+      background-color: white;
+      border: 0.5px solid;
+      border-color: rgb(226, 226, 226);
+      border-radius: 5px;
+    }
+  }
+  &__info {
+    height: 310px;
+    background-color: white;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    &__text {
+      height: 200px;
+      border: 1px solid;
+      border-color: rgb(207, 207, 207);
+      margin-bottom: 20px;
+    }
+    &__btn {
+      height: 50px;
+      background-color: rgb(233, 0, 0);
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+}

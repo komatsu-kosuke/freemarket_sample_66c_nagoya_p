@@ -5,12 +5,20 @@
     height: 200px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background: url("footer.jpg") center top/cover no-repeat;
+    background: url("profile2.jpg") center top/cover no-repeat;
     &__border {
       height: 200px;
       width: 450px;
-      margin-top: 100px;
+      margin-top: 30px;
       margin-left: 340px;
+      &__text1 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__text2 {
+        font-size: 30px;
+        font-weight: bold;
+      }
       &__frame {
         display: flex;
         justify-content: space-between;

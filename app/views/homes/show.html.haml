@@ -1,5 +1,5 @@
-.wraper
-  .sell-btn
+.wrapper
+  = link_to new_trading_path, class: 'sell-btn' do
     .sell-btn__text 出品
     %i.fas.fa-camera
 = render "header"
@@ -14,7 +14,8 @@
     .main-top
       .main-top__back
         .main-top__back__image
-        .main-top__back__name ishii shunichi
+        .main-top__back__name
+          = @user.nickname
         .main-top__back__value 評価 10 出品数  18
       .main-top__category
         .main-top__category__content お知らせ

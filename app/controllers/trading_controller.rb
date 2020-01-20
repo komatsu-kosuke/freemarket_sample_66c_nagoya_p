@@ -8,7 +8,7 @@ class TradingController < ApplicationController
 
 
   def create
-    @product = Product.create(product_params)
+    Product.create(product_params)
   end
 
   private
