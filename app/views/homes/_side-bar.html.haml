@@ -14,19 +14,19 @@
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品する', "/accounts"
+        = link_to '出品する', accounts_path
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品した商品- 出品中', "/accounts/listing"
+        = link_to '出品した商品- 出品中', listing_accounts_path
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品した商品- 取引中', "/accounts/listing_progress"
+        = link_to '出品した商品- 取引中', listing_progress_accounts_path
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品した商品- 売却済み', "/accounts/completed"
+        = link_to '出品した商品- 売却済み',  completed_accounts_path
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text 購入した商品- 取引中
@@ -59,14 +59,14 @@
     .side-bar__bottom__text 設定
     .side-bar__bottom__content
       .side-bar__bottom__content__text
-        = link_to 'プロフィール', "profile"
+        = link_to 'プロフィール', profile_homes_path
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text 発送元・お届け先住所変更
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text
-        = link_to '支払い方法', "credit"
+        = link_to '支払い方法', credit_homes_path
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text メール/パスワード
@@ -79,5 +79,5 @@
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text
-        = link_to 'ログアウト', "logout"
+        = link_to 'ログアウト', logout_homes_path
       .side-bar__bottom__content__text-1 ＞

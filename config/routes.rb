@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   end
   
   resources :trading, only: [:new, :create, :edit, :update]
-  resources :products, only: [:index, :show]
+  resources :products, only: [:show]
 end
 
 
 
-# colectionとnumber調べること
+# colectionとmember調べること

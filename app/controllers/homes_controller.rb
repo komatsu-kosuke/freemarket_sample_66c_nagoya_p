@@ -8,7 +8,7 @@ class HomesController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
     # サーバーサイド未実装のため
   end
 
