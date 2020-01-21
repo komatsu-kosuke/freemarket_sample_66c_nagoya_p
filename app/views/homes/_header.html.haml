@@ -28,7 +28,7 @@
         .header-lower-right__mypage
           .header-lower-right__mypage__logo
           .header-lower-right__mypage__text
-            = link_to 'マイページ', "homes/show"
+            = link_to 'マイページ', home_path(current_user.id)
       - else
         = link_to "新規会員登録", signup_index_path, class: "header-lower-right__new"
         = link_to "ログイン", new_user_session_path, class: "header-lower-right__login"
