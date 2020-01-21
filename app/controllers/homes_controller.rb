@@ -8,7 +8,7 @@ class HomesController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
     # サーバーサイド未実装のため
   end
 
@@ -17,16 +17,15 @@ class HomesController < ApplicationController
     # サーバーサイド未実装のため
   end
 
-  # def update
-  #   @user = Users.find(params[:id])
-  #   user.update(user_params)
-  #   redirect_to root_path
-  # サーバーサイド未実装のため
-  # end
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to profile_home_path
+  end
 
 
   def profile
-    # @user = User.find(user_params)
+    @user = User.find(params[:id])
     # サーバーサイド未実装のため
   end
  
@@ -46,9 +45,8 @@ class HomesController < ApplicationController
   end
   
   
-  # private 
-  # def user_params
-  #   params.require(:user).permit(:nickname, :email, :firstname, :familyname, :firstname_kana, :familyname_kana, :descript, :birthyaer, :birthmonth, :birthday, :phonenumber)
-  # end
-  # サーバーサイド未実装のため
+  private 
+  def user_params
+    params.require(:user).permit(:nickname, :description, :email, :firstname, :familyname, :firstname_kana, :familyname_kana, :descript, :birthyaer, :birthmonth, :birthday, :phonenumber)
+  end
 end
