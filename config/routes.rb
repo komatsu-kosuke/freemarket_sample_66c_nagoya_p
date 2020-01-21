@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   resources :homes, only: [:index, :show, :edit, :update] do
     collection do
-      get "profile"
       get "logout" 
       get "credit"
       get "credit_register"
+    end
+    member do
+      get "profile"
     end
   end
 
