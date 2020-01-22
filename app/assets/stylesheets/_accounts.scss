@@ -1,0 +1,222 @@
+
+// -------------本人確認ページ---------------
+
+.indent__main {
+  width: 50%;
+  height: 160vh;
+  background-color: white;
+  margin-left: 50px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  color: rgba(0, 0, 0, 0.76);
+  &__box__1 {
+    width: 100%;
+    height: 60px;
+    border-bottom: solid 1px rgba(105, 105, 105, 0.116);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__box__2 {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__box__3 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  &__box__4 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  &__box__5 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  &__box__6 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex;
+      &__any {
+        width: 40px;
+        height: 20px;
+        background-color: rgba(128, 128, 128, 0.411);
+        font-weight: normal;
+        font-size: 13px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__box__7 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex;
+      &__any {
+        width: 40px;
+        height: 20px;
+        background-color: rgba(128, 128, 128, 0.411);
+        font-weight: normal;
+        font-size: 13px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__box__8 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex;
+      &__any {
+        width: 40px;
+        height: 20px;
+        background-color: rgba(128, 128, 128, 0.411);
+        font-weight: normal;
+        font-size: 13px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__box__9 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex;
+      &__any {
+        width: 40px;
+        height: 20px;
+        background-color: rgba(128, 128, 128, 0.411);
+        font-weight: normal;
+        font-size: 13px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__box__10 {
+    width: 80%;
+    height: 80px;
+    font-size: 13px;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    &__name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex;
+      &__any {
+        width: 40px;
+        height: 20px;
+        background-color: rgba(128, 128, 128, 0.411);
+        font-weight: normal;
+        font-size: 13px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__box__11 {
+    width: 86%;
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+  }
+  &__box__12 {
+    width: 85%;
+    height: 100px;
+    color: #00bfff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 14px;
+  }
+}
+
+
+.indent__main__box__input-form {
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.indent__main__box__submit {
+  width: 98%;
+  height: 50px;
+  background-color: #DC143CE8;
+  color: white
+  
+}

@@ -44,7 +44,6 @@ class HomesController < ApplicationController
   def listing
   end
   
-  
   private 
   def user_params
     params.require(:user).permit(:nickname, :description, :email, :firstname, :familyname, :firstname_kana, :familyname_kana, :descript, :birthyaer, :birthmonth, :birthday, :phonenumber)

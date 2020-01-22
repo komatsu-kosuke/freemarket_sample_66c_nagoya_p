@@ -6,6 +6,7 @@ class CreateShippings < ActiveRecord::Migration[5.2]
       t.string :period_before_shipping, null: false
       t.string :prefecture_from, null: false
       t.string :fee_burden, null: false
+      t.references :product, foreign_key: true
       t.timestamps
     end
   end

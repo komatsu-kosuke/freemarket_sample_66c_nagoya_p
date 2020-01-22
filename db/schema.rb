@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "price", null: false
     t.string "status", null: false
     t.bigint "users_id"
-    t.bigint "shipping_id"
     t.bigint "category_id"
     t.bigint "brand_id"
     t.bigint "size_id"
@@ -94,7 +93,6 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["shipping_id"], name: "index_products_on_shipping_id"
     t.index ["size_id"], name: "index_products_on_size_id"
     t.index ["users_id"], name: "index_products_on_users_id"
   end
@@ -128,8 +126,10 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "period_before_shipping", null: false
     t.string "prefecture_from", null: false
     t.string "fee_burden", null: false
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_shippings_on_product_id"
   end
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.integer "birthyear", null: false
     t.integer "birthmonth", null: false
     t.integer "birthday", null: false
-    t.integer "phonenumber", null: false
+    t.bigint "phonenumber", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -177,11 +177,11 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   add_foreign_key "orders", "tradings"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
-  add_foreign_key "products", "shippings"
   add_foreign_key "products", "sizes"
   add_foreign_key "products", "users", column: "users_id"
   add_foreign_key "products_images", "products"
   add_foreign_key "profiles", "users", column: "users_id"
   add_foreign_key "reviews", "tradings"
+  add_foreign_key "shippings", "products"
   add_foreign_key "tradings", "users"
 end
