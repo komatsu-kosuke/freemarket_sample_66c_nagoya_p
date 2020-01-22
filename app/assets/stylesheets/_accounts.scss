@@ -166,7 +166,7 @@
     height: 80px;
     font-size: 13px;
     padding: 0 50px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     &__name {
       font-size: 15px;
       font-weight: bold;
@@ -195,7 +195,7 @@
     align-items: center;
   }
   &__box__12 {
-    width: 85%;
+    width: 86%;
     height: 100px;
     color: #00bfff;
     display: flex;
@@ -203,6 +203,7 @@
     align-items: center;
     padding: 0 50px;
     font-size: 14px;
+    background-color: white;
   }
 }
 
