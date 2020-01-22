@@ -10,7 +10,6 @@ class Product < ApplicationRecord
   belongs_to :brand ,optional: true
   belongs_to :size, optional: true
   belongs_to :category ,optional: true
-  belongs_to :shipping ,optional: true
 
   
   

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accounts, only: [:index] do
+  resources :accounts, only: [:index, :edit, :update] do
     collection do
       get "listing"
       get "listing_progress"

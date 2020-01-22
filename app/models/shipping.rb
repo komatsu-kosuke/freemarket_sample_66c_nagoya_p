@@ -1,5 +1,5 @@
 class Shipping < ApplicationRecord
-  belongs_to :product
+  belongs_to :product, optional: true
 
   with_options presence: true do
     validates :period_before_shipping	
