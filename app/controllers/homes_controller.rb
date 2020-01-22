@@ -9,7 +9,6 @@ class HomesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # サーバーサイド未実装のため
   end
 
   def edit
