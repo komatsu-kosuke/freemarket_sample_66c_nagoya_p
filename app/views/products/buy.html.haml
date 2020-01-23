@@ -5,11 +5,13 @@
   .buy__frame
     .buy__frame__text 購入内容の確認
     .buy__frame__product
-      .buy__frame__product__image
+      = image_tag "#{@product_image.image}", class: "buy__frame__product__image" 
       .buy__frame__product__right
-        .buy__frame__product__right__name めっっっっっっちゃくちゃうまいみかん
+        .buy__frame__product__right__name
+          = @product.name
         .buy__frame__product__right__price
-          .buy__frame__product__right__price__en ￥1,000
+          .buy__frame__product__right__price__en
+            = @product.price
           .buy__frame__product__right__price__tax （税込）
           .buy__frame__product__right__price__shipping 送料込み
     .buy__frame__low
