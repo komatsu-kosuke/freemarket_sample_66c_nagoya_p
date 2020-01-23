@@ -4,11 +4,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @user = User.find(@product.users_id)
     @category = Category.find(@product.category_id)
-    @shipping = Shipping.find(@product.id)
-    @product_image = ProductsImage.find(@product.id)
+    @shipping = Shipping.find_by(product_id: params[:id])
+    @product_image = ProductsImage.find_by(product_id: params[:id])
+    @prefecture = Prefecture.find_by(id: @shipping.prefecture_id)
   end
 
   def buy
+    @product = Product.find(params[:id])
+    @product_image = ProductsImage.find_by(product_id: params[:id])
   end
 
   private
