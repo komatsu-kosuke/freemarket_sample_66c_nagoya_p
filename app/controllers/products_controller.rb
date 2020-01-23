@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     @category = Category.find(@product.category_id)
     @shipping = Shipping.find_by(product_id: params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
-    @prefecture = Prefecture.find_by(id: @shipping.prefecture_id)
+    @prefecture = Prefecture.find(@shipping.prefecture_id)
   end
 
   def buy
