@@ -36,7 +36,11 @@ Rails.application.routes.draw do
   end
   
   resources :trading, only: [:new, :create, :edit, :update]
-  resources :products, only: [:show]
+  resources :products, only: [:show] do
+    member do
+      get "buy"
+    end
+  end
 end
 
 

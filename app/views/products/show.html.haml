@@ -8,7 +8,7 @@
       .product_main_contents_main
         .product_main_contents_main_left
           .product_main_contents_main_left_top
-            .product_main_contents_main_left_top_t
+            .product_main_contents_main_left_top_t{:style => "background-image: url(#{@product_image.image});"}
           .product_main_contents_main_left_bottom
             .product_main_contents_main_left_bottom_1
             .product_main_contents_main_left_bottom_1
@@ -30,12 +30,10 @@
             .product_main_contents_main_right_3_l
               ブランド
             .product_main_contents_main_right_3_r
-              フジりんご
           .product_main_contents_main_right_3
             .product_main_contents_main_right_3_l
               商品のサイズ
             .product_main_contents_main_right_3_r
-              M
           .product_main_contents_main_right_3
             .product_main_contents_main_right_3_l
               商品の状態
@@ -45,22 +43,22 @@
             .product_main_contents_main_right_3_l
               配送料の負担
             .product_main_contents_main_right_3_r
-              送料込み(出品者負担)
+              = @shipping.fee_burden
           .product_main_contents_main_right_3
             .product_main_contents_main_right_3_l
               配送の方法
             .product_main_contents_main_right_3_r
-              らくらくメルカリ便
+              = @shipping.method
           .product_main_contents_main_right_3
             .product_main_contents_main_right_3_l
               配送元地域
             .product_main_contents_main_right_3_r
-              青森県
+              = @shipping.prefecture_from
           .product_main_contents_main_right_3
             .product_main_contents_main_right_3_l
               発送日の目安
             .product_main_contents_main_right_4_r
-              ４〜7日で発送
+              = @shipping.period_before_shipping
 
       .product_main_contents_price
         .product_main_contents_price_a
@@ -72,8 +70,7 @@
         .product_main_contents_price_fee
           送料込み
       .product_main_contents_text
-      .product_main_contents_buy_btn        
-        = link_to "購入画面に進む"
+      = link_to "購入画面に進む", buy_product_path, class: "product_main_contents_buy_btn"
       .product_main_contents_description
         本日(1/15)大幅値下げ！
         基本中の基本、ロンドントラディションのキャメルブラウンのダッフルコートです。
