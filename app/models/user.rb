@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :tradings
   has_many :comments
   has_many :address
+  has_many :cards
 
   # with_options presence: true do
   #   validates :nickname
