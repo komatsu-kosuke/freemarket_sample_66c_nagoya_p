@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
     @user = User.find(@product.users_id)
     @category = Category.find(@product.category_id)
     @shiping = Shipping.find(@product.id)
-  
   end
 end
 

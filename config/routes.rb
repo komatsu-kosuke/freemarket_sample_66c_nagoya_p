@@ -12,13 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :homes, only: [:index, :show, :edit, :update] do
-    collection do
-      get "logout" 
-      get "credit"
-      get "credit_register"
-    end
     member do
       get "profile"
+      get "credit"
+      get "logout" 
     end
   end
 
@@ -27,6 +24,14 @@ Rails.application.routes.draw do
       get "listing"
       get "listing_progress"
       get "completed"
+    end
+  end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
     end
   end
   
