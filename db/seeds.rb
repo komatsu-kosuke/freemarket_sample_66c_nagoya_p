@@ -1,3 +1,5 @@
+# coding: utf-8
+
 Category.create(category: "レディース")
 Category.create(category: "メンズ")
 Category.create(category: "ベビー・キッズ")

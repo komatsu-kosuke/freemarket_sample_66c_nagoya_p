@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "customer_id"
+    t.string "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", null: false
@@ -74,7 +83,6 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -124,12 +132,11 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "method"
     t.string "shipping_price"
     t.string "period_before_shipping", null: false
+    t.string "prefecture_from"
     t.string "fee_burden", null: false
-    t.bigint "prefecture_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["prefecture_id"], name: "index_shippings_on_prefecture_id"
     t.index ["product_id"], name: "index_shippings_on_product_id"
   end
 
@@ -169,6 +176,7 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "creditcards", "users"
@@ -183,7 +191,6 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   add_foreign_key "products_images", "products"
   add_foreign_key "profiles", "users", column: "users_id"
   add_foreign_key "reviews", "tradings"
-  add_foreign_key "shippings", "prefectures"
   add_foreign_key "shippings", "products"
   add_foreign_key "tradings", "users"
 end
