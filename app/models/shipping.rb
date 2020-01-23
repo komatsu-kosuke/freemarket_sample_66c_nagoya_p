@@ -6,7 +6,7 @@ class Shipping < ApplicationRecord
 
   with_options presence: true do
     validates :period_before_shipping	
-    validates :prefecture_id
+    validates :prefecture_from
     validates :fee_burden
   end
 end
