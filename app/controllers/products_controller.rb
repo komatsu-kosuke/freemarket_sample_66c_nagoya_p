@@ -13,6 +13,16 @@ class ProductsController < ApplicationController
     @product_image = ProductsImage.find_by(product_id: params[:id])
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product_image = ProductsImage.find_by(product_id: params[:id])
+    product_image.destroy
+    shipping = Shipping.find_by(product_id: params[:id])
+    shipping.destroy
+    product.destroy
+  end
+
+
   private
   def shipping_params
     params.require(:shipping).permit( :period_before_shipping,

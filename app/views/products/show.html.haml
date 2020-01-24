@@ -1,86 +1,76 @@
 = render "homes/header"
 .wrapper
   .product_main
-    .product_main_contents
-      .product_main_contents_title
-        = @product.name
-        
-      .product_main_contents_main
-        .product_main_contents_main_left
-          .product_main_contents_main_left_top
-            .product_main_contents_main_left_top_t{:style => "background-image: url(#{@product_image.image});"}
-          .product_main_contents_main_left_bottom
-            .product_main_contents_main_left_bottom_1
-            .product_main_contents_main_left_bottom_1
-            .product_main_contents_main_left_bottom_1
-            .product_main_contents_main_left_bottom_1
-            .product_main_contents_main_left_bottom_1
-        .product_main_contents_main_right
-          .product_main_contents_main_right_1
-            .product_main_contents_main_right_1_l
-              出品者
-            .product_main_contents_main_right_1_r
-              = @user.nickname
-          .product_main_contents_main_right_2
-            .product_main_contents_main_right_2_l
-              カテゴリー
-            .product_main_contents_main_right_2_r
-              = @category.category
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              ブランド
-            .product_main_contents_main_right_3_r
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              商品のサイズ
-            .product_main_contents_main_right_3_r
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              商品の状態
-            .product_main_contents_main_right_3_r
-              = @product.status
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              配送料の負担
-            .product_main_contents_main_right_3_r
-              = @shipping.fee_burden
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              配送の方法
-            .product_main_contents_main_right_3_r
-              = @shipping.method
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              配送元地域
-            .product_main_contents_main_right_3_r
-              = @shipping.prefecture_from
-          .product_main_contents_main_right_3
-            .product_main_contents_main_right_3_l
-              発送日の目安
-            .product_main_contents_main_right_4_r
-              = @shipping.period_before_shipping
+    - if user_signed_in? && current_user.id == @product.users_id
+      .product_main_contents
+        .product_main_contents_title
+          = @product.name
+        .product_main_contents_main
+          .product_main_contents_main_left
+            .product_main_contents_main_left_top
+              .product_main_contents_main_left_top_t{:style => "background-image: url(#{@product_image.image});"}
+            .product_main_contents_main_left_bottom
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+          = render "status"
 
-      .product_main_contents_price
-        .product_main_contents_price_a
-          ¥
-        .product_main_contents_price_money
-          = @product.price
-        .product_main_contents_price_tax
-          (税込)
-        .product_main_contents_price_fee
-          送料込み
-      .product_main_contents_text
-      = link_to "購入画面に進む", buy_product_path, class: "product_main_contents_buy_btn"
-      .product_main_contents_description
-        = @product.description
-      .product_main_contents_item_btn
-        .product_main_contents_item_btn_left
-          .product_main_contents_item_btn_left_like
-            ♡ いいね！4
-          .product_main_contents_item_btn_left_report
-            %i.far.fa-flag 不適切な商品の報告
-        .product_main_contents_item_btn_right
-          %i.fas.fa-lockあんしん・あんぜんへの取り組み
+        .product_main_contents_price
+          .product_main_contents_price_a
+            ¥
+          .product_main_contents_price_money
+            = @product.price
+          .product_main_contents_price_tax
+            (税込)
+          .product_main_contents_price_fee
+            送料込み
+        .product_main_contents_description
+          = @product.description
+      .product_main_frame
+        .product_main_frame_edit 編集する
+        .product_main_frame_text or
+        .product_main_frame_stop 出品を一旦停止する
+        = link_to "この商品を削除する" , product_path, method: :delete, class: "product_main_frame_delete"
+          
+    - else
+      .product_main_contents
+        .product_main_contents_title
+          = @product.name
+        .product_main_contents_main
+          .product_main_contents_main_left
+            .product_main_contents_main_left_top
+              .product_main_contents_main_left_top_t{:style => "background-image: url(#{@product_image.image});"}
+            .product_main_contents_main_left_bottom
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+              .product_main_contents_main_left_bottom_1
+          = render "status"
+
+        .product_main_contents_price
+          .product_main_contents_price_a
+            ¥
+          .product_main_contents_price_money
+            = @product.price
+          .product_main_contents_price_tax
+            (税込)
+          .product_main_contents_price_fee
+            送料込み
+        .product_main_contents_text
+        = link_to "購入画面に進む", buy_product_path, class: "product_main_contents_buy_btn"
+        .product_main_contents_description
+          = @product.description
+        .product_main_contents_item_btn
+          .product_main_contents_item_btn_left
+            .product_main_contents_item_btn_left_like
+              ♡ いいね！4
+            .product_main_contents_item_btn_left_report
+              %i.far.fa-flag 不適切な商品の報告
+          .product_main_contents_item_btn_right
+            %i.fas.fa-lockあんしん・あんぜんへの取り組み
 
     .product_main_center
       .product_main_center_caution
@@ -102,7 +92,4 @@
           %i.fab.fa-twitter-square
         .product_main_sns_box_line
           %i.fab.fa-line
-
-
-
 = render "homes/footer"
