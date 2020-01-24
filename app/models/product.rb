@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   has_one :shipping
-  accepts_nested_attributes_for :shipping
+  accepts_nested_attributes_for :shipping, allow_destroy: true
   has_one :order
   has_many :likes
   has_many :comments

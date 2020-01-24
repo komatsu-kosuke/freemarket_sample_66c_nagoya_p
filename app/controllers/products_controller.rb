@@ -10,13 +10,13 @@ class ProductsController < ApplicationController
     @shipping = Shipping.find_by(product_id: params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
     card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to controller: "card", action: "new"
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
-    end
+    # if card.blank?
+    #   redirect_to controller: "card", action: "new"
+    # else
+    #   Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    #   customer = Payjp::Customer.retrieve(card.customer_id)
+    #   @default_card_information = customer.cards.retrieve(card.card_id)
+    # end
   end
 
   def buy
@@ -46,6 +46,19 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
   end
+
+  def destroy
+    ActiveRecord::Base.transaction do
+      @product = Product.find(params[:id])
+      @product_image = ProductsImage.find_by(product_id: params[:id])
+      @shipping = Shipping.find_by(product_id: params[:id])
+      if @product_image.destroy && @shipping.destroy && @product.destroy
+      else
+        redirect_back(fallback_location: root_path)
+      end
+    end
+  end
+
 
   private
   def shipping_params

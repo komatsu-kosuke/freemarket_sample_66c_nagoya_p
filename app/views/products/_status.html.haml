@@ -1,0 +1,44 @@
+.product_main_contents_main_right
+  .product_main_contents_main_right_1
+    .product_main_contents_main_right_1_l
+      出品者
+    .product_main_contents_main_right_1_r
+      = @user.nickname
+  .product_main_contents_main_right_2
+    .product_main_contents_main_right_2_l
+      カテゴリー
+    .product_main_contents_main_right_2_r
+      = @category.category
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      ブランド
+    .product_main_contents_main_right_3_r
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      商品のサイズ
+    .product_main_contents_main_right_3_r
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      商品の状態
+    .product_main_contents_main_right_3_r
+      = @product.status
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      配送料の負担
+    .product_main_contents_main_right_3_r
+      = @shipping.fee_burden
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      配送の方法
+    .product_main_contents_main_right_3_r
+      = @shipping.method
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      配送元地域
+    .product_main_contents_main_right_3_r
+      = @shipping.prefecture_from
+  .product_main_contents_main_right_3
+    .product_main_contents_main_right_3_l
+      発送日の目安
+    .product_main_contents_main_right_4_r
+      = @shipping.period_before_shipping
