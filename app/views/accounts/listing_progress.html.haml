@@ -9,8 +9,13 @@
 
 .mypage
   = render "homes/side-bar"
-  .exhibition__main
-    .exhibition__main__box__top
-    .exhibition__main__box__center
-  
+  .exhibition
+    .exhibition__header
+      出品した商品
+    .exhibition__main
+      = link_to '出品中', listing_account_path, class: "exhibition__main__left2"
+      = link_to '取引中', listing_progress_account_path, class: "exhibition__main__center2"
+      = link_to '売却済み', completed_account_path, class: "exhibition__main__right"
+    .exhibition__footer
+    
 = render "homes/footer"

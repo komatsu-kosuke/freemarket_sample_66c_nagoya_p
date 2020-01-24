@@ -4,6 +4,8 @@ class AccountsController < ApplicationController
   end
 
   def listing
+    @product_image = ProductsImage.find_by(product_id: params[:id])
+    @product = Product.find(params[:id])
   end
 
   def listing_progress
