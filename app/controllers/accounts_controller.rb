@@ -4,8 +4,7 @@ class AccountsController < ApplicationController
   end
 
   def listing
-    @product_image = ProductsImage.find_by(product_id: params[:id])
-    @product = Product.find(params[:id])
+    @product = Product.where(users_id: current_user.id).order(created_at: "DESC").limit(5)
   end
 
   def listing_progress
