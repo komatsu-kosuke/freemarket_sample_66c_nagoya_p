@@ -5,7 +5,7 @@
     height: 200px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background: url("profile2.jpg") center top/cover no-repeat;
+    background: image-url("profile2.jpg") center top/cover no-repeat;
     &__border {
       height: 200px;
       width: 450px;
@@ -36,7 +36,7 @@
             height: 50px;
             width: 40px;
             border-radius: 10px;
-            background: url("logo_red.svg") center top/cover no-repeat;
+            background: image-url("logo_red.svg") center top/cover no-repeat;
           }
         }
         &__apple {
@@ -46,7 +46,7 @@
           border-radius: 5px;
           border: 1px solid;
           border-color: white;
-          background: url("apple.png") center top/cover no-repeat;
+          background: image-url("apple.png") center top/cover no-repeat;
         }
         &__google {
           height: 40px;
@@ -55,7 +55,7 @@
           border-radius: 5px;
           border: 1px solid;
           border-color: white;
-          background: url("google.png") center top/cover no-repeat;
+          background: image-url("google.png") center top/cover no-repeat;
         }
       }
     }
@@ -113,7 +113,7 @@
         &__logo {
           height: 35px;
           width: 30px;
-          background: url("logo_white.svg") center top/cover no-repeat;
+          background: image-url("logo_white.svg") center top/cover no-repeat;
         }
         &__text {
           height: 35px;
