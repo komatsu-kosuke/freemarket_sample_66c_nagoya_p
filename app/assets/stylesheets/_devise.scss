@@ -22,7 +22,7 @@
 .single-header-box__logo {
   width: 200px;
   height: 60px;
-  background: url("fmarket_logo_red.svg") center top/cover no-repeat;
+  background: image-url("fmarket_logo_red.svg") center top/cover no-repeat;
 }
 .single-header-box__text {
   font-size: 30px;
@@ -158,7 +158,7 @@
   width: 85px;
   height: 75px;
   background-color: whitesmoke;
-  background: url("logo_gray.svg") center top/cover no-repeat;
+  background: image-url("logo_gray.svg") center top/cover no-repeat;
   color: #A9A9A9
 }
 .single-footer-box-bottom_license {
@@ -482,7 +482,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("google-icon.png") center top/cover no-repeat;
+    background: image-url("google-icon.png") center top/cover no-repeat;
     margin-left: 18px;
   }
   &__text {
@@ -530,7 +530,7 @@
 .login-main__form__recapcha {
   width: 300px;
   height: 60px;
-  background: url("recapcha.png") center top/cover no-repeat;
+  background: image-url("recapcha.png") center top/cover no-repeat;
   margin: auto;
   margin-bottom: 25px;
 }

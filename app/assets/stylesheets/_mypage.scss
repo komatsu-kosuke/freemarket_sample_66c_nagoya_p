@@ -124,12 +124,12 @@
     &__back {
       height: 160px;
       padding-top: 40px;
-      background: url("profile2.jpg") center top/cover no-repeat;
+      background: image-url("profile2.jpg") center top/cover no-repeat;
       &__image {
         height: 70px;
         width: 70px;
         border-radius: 50%;
-        background: url("ringo.jpg") center top/cover no-repeat;
+        background: image-url("ringo.jpg") center top/cover no-repeat;
         margin: 0 auto;
       }
       &__name {
@@ -174,7 +174,7 @@
         &__image {
           height: 50px;
           width: 50px;
-          background: url("ringo.jpg") center top/cover no-repeat;
+          background: image-url("ringo.jpg") center top/cover no-repeat;
         }
         &__things {
           margin-left: 15px;

@@ -11,7 +11,7 @@
       height: 50px;
       line-height: 50px;
       display:flex;
-      background: url("fmarket_logo_red.svg") center top/cover no-repeat;
+      background: image-url("fmarket_logo_red.svg") center top/cover no-repeat;
       margin-right: 20px;
     }
     &__find {
@@ -129,7 +129,7 @@
           height:30px;
           border-radius: 50%;
           margin-top:10px;
-          background: url("ringo.jpg") center top/cover no-repeat;
+          background: image-url("ringo.jpg") center top/cover no-repeat;
         }
         &__text{
           margin-left: 10px;
