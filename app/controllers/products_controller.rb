@@ -14,12 +14,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    product_image = ProductsImage.find_by(product_id: params[:id])
-    product_image.destroy
-    shipping = Shipping.find_by(product_id: params[:id])
-    shipping.destroy
-    product.destroy
+    ActiveRecord::Base.transaction do
+      @product = Product.find(params[:id])
+      @product_image = ProductsImage.find_by(product_id: params[:id])
+      @product_image.destroy
+      @shipping = Shipping.find_by(product_id: params[:id])
+      @shipping.destroy
+      @product.destroy
+    end
   end
 
 
