@@ -14,19 +14,19 @@
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品する', new_trading_path
+        = link_to '出品する', new_trading_path(current_user.id)
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品した商品- 出品中', listing_account_path
+        = link_to '出品した商品- 出品中', listing_account_path(current_user.id)
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品した商品- 取引中', listing_progress_account_path
+        = link_to '出品した商品- 取引中', listing_progress_account_path(current_user.id)
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
-        = link_to '出品した商品- 売却済み',  completed_account_path
+        = link_to '出品した商品- 売却済み',  completed_account_path(current_user.id)
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text 購入した商品- 取引中
@@ -66,19 +66,19 @@
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text
-        = link_to '支払い方法', credit_home_path
+        = link_to '支払い方法', credit_home_path(current_user.id)
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text メール/パスワード
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text
-        = link_to "本人情報", edit_account_path
+        = link_to "本人情報", edit_account_path(current_user.id)
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text 電話番号の確認
       .side-bar__bottom__content__text-1 ＞
     .side-bar__bottom__content
       .side-bar__bottom__content__text
-        = link_to 'ログアウト', logout_home_path
+        = link_to 'ログアウト', logout_home_path(current_user.id)
       .side-bar__bottom__content__text-1 ＞

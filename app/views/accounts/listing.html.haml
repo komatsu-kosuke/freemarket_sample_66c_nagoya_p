@@ -17,16 +17,15 @@
       = link_to '取引中', listing_progress_account_path, class: "exhibition__main__center"
       = link_to '売却済み', completed_account_path, class: "exhibition__main__right"
     .exhibition__footer
-      = link_to product_path, class: "exhibition__footer__box" do
-        .exhibition__footer__box__image
-          = image_tag "#{@product_image.image}", class: "exhibition__footer__box__image__box" 
-          .exhibition__footer__box__image__text
-            = @product.name
-            .exhibition__footer__box__image__status
-              出品中
-        .exhibition__footer__box__arrow >
+      - @product.each do |product|
+        = link_to product_path(product.id), class: "exhibition__footer__box" do
+          .exhibition__footer__box__image
+            = image_tag "#{product.products_images.slice(0).image}", class: "exhibition__footer__box__image__box" 
+            .exhibition__footer__box__image__text
+              = product.name
+              .exhibition__footer__box__image__status
+                出品中
+          .exhibition__footer__box__arrow >
 
 
 = render "homes/footer"
-
-{style: "background-image: url(#{@product_image.image});"}
