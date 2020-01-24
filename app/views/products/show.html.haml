@@ -8,7 +8,7 @@
         .product_main_contents_main
           .product_main_contents_main_left
             .product_main_contents_main_left_top
-              .product_main_contents_main_left_top_t{:style => "background-image: url(#{@product_image.image});"}
+              = image_tag "#{@product_image.image}", class: "product_main_contents_main_left_top_t"
             .product_main_contents_main_left_bottom
               .product_main_contents_main_left_bottom_1
               .product_main_contents_main_left_bottom_1
@@ -41,7 +41,7 @@
         .product_main_contents_main
           .product_main_contents_main_left
             .product_main_contents_main_left_top
-              .product_main_contents_main_left_top_t{:style => "background-image: url(#{@product_image.image});"}
+              = image_tag "#{@product_image.image}", class: "product_main_contents_main_left_top_t"
             .product_main_contents_main_left_bottom
               .product_main_contents_main_left_bottom_1
               .product_main_contents_main_left_bottom_1
