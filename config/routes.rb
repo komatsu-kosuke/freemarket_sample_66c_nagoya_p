@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   end
   
   resources :trading, only: [:new, :create, :edit, :update]
-  resources :products, only: [:show, :destroy] do
+  resources :products, only: [:show, :destroy, :edit, :update] do
     member do
       get 'buy'
       post 'pay'

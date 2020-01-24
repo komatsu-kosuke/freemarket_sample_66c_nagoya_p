@@ -10,13 +10,13 @@ class ProductsController < ApplicationController
     @shipping = Shipping.find_by(product_id: params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
     card = Card.where(user_id: current_user.id).first
-    # if card.blank?
-    #   redirect_to controller: "card", action: "new"
-    # else
-    #   Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    #   customer = Payjp::Customer.retrieve(card.customer_id)
-    #   @default_card_information = customer.cards.retrieve(card.card_id)
-    # end
+    if card.blank?
+      redirect_to controller: "card", action: "new"
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def buy
@@ -59,6 +59,25 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    @user = User.find(@product.users_id)
+    @category = Category.find(@product.category_id)
+    @shipping = Shipping.find_by(product_id: params[:id])
+    @product_image = ProductsImage.find_by(product_id: params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @user = User.find(@product.users_id)
+    @category = Category.find(@product.category_id)
+    @shipping = Shipping.find_by(product_id: params[:id])
+    @product_image = ProductsImage.find_by(product_id: params[:id])
+    if @product_image.update(product_params) && @shipping.update(product_params) && @product.update(product_params)
+    else
+      redirect_back(fallback_location: root_path)
+    end
+  end
 
   private
   def shipping_params
@@ -67,4 +86,8 @@ class ProductsController < ApplicationController
                                       :fee_burdun                                    
                                       ).merge(users_id: current_user.id)
   end
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :status, :users_id, :category_id, :brand_id, :size_id, shipping_attributes:[:fee_burden, :prefecture_from, :period_before_shipping], products_images_attributes:[:image]).merge(users_id: current_user.id)
+  end
+
 end
