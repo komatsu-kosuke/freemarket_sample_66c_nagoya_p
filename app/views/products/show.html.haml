@@ -29,7 +29,7 @@
         .product_main_contents_description
           = @product.description
       .product_main_frame
-        .product_main_frame_edit 編集する
+        = link_to "編集する" , edit_product_path, method: :get, class: "product_main_frame_edit"
         .product_main_frame_text or
         .product_main_frame_stop 出品を一旦停止する
         = link_to "この商品を削除する" , product_path, method: :delete, class: "product_main_frame_delete"
