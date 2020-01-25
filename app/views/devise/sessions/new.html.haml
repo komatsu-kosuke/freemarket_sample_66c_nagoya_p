@@ -3,7 +3,7 @@
 .login-main
   .login-main__box 
     .login-main__box-inner
-      = form_for(resource, as: resource_name, url: session_path(resource_name), action: '/login/', method: 'POST', novalidate: 'novalidate') do |f|
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-main__top
           .login-main__top__text
             アカウントをお持ちでない方はこちら
