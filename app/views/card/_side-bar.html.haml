@@ -13,8 +13,7 @@
       .side-bar__top__content__text いいね！一覧
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
-      .side-bar__top__content__text
-        = link_to '出品する', new_trading_path(current_user.id)
+      = link_to '出品する', new_trading_path(current_user.id), class: "side-bar__top__content__text"
       .side-bar__top__content__text-1 ＞
     .side-bar__top__content
       .side-bar__top__content__text
@@ -64,7 +63,7 @@
     .side-bar__bottom__content
       .side-bar__bottom__content__text 発送元・お届け先住所変更
       .side-bar__bottom__content__text-1 ＞
-    後からパスを変えて実装予定のためコメントアウト
+    
     .side-bar__bottom__content
       .side-bar__bottom__content__text
         = link_to '支払い方法', credit_home_path(current_user.id)
@@ -72,7 +71,7 @@
     .side-bar__bottom__content
       .side-bar__bottom__content__text メール/パスワード
       .side-bar__bottom__content__text-1 ＞
-    後からパスを変えて実装予定のためコメントアウト
+    
     .side-bar__bottom__content
       .side-bar__bottom__content__text
         = link_to "本人情報", edit_account_path(current_user.id)
@@ -80,7 +79,7 @@
     .side-bar__bottom__content
       .side-bar__bottom__content__text 電話番号の確認
       .side-bar__bottom__content__text-1 ＞
-    後からパスを変えて実装予定のためコメントアウト
+    
     .side-bar__bottom__content
       .side-bar__bottom__content__text
         = link_to 'ログアウト', logout_home_path(current_user.id)
