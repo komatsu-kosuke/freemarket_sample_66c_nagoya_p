@@ -240,7 +240,14 @@
   border: solid 0.5px #d3d3d3;
   border-radius: 2px;
   padding: 10px 20px;
-  
+}
+.second-main__box-bottom__form2 {
+  width: 89%;
+  height: 30px;  
+  background-color: white;
+  border: solid 0.5px #d3d3d3;
+  border-radius: 2px;
+  padding: 10px 10px;
 }
 .second-main__box-bottom__cortion {
   width: 100%;
@@ -257,6 +264,7 @@
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .second-main__box-bottom__check {
   width: 100%;
