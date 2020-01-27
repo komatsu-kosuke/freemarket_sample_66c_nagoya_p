@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
   def index
-    @product = Product.all.order(created_at: "DESC").limit(5)
+    @product = Product.order(created_at: "DESC").limit(5)
     
     # @products_image.image="#{@product.id}.jpg"
     # image=params[:image_file]
