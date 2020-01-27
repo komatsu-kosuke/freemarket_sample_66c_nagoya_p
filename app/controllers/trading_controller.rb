@@ -4,6 +4,7 @@ class TradingController < ApplicationController
     @product = Product.new
     @product.build_shipping
     @product.products_images.build
+    
   end
 
 
