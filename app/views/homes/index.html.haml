@@ -10,31 +10,13 @@
         .like-things__frame__text いいね！した商品
         .like-things__frame__text-1 すべて見る >
       .like-things__frame__info
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-
+        - @product.each do |product|
+          = link_to product_path(product.id) do
+            .like-things__frame__info__product__frame
+              .like-things__frame__info__product__frame__logo ￥
+              .like-things__frame__info__product__frame__price
+                = product.price
+            = image_tag "#{product.products_images.slice(0).image}", class: "product__image" 
   .category
     .category-border
       .category-border__text 人気のカテゴリー
@@ -43,7 +25,6 @@
         .category-border__frame__things メンズ
         .category-border__frame__things 家電・スマホ・カメラ
         .category-border__frame__things おもちゃ・ホビー・グッズ
-  
   .ladynew
     .ladynew-border
       .ladynew-border__text
@@ -52,17 +33,12 @@
       = render "product"
       -# .contents.row
         -# %img{src: "#{@products_image.image}"}
-     
-
-
-  
   .ladynew
     .ladynew-border
       .ladynew-border__text
         .ladynew-border__text メンズ新着アイテム
         .ladynew-border__text-1 もっと見る >
       = render "product"
-
   .ladynew
     .ladynew-border
       .ladynew-border__text

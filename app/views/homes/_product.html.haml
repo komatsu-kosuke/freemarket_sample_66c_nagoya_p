@@ -1,62 +1,70 @@
 .ladynew-border__frame
   .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-.ladynew-border__frame
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
-  .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
-      .ladynew-border__frame__things-image__frame
-        .ladynew-border__frame__things-image__frame__logo ¥
-        .ladynew-border__frame__things-image__frame__price 1000
-    .ladynew-border__frame__things-text りんご
+    - @product.each do |product|
+      = link_to product_path(product.id) do
+        .product__image2
+          = image_tag "#{product.products_images.slice(0).image}", class: "product__image2" 
+          .ladynew-border__frame__things-image__frame
+            .ladynew-border__frame__things-image__frame__logo ¥
+            .ladynew-border__frame__things-image__frame__price
+              = product.price
+          .ladynew-border__frame__things-text
+            = product.name
+
+
+
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-# .ladynew-border__frame
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
+-#   .ladynew-border__frame__things
+-#     .ladynew-border__frame__things-image
+-#       .ladynew-border__frame__things-image__frame
+-#         .ladynew-border__frame__things-image__frame__logo ¥
+-#         .ladynew-border__frame__things-image__frame__price 1000
+-#     .ladynew-border__frame__things-text りんご
