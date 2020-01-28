@@ -10,30 +10,15 @@
         .like-things__frame__text いいね！した商品
         .like-things__frame__text-1 すべて見る >
       .like-things__frame__info
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
-        .like-things__frame__info__product
-          .like-things__frame__info__product__frame
-            .like-things__frame__info__product__frame__logo ￥
-            .like-things__frame__info__product__frame__price 1300
+        -# - @products.each |product| do
+        -#   - product.product_images.each |image| do
+        -#     = image_tag image.image
+        - @product_image.each do |item|
+          - if item.image
+          = image_tag "#{item.image}",class: "like-things__frame__info__product"
+            .like-things__frame__info__product__frame
+              .like-things__frame__info__product__frame__logo ￥
+              .like-things__frame__info__product__frame__price 1300
 
   .category
     .category-border

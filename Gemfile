@@ -76,3 +76,5 @@ gem 'font-awesome-sass'
 gem 'active_hash'
 gem 'devise'
 gem "gretel"
+gem 'carrierwave'
+gem 'mini_magick'

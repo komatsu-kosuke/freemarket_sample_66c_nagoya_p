@@ -1,6 +1,8 @@
 .ladynew-border__frame
   .ladynew-border__frame__things
-    .ladynew-border__frame__things-image
+    - @product_image.each do |item|
+      - if item.image
+        = image_tag "#{item.image}",class: "ladynew-border__frame__things-image"
       .ladynew-border__frame__things-image__frame
         .ladynew-border__frame__things-image__frame__logo ¥
         .ladynew-border__frame__things-image__frame__price 1000

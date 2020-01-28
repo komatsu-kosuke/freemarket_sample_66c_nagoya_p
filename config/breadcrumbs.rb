@@ -7,7 +7,12 @@ crumb :mypage do
 end
 
 crumb :profile do
-  link "プロフィール編集", profile_path
+  link "プロフィール編集", profile_homes_path
+  parent :mypage
+end
+
+crumb :exhibition do
+  link "商品出品", accounts_path
   parent :mypage
 end
 # crumb :projects do
