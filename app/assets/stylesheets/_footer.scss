@@ -1,16 +1,25 @@
 .footer {
   height: 700px;
   background-color: gray;
+  
   &-upper {
     height: 200px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background: url("footer.jpg") center top/cover no-repeat;
+    background: image-url("profile2.jpg") center top/cover no-repeat;
     &__border {
       height: 200px;
       width: 450px;
-      margin-top: 100px;
+      margin-top: 30px;
       margin-left: 340px;
+      &__text1 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__text2 {
+        font-size: 30px;
+        font-weight: bold;
+      }
       &__frame {
         display: flex;
         justify-content: space-between;
@@ -28,7 +37,7 @@
             height: 50px;
             width: 40px;
             border-radius: 10px;
-            background: url("logo_red.svg") center top/cover no-repeat;
+            background: image-url("logo_red.svg") center top/cover no-repeat;
           }
         }
         &__apple {
@@ -38,7 +47,7 @@
           border-radius: 5px;
           border: 1px solid;
           border-color: white;
-          background: url("apple.png") center top/cover no-repeat;
+          background: image-url("apple.png") center top/cover no-repeat;
         }
         &__google {
           height: 40px;
@@ -47,7 +56,7 @@
           border-radius: 5px;
           border: 1px solid;
           border-color: white;
-          background: url("google.png") center top/cover no-repeat;
+          background: image-url("google.png") center top/cover no-repeat;
         }
       }
     }
@@ -57,6 +66,7 @@
     background-color: rgb(32, 31, 31);
     display: flex;
     justify-content: center;
+    font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
     &__frame {
       width: 180px;
       color: white;
@@ -105,7 +115,7 @@
         &__logo {
           height: 35px;
           width: 30px;
-          background: url("logo_white.svg") center top/cover no-repeat;
+          background: image-url("logo_white.svg") center top/cover no-repeat;
         }
         &__text {
           height: 35px;

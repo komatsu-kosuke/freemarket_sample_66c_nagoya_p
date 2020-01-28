@@ -10,30 +10,129 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &-box {
+    width: 60%;
+    height: 100px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__logo {
+      width: 200px;
+      height: 60px;
+      background: image-url("fmarket_logo_red.svg") center top/cover no-repeat;
+    }
+  }
 }
-.single-header-box {
-  width: 30%;
-  height: 70px;
-  background-color: whitesmoke;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.single-header-box__logo {
-  width: 200px;
-  height: 60px;
-  background: url("fmarket_logo_red.svg") center top/cover no-repeat;
-}
+
 .single-header-box__text {
   font-size: 30px;
   margin-left: 10px;
   font-weight: bold;
   font-family: 'Hiragino Maru Gothic ProN',fantasy;
   letter-spacing: 0.05em;
-   & a {
+  & a {
      text-decoration: none;
      color: black;
-   }
+  }
+}
+
+.progress {
+  width: 50%;
+  height: 10px;
+  
+  display: flex;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &__text {
+    font-size: 11px;
+    position: absolute;
+    bottom: 20px;
+    left: 40px
+  }
+  &__box {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  &__bar {
+    width: 80px;
+    height: 4px;
+    background-color: red;
+  }
+  &__text2 {
+    font-size: 11px;
+    position: absolute;
+    bottom: 20px;
+    left: 135px
+  }
+  &__text3 {
+    font-size: 11px;
+    position: absolute;
+    bottom: 20px;
+    left: 240px
+  }
+  &__text4 {
+    font-size: 11px;
+    position: absolute;
+    bottom: 20px;
+    right: 55px;
+  }
+  .progress__box__r {
+    width: 15px;
+    height: 15px;
+    background-color: #dcdcdc;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  &__bar__r {
+    width: 80px;
+    height: 4px;
+    background-color:#dcdcdc;
+  }
+  &__box__s {
+    width: 15px;
+    height: 15px;
+    background-color: #dcdcdc;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  &__bar__s {
+    width: 80px;
+    height: 4px;
+    background-color:#dcdcdc;
+  }
+  &__box__a {
+    width: 15px;
+    height: 15px;
+    background-color: #dcdcdc;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  &__bar__a {
+    width: 80px;
+    height: 4px;
+    background-color:#dcdcdc;
+  }
+  
+
+
 }
 // -----------main-------------
 
@@ -158,7 +257,7 @@
   width: 85px;
   height: 75px;
   background-color: whitesmoke;
-  background: url("logo_gray.svg") center top/cover no-repeat;
+  background: image-url("logo_gray.svg") center top/cover no-repeat;
   color: #A9A9A9
 }
 .single-footer-box-bottom_license {
@@ -240,7 +339,14 @@
   border: solid 0.5px #d3d3d3;
   border-radius: 2px;
   padding: 10px 20px;
-  
+}
+.second-main__box-bottom__form2 {
+  width: 89%;
+  height: 30px;  
+  background-color: white;
+  border: solid 0.5px #d3d3d3;
+  border-radius: 2px;
+  padding: 10px 10px;
 }
 .second-main__box-bottom__cortion {
   width: 100%;
@@ -257,6 +363,7 @@
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .second-main__box-bottom__check {
   width: 100%;
@@ -482,7 +589,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("google-icon.png") center top/cover no-repeat;
+    background: image-url("google-icon.png") center top/cover no-repeat;
     margin-left: 18px;
   }
   &__text {
@@ -530,7 +637,7 @@
 .login-main__form__recapcha {
   width: 300px;
   height: 60px;
-  background: url("recapcha.png") center top/cover no-repeat;
+  background: image-url("recapcha.png") center top/cover no-repeat;
   margin: auto;
   margin-bottom: 25px;
 }

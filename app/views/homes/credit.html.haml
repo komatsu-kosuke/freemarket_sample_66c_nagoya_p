@@ -16,9 +16,7 @@
       .credit-main__box__center__inner
         .credit-main__box__center__text
           クレジットカード一覧
-        .credit-main__box__center__btn
-          %i.far.fa-credit-card
-          クレジットカードを追加する
+        = link_to "クレジットカードを追加する", new_card_path, class: "credit-main__box__center__btn"
     .credit-main__box__bottom
       支払い方法について>
  

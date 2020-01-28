@@ -35,7 +35,9 @@ class SignupController < ApplicationController
       birthmonth: session[:birthmonth],
       birthday: session[:birthday],
     )
+    # render '/signup/registration' unless @user.valid?
   end
+
   # STEP4 住所入力
   def adress
     session[:phonenumber] = user_params[:phonenumber]
@@ -54,7 +56,9 @@ class SignupController < ApplicationController
       phonenumber: session[:phonenumber]
     )
     @address = Address.new
+    # render '/signup/sms' unless @user.valid?
   end
+
   # STEP5 登録完了画面
   def create
     @user = User.new( 

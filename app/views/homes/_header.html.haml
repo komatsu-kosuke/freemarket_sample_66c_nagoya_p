@@ -1,6 +1,6 @@
 .header
   .header-upper
-    .header-upper__mercari
+    = link_to '', root_path, class: "header-upper__mercari"
     .header-upper__find 
       .header-upper__find__text 何かお探しですか？
       %i.fas.fa-search
@@ -24,11 +24,11 @@
         .header-lower-right__todo
           %i.fas.fa-check
           .header-lower-right__todo__text
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            やることリスト
         .header-lower-right__mypage
           .header-lower-right__mypage__logo
           .header-lower-right__mypage__text
-            = link_to 'マイページ', "homes/show"
+            = link_to 'マイページ', home_path(current_user.id)
       - else
         = link_to "新規会員登録", signup_index_path, class: "header-lower-right__new"
         = link_to "ログイン", new_user_session_path, class: "header-lower-right__login"

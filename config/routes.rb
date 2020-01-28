@@ -12,26 +12,39 @@ Rails.application.routes.draw do
   end
 
   resources :homes, only: [:index, :show, :edit, :update] do
-    collection do
+    member do
       get "profile"
-      get "logout" 
       get "credit"
-      get "credit_register"
+      get "logout" 
     end
   end
 
-  resources :accounts, only: [:index] do
-    collection do
+  resources :accounts, only: [:index, :edit, :update] do
+    member do
       get "listing"
       get "listing_progress"
       get "completed"
     end
   end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
   
   resources :trading, only: [:new, :create, :edit, :update]
-  resources :products, only: [:index, :show]
+  resources :products, only: [:show, :destroy, :edit, :update] do
+    member do
+      get 'buy'
+      post 'pay'
+      get 'done'
+    end
+  end
 end
 
 
 
-# colectionとnumber調べること
+# colectionとmember調べること

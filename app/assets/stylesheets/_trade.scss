@@ -10,7 +10,7 @@
     height: 50px;
     width: 170px;
     display:inline-block;
-    background: url("fmarket_logo_red.svg") center top/cover no-repeat;
+    background: image-url("fmarket_logo_red.svg") center top/cover no-repeat;
   }
 }
 
@@ -386,7 +386,7 @@
   }
 }
 
-.category {
+.category-frame {
   height: 50px;
   width: 100%;
   border: 1px solid;
@@ -401,7 +401,7 @@
   align-items: center;
 }
 
-.category__end {
+.category-frame__end {
   height: 50px;
   width: 100%;
   border: 1px solid;
@@ -415,3 +415,49 @@
   align-items: center;
 }
 
+
+// ↓create用
+
+.main-create {
+  height: 100px;
+  width: 700px;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+  border-bottom: 1px solid;
+  border-bottom-color: rgb(230, 228, 228);
+}
+
+.main-create2__bottom {
+  height: 150px;
+  padding: 50px;
+}
+
+.main-create2__bottom__text {
+  height: 80px;
+  line-height: 60px;
+}
+
+.main-create2__bottom__btn {
+  height: 50px;
+  width: 600px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: red;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+}
+
+.main-create2__bottom__share {
+  justify-content: center;
+  color: rgb(0, 247, 255);
+  width: 600px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 5px;
+  text-decoration: none;
+}

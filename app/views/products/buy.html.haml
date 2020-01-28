@@ -1,0 +1,74 @@
+.header-frame
+  =link_to "", root_path, class: "header-frame__market"
+
+.buy
+  .buy__frame
+    .buy__frame__text 購入内容の確認
+    .buy__frame__product
+      = image_tag "#{@product_image.image}", class: "buy__frame__product__image" 
+      .buy__frame__product__right
+        .buy__frame__product__right__name
+          = @product.name
+        .buy__frame__product__right__price
+          .buy__frame__product__right__price__logo ￥
+          .buy__frame__product__right__price__en
+            = @product.price
+          .buy__frame__product__right__price__tax （税込）
+          .buy__frame__product__right__price__shipping 送料込み
+    .buy__frame__low
+      .buy__frame__low__price
+        .buy__frame__low__price__border
+          .buy__frame__low__price__border__text 支払い金額
+          .buy__frame__low__price__border__en ￥
+          .buy__frame__low__price__border__num
+            = @product.price
+        .buy__frame__low__price__check ポイントを使用（所持ポイント: P0）
+
+
+
+      .buy__frame__low__card
+        .buy__frame__low__card__left
+          .buy__frame__low__card__left__text-1 支払い方法
+          .buy__frame__low__card__left__text-2 クレジットカード
+          .buy__frame__low__card__left__number
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            %h3 有効期限
+            = exp_month + " / " + exp_year
+          %i.fab.fa-cc-visa
+        = link_to "変更する", new_card_path, class: "buy__frame__low__card__right"
+
+
+
+
+      .buy__frame__low__shipping
+        .buy__frame__low__shipping__left
+          .buy__frame__low__shipping__left__text 配送先
+          .buy__frame__low__shipping__left__yuubin
+            = @address.zipcode
+          .buy__frame__low__shipping__left__house
+            = @address.prefecture
+            = @address.city
+            = @address.district
+            = @address.building
+          .buy__frame__low__shipping__left__user
+            = @user.familyname
+            = @user.firstname
+        = link_to "変更する", edit_account_path, class: "buy__frame__low__shippng__right"
+      .buy__frame__low__btn
+        = form_tag(action: :pay, method: :post) do
+          %button 購入する
+.single-footer
+  .single-footer-box
+    .single-footer-box-top
+      .single-footer-box_text
+        プライバシーポリシー
+      .single-footer-box_text
+        Fmarket利用規約
+      .single-footer-box_text
+        特定商取引に関する表記
+    .single-footer-box-bottom
+      .single-footer-box-bottom_logo
+    .single-footer-box-bottom_license
+      ©︎ Mercari, inc.

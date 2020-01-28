@@ -5,11 +5,13 @@
 
 .mypage
   = render "side-bar"
-    
-  .main
-    .main-top
-      .main-top__back
-        .main-top__back__image
-        .main-top__back__name ishii shunichi
-        .main-top__back__value 評価 10 出品数  18
+  .profile
+    = form_for(@user, url: home_path) do |f|
+      .profile__text プロフィール
+      .profile__frame
+        .profile__frame__icon
+        = f.text_field :nickname, placeholder:"#{@user.nickname}", class: "profile__frame__name" 
+      .profile__info
+        = f.text_area :description, placeholder:"例）こんにちは！ご覧いただきありがとうございます！気持ちよくお取引できるよう心がけて参りますので、よろしくお願いします♪", class: "profile__info__text"
+        = f.submit "変更する", class: "profile__info__btn"
 = render "footer"

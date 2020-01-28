@@ -1,4 +1,22 @@
-= render "header"
+.single-header
+  .single-header-box
+    .single-header-box__logo
+    .progress
+      .progress__text
+        会員情報入力
+      .progress__box
+      .progress__bar__r
+      .progress__text2
+        電話番号認証
+      .progress__box__r
+      .progress__bar__r
+      .progress__text3
+        住所入力
+      .progress__box__r
+      .progress__bar__r
+      .progress__text4
+        登録完了
+      .progress__box__r
 
 .second-main
   .second-main__box
@@ -24,13 +42,13 @@
             .second-main__box-bottom__must
               必須
           .second-main__box-bottom__form-under
-            = f.password_field :password, { class: "second-main__box-bottom__form", placeholder: '6文字以上' }
+            = f.password_field :password, { class: "second-main__box-bottom__form", placeholder: '6文字以上', autocomplete: "new-password" }
           .second-main__box-bottom__text
             パスワード（確認）
             .second-main__box-bottom__must
               必須
           .second-main__box-bottom__form-under
-            = f.password_field :encrypted_password, { class: "second-main__box-bottom__form", placeholder: '6文字以上' }
+            = f.password_field :encrypted_password, { class: "second-main__box-bottom__form", placeholder: '6文字以上', autocomplete: "new-password" }
           .second-main__box-bottom__cortion
             ※英字と数字の両方を含めて設定してください
           .second-main__box-bottom__check
@@ -60,9 +78,12 @@
             .second-main__box-bottom__must
               必須
           .second-main__box-bottom__form-under
-            = f.text_field :birthyear, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
-            = f.text_field :birthmonth, { class: "second-main__box-bottom__form", placeholder: '例) タロウ' }
-            = f.text_field :birthday, { class: "second-main__box-bottom__form", placeholder: '例) ヤマダ' }
+            = f.text_field :birthyear, { class: "second-main__box-bottom__form2", placeholder: '例) 2020' }
+            %h2 年
+            = f.text_field :birthmonth, { class: "second-main__box-bottom__form2", placeholder: '例) 01' }
+            %h2 月
+            = f.text_field :birthday, { class: "second-main__box-bottom__form2", placeholder: '例) 01' }
+            %h2 日
           .second-main__box-bottom__text-1
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .second-main__box-bottom__text-next
@@ -75,7 +96,7 @@
             本人情報の登録について>
           .second-main__box-bottom__text-3
             This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
-
+-# = render "error"
 = render "footer"
 
 

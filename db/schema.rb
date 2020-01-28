@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "customer_id"
+    t.string "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", null: false
@@ -124,9 +133,9 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "method"
     t.string "shipping_price"
     t.string "period_before_shipping", null: false
-    t.string "prefecture_from", null: false
+    t.string "prefecture_from"
     t.string "fee_burden", null: false
-    t.bigint "product_id", null: false
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_shippings_on_product_id"
@@ -153,10 +162,11 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.string "familyname", null: false
     t.string "firstname_kana", null: false
     t.string "familyname_kana", null: false
+    t.string "description"
     t.integer "birthyear", null: false
     t.integer "birthmonth", null: false
     t.integer "birthday", null: false
-    t.integer "phonenumber", null: false
+    t.bigint "phonenumber", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -167,6 +177,7 @@ ActiveRecord::Schema.define(version: 125500113055006) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "creditcards", "users"
