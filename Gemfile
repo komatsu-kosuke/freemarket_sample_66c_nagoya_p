@@ -77,7 +77,7 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'gretel'
 gem 'active_hash'
-
+gem 'antivirus'
 gem 'payjp'
 gem 'jquery-rails'
 gem 'dotenv-rails'

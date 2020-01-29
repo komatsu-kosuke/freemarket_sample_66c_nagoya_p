@@ -4,10 +4,11 @@ class AccountsController < ApplicationController
   end
 
   def listing
-    @product = Product.where(users_id: current_user.id).order(created_at: "DESC").limit(5)
+    @product = Product.where(users_id: current_user.id, progress: "出品中").order(created_at: "DESC").limit(5)
   end
 
   def listing_progress
+    @product = Product.where(users_id: current_user.id, progress: "交渉中").order(created_at: "DESC").limit(5)
   end
 
   def completed
