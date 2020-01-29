@@ -2,6 +2,17 @@ class ProductsController < ApplicationController
 
   require 'payjp'
 
+  def new
+    @product = Product.new
+    @product.build_shipping
+    @product.products_images.build
+    
+  end
+
+  def create
+    Product.create(product_params)
+  end
+
   #商品詳細ページ
   def show
     @product = Product.find(params[:id])
@@ -60,22 +71,13 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @user = User.find(@product.users_id)
-    @category = Category.find(@product.category_id)
     @shipping = Shipping.find_by(product_id: params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
   end
 
   def update
     @product = Product.find(params[:id])
-    @user = User.find(@product.users_id)
-    @category = Category.find(@product.category_id)
-    @shipping = Shipping.find_by(product_id: params[:id])
-    @product_image = ProductsImage.find_by(product_id: params[:id])
-    if @product_image.update(product_params) && @shipping.update(product_params) && @product.update(product_params)
-    else
-      redirect_back(fallback_location: root_path)
-    end
+    @product.update(product_params)
   end
 
   private
@@ -85,8 +87,9 @@ class ProductsController < ApplicationController
                                       :fee_burdun                                    
                                       ).merge(users_id: current_user.id)
   end
+
   def product_params
-    params.require(:product).permit(:name, :description, :price, :status, :users_id, :category_id, :brand_id, :size_id, shipping_attributes:[:fee_burden, :prefecture_from, :period_before_shipping], products_images_attributes:[:image]).merge(users_id: current_user.id)
+    params.require(:product).permit(:name, :description, :price, :status, :users_id, :category_id, :brand_id, :size_id, shipping_attributes:[:fee_burden, :prefecture_from, :period_before_shipping, :_destroy], products_images_attributes:[:image, :_destroy]).merge(users_id: current_user.id)
   end
 
 end
