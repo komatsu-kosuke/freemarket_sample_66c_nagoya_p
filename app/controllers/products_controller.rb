@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     if card.blank?
       redirect_to controller: "card", action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
     @address = Address.find(params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
     card = Card.find_by(user_id: current_user.id)
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
     customer = Payjp::Customer.retrieve(card.customer_id)
     @default_card_information = customer.cards.retrieve(card.card_id)
   end
@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
   def pay
     @product = Product.find(params[:id])
     @card = Card.find(params[:id])
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
     amount: @product.price,
     customer: @card.customer_id, 
@@ -54,8 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def done
-    @product = Product.find(params[:id])
-    @product_image = ProductsImage.find_by(product_id: params[:id])
+    
   end
 
   def destroy

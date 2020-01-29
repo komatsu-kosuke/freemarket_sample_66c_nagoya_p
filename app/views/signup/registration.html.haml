@@ -1,6 +1,6 @@
 .single-header
   .single-header-box
-    .single-header-box__logo
+    = link_to '', root_path, class: "single-header-box__logo"
     .progress
       .progress__text
         会員情報入力
@@ -42,13 +42,13 @@
             .second-main__box-bottom__must
               必須
           .second-main__box-bottom__form-under
-            = f.password_field :password, { class: "second-main__box-bottom__form", placeholder: '6文字以上', autocomplete: "new-password" }
+            = f.password_field :password, { class: "second-main__box-bottom__form", placeholder: '英字、数字を含む7文字以上', autocomplete: "new-password" }
           .second-main__box-bottom__text
             パスワード（確認）
             .second-main__box-bottom__must
               必須
           .second-main__box-bottom__form-under
-            = f.password_field :encrypted_password, { class: "second-main__box-bottom__form", placeholder: '6文字以上', autocomplete: "new-password" }
+            = f.password_field :encrypted_password, { class: "second-main__box-bottom__form", placeholder: '英字、数字を含む7文字以上', autocomplete: "new-password" }
           .second-main__box-bottom__cortion
             ※英字と数字の両方を含めて設定してください
           .second-main__box-bottom__check
