@@ -3,7 +3,7 @@
 
 .main-new
   .main-frame
-    = form_for(@product, url: trading_index_path) do |f|
+    = form_for(@product, url: products_path) do |f|
       .main-frame__infomation 商品の情報を入力
       .main-frame__image
         = f.fields_for :products_images do |i|
@@ -11,7 +11,11 @@
             .main-frame__image__text__trading 出品画像
             .main-frame__image__text__btn 必須
           .main-frame__image__upload 最大10枚までアップロードできます
-          = i.file_field :image, :placeholder => "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "main-frame__image__up"
+          #image-box
+            .js-file_group{"data-index" => "#{i.index}"}
+              = i.file_field :image, :placeholder => "ドラッグアンドドロップまたはクリックしてファイルをアップロード", class: "main-frame__image__up"
+              %br/
+              %span.js-remove 削除
       .main-frame__product
         .main-frame__product__name
           .main-frame__product__name__border
