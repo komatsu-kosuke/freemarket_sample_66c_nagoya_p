@@ -12,19 +12,44 @@ class User < ApplicationRecord
   has_many :comments
   has_many :address
   has_many :cards
+  
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
+  VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
 
+  validates :nickname, presence: true, length: { maximum: 20, message: 'を20文字以内にしてください' }, profanity_filter: true
+  validates :email, presence: true, uniqueness: { message: 'はすでに使用されています'}
+  validates :password, presence: true, length: { in: 7..128, message: 'を7桁以上にしてください' }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :encrypted_password, presence: true, length: { in: 7..128, message: 'を7桁以上にしてください' }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :familyname, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, profanity_filter: true
+  validates :firstname, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, profanity_filter: true
+  validates :familyname_kana, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}, profanity_filter: true
+  validates :firstname_kana, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}, profanity_filter: true
+  validates :birthyear, presence: true
+  validates :birthmonth, presence: true
+  validates :birthday, presence: true
+
+  validates :phonenumber, presence: true, format: { with: /\A\d{10,11}\z/, message: 'の入力が正しくありません'}
+
+  
+
+  
   # with_options presence: true do
-  #   validates :nickname
-  #   validates :email, uniqueness: true
+    # validates :nickname ,presence: true
+  #   validates :email
+  #   validates :password, length: { minimum: 6 }
+  #   validates :encrypted_password, length: { minimum: 6 }
   #   validates :address
-  #   validates :firstname
   #   validates :familyname
+  #   validates :firstname
+  #   validates :familyname_kana
   #   validates :firstname_kana
-  #   validates :familyname_kana	
   #   validates :birthyear
   #   validates :birthmonth
   #   validates :birthday
-  #   validates :phonenumber, uniqueness: true
+  #   validates :phonenumber
   # end
   
 end

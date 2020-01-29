@@ -1,8 +1,9 @@
 class HomesController < ApplicationController
 
   def index
+
     @product = Product.order(created_at: "DESC").limit(5)
-    
+
     # @products_image.image="#{@product.id}.jpg"
     # image=params[:image_file]
     # File.binwrite("public/#{@user.image_name}", image.read)

@@ -21,4 +21,8 @@ class Product < ApplicationRecord
     validates :price
     validates :status
   end
+    validates :progress, null: false
+    enum progress: {
+      "出品中":1, "交渉中":2, "出品停止":3, "売却済":4
+    }
 end

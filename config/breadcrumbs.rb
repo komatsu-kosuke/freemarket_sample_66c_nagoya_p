@@ -3,11 +3,17 @@ crumb :root do
 end
 
 crumb :mypage do
-  link "マイページ", homes_path
+  link "マイページ", home_path(current_user.id)
+  parent :root
 end
 
 crumb :profile do
-  link "プロフィール編集", profile_path
+  link "プロフィール編集", profile_home_path(current_user.id)
+  parent :mypage
+end
+
+crumb :exhibition do
+  link "商品出品", accounts_path(current_user.id)
   parent :mypage
 end
 # crumb :projects do
