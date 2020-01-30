@@ -38,6 +38,10 @@
           = @product.name
         .product_main_contents_main
           .product_main_contents_main_left
+            - if @product.progress == "交渉中"
+              .ribbon
+                .ribbon__text
+                  SOLD
             .product_main_contents_main_left_top
               = image_tag "#{@product_image.image}", class: "product_main_contents_main_left_top_t"
             .product_main_contents_main_left_bottom
@@ -92,8 +96,5 @@
           %i.fab.fa-twitter-square
         .product_main_sns_box_line
           %i.fab.fa-line
-  - if @product.progress == "交渉中"
-    .ribbon
-      .ribbon__text
-        SOLD
+  
   = render "homes/footer"
