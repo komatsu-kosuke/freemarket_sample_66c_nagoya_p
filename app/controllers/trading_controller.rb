@@ -1,2 +1,2 @@
-
-aaaaaaaaaaaa
+class TradingController < ApplicationController
+end
