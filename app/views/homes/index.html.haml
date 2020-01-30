@@ -1,9 +1,19 @@
 .wrapper
-  = link_to new_product_path, class: 'sell-btn' do
-    .sell-btn__text 出品
-    %i.fas.fa-camera
+  - if user_signed_in?
+    = link_to new_product_path, class: 'sell-btn' do
+      .sell-btn__text 出品
+      %i.fas.fa-camera
+  - else
+    = link_to accounts_path
+
   = render "header"
-  .image-slide
+
+  .slide_1
+    .slide
+      = image_tag 'slide.jpg', width: '100%', height: '400px', class: 'slide_img'
+      = image_tag 'https://www.pakutaso.com/shared/img/thumb/018ELLY18420_TP_V.jpg', width: '100%', height: '400px', class: 'slide_img'
+      = image_tag 'https://www.pakutaso.com/shared/img/thumb/PAK56_okaikeicureka20140208_TP_V.jpg', width: '100%', height: '400px', class: 'slide_img'
+
   .like-things
     .like-things__frame
       .like-things__frame__text
@@ -15,8 +25,13 @@
             .like-things__frame__info__product__frame
               .like-things__frame__info__product__frame__logo ￥
               .like-things__frame__info__product__frame__price
-                = product.price
-            = image_tag "#{product.products_images.slice(0).image}", class: "product__image" 
+                = number_with_delimiter(product.price)
+            = image_tag "#{product.products_images.slice(0).image}", class: "product__image"
+            - if product.progress == "交渉中"
+              .ribbon-2
+                .ribbon-2__text
+                  SOLD
+          
             
   .category
     .category-border

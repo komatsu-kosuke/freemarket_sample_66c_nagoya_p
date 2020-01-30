@@ -2,12 +2,19 @@
 // ↓キャンペーンスライド
 
 
-.image-slide {
+.slide{
   height: 400px;
   width: 100%;
-  background-color: yellow;
-  background: image-url("slide.jpg") center top/cover no-repeat;
 }
+.slide {
+  position:relative;
+}
+  .slide_img{
+    position:absolute;
+    left:0;
+    top:0;
+  }
+
 
 // ↓いいねした商品
 
@@ -24,6 +31,7 @@
     padding: 30px;
     margin: 0 auto;
     background-color: white;
+    position: relative;
     &__text {
       height: 40px;
       line-height: 20px;
@@ -174,53 +182,6 @@
   }
 }
 
-.ladynew-end {
-  height:600px;
-  background-color: rgb(248, 247, 247);
-  padding-top: 50px;
-  padding-bottom: 50px;
-  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
-  &-border {
-    height: 600px;
-    width: 1060px;
-    margin: 0 auto;
-    &__text {
-      height: 60px;
-      line-height: 60px;
-      color: black;
-      font-size: 23px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      &-1 {
-        color: rgb(45, 128, 196);
-        font-weight: bold;
-        font-size: 15px;
-      }
-    }
-    &__frame {
-      height:250px;
-      margin-bottom: 15px;
-      background-color: rgb(248, 247, 247);
-      display: flex;
-      justify-content: space-between;
-      &__things {
-        width: 180px;
-        background-color: white;
-        &-image {
-          height: 50px;
-          padding-top: 130px;
-          background: image-url("ringo.jpg") center top/cover no-repeat;
-        }
-        &-text {
-          padding: 10px;
-          font-size: 15px;
-        }
-      }
-    }
-  }
-}
-
 
 // ↓出品ボタン
 
@@ -253,13 +214,26 @@
 
 
 
-.product__image {
-  width: 150px;
-  height: 100%;
-  margin-left: 25px;
-  margin-right: 25px;
+.ribbon-2 {
+  width: 5px;
+  height: 5px;
+  position: relative;
+  border-top: 70px solid #DC143CE8;
+  border-right: 70px solid transparent;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  position: absolute;
+  bottom: 75px;
+  &__text {
+    width: 100px;
+    height: 50px;
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    bottom: 32px;
+    left: 7px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+  }
 }
-.product__image2 {
-  width: 200px;
-  height: 200px;
-}
+
