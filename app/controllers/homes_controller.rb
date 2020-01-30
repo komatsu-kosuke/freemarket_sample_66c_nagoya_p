@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
   def index
-    @product = Product.order(created_at: "DESC").limit(5)
+    @products = Product.order(created_at: "DESC").limit(10)
   end
 
   def show
@@ -9,11 +9,13 @@ class HomesController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    # サーバーサイド未実装のため
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
+    @user.update!(user_params)
     redirect_to profile_home_path
   end
 

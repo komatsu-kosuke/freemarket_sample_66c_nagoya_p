@@ -1,31 +1,31 @@
-.wraper
+.wrapper
   .sell-btn
     .sell-btn__text 出品
     %i.fas.fa-camera
-= render "homes/header"
+  = render "homes/header"
 
-- breadcrumb :exhibition, class: "breadcrumbs"
-= breadcrumbs pretext: "",separator: " &rsaquo; "
+  - breadcrumb :mypage, class: "breadcrumbs"
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
 
-.mypage
-  = render "homes/side-bar"
-  .exhibition
-    .exhibition__header
-      出品した商品
-    .exhibition__main
-      = link_to '出品中', listing_account_path, class: "exhibition__main__left"
-      = link_to '取引中', listing_progress_account_path, class: "exhibition__main__center"
-      = link_to '売却済み', completed_account_path, class: "exhibition__main__right"
-    .exhibition__footer
-      - @product.each do |product|
-        = link_to product_path(product.id), class: "exhibition__footer__box" do
-          .exhibition__footer__box__image
-            = image_tag "#{product.products_images.slice(0).image}", class: "exhibition__footer__box__image__box" 
-            .exhibition__footer__box__image__text
-              = product.name
-              .exhibition__footer__box__image__status
-                出品中
-          .exhibition__footer__box__arrow >
+  .mypage
+    = render "homes/side-bar"
+    .exhibition
+      .exhibition__header
+        出品した商品
+      .exhibition__main
+        = link_to '出品中', listing_account_path, class: "exhibition__main__left"
+        = link_to '取引中', listing_progress_account_path, class: "exhibition__main__center"
+        = link_to '売却済み', completed_account_path, class: "exhibition__main__right"
+      .exhibition__footer
+        - @product.each do |product|
+          = link_to product_path(product.id), class: "exhibition__footer__box" do
+            .exhibition__footer__box__image
+              = image_tag "#{product.products_images.slice(0).image}", class: "exhibition__footer__box__image__box" 
+              .exhibition__footer__box__image__text
+                = product.name
+                .exhibition__footer__box__image__status
+                  出品中
+            .exhibition__footer__box__arrow >
 
 
-= render "homes/footer"
+  = render "homes/footer"

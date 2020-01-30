@@ -1,17 +1,18 @@
-= render "header"
+.wrapper
+  = render "header"
 
-- breadcrumb :profile, class: "breadcrumbs"
-= breadcrumbs pretext: "",separator: " &rsaquo; "
+  - breadcrumb :profile, class: "breadcrumbs"
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
 
-.mypage
-  = render "side-bar"
-  .profile
-    = form_for(@user, url: home_path) do |f|
-      .profile__text プロフィール
-      .profile__frame
-        .profile__frame__icon
-        = f.text_field :nickname, placeholder:"#{@user.nickname}", class: "profile__frame__name" 
-      .profile__info
-        = f.text_area :description, placeholder:"例）こんにちは！ご覧いただきありがとうございます！気持ちよくお取引できるよう心がけて参りますので、よろしくお願いします♪", class: "profile__info__text"
-        = f.submit "変更する", class: "profile__info__btn"
-= render "footer"
+  .mypage
+    = render "side-bar"
+    .profile
+      = form_for(@user, url: home_path) do |f|
+        .profile__text プロフィール
+        .profile__frame
+          .profile__frame__icon
+          = f.text_field :nickname, placeholder:"#{@user.nickname}", class: "profile__frame__name" 
+        .profile__info
+          = f.text_area :description, placeholder:"例）こんにちは！ご覧いただきありがとうございます！気持ちよくお取引できるよう心がけて参りますので、よろしくお願いします♪", class: "profile__info__text"
+          = f.submit "変更する", class: "profile__info__btn"
+  = render "footer"

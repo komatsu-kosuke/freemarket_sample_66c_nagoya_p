@@ -10,11 +10,9 @@
             .product_main_contents_main_left_top
               = image_tag "#{@product_image.image}", class: "product_main_contents_main_left_top_t"
             .product_main_contents_main_left_bottom
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
+              - @products_images.each do |product|
+                .product_main_contents_main_left_bottom_1
+                  = image_tag "#{product.image}", class: "product_main_contents_main_left_bottom_1"
           = render "status"
 
         .product_main_contents_price
@@ -43,11 +41,9 @@
             .product_main_contents_main_left_top
               = image_tag "#{@product_image.image}", class: "product_main_contents_main_left_top_t"
             .product_main_contents_main_left_bottom
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
-              .product_main_contents_main_left_bottom_1
+              - @products_images.each do |product|
+                .product_main_contents_main_left_bottom_1
+                  = image_tag "#{product.image}", class: "product_main_contents_main_left_bottom_1"
           = render "status"
 
         .product_main_contents_price
@@ -100,4 +96,4 @@
     .ribbon
       .ribbon__text
         SOLD
-= render "homes/footer"
+  = render "homes/footer"
