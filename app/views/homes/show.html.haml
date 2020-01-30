@@ -2,95 +2,95 @@
   = link_to new_product_path, class: 'sell-btn' do
     .sell-btn__text 出品
     %i.fas.fa-camera
-= render "header"
+  = render "header"
 
-- breadcrumb :mypage, class: "breadcrumbs"
-= breadcrumbs pretext: "",separator: " &rsaquo; "
+  - breadcrumb :mypage, class: "breadcrumbs"
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
 
-.mypage
-  = render "side-bar"
-    
-  .main
-    .main-top
-      .main-top__back
-        .main-top__back__image
-        .main-top__back__name
-          = @user.nickname
-        .main-top__back__value 評価 10 出品数  18
-      .main-top__category
-        .main-top__category__content お知らせ
-        .main-top__category__content やることリスト
-      .main-top__content
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text 小松さんがいいねしました
-            .main-top__content__frame__things__time 2時間前
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text まっつんさんがいいねしました
-            .main-top__content__frame__things__time 12時間前
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text たかしまさんがいいねしました
-            .main-top__content__frame__things__time 13時間前
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text 事務局から個別メッセージ
-            .main-top__content__frame__things__time 1日前
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text 松島さんがいいねしました
-            .main-top__content__frame__things__time 2日前
-          .main-top__content__frame__text ＞
-        .main-top__index
-          .main-top__index__btn 一覧を見る
+  .mypage
+    = render "side-bar"
+      
+    .main
+      .main-top
+        .main-top__back
+          .main-top__back__image
+          .main-top__back__name
+            = @user.nickname
+          .main-top__back__value 評価 10 出品数  18
+        .main-top__category
+          .main-top__category__content お知らせ
+          .main-top__category__content やることリスト
+        .main-top__content
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text 小松さんがいいねしました
+              .main-top__content__frame__things__time 2時間前
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text まっつんさんがいいねしました
+              .main-top__content__frame__things__time 12時間前
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text たかしまさんがいいねしました
+              .main-top__content__frame__things__time 13時間前
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text 事務局から個別メッセージ
+              .main-top__content__frame__things__time 1日前
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text 松島さんがいいねしました
+              .main-top__content__frame__things__time 2日前
+            .main-top__content__frame__text ＞
+          .main-top__index
+            .main-top__index__btn 一覧を見る
 
-    .main-bottom
-      .main-bottom__product 購入した商品
-      .main-bottom__category
-        .main-top__category__content 取引中
-        .main-top__category__content 過去の取引
-      .main-bottom__content
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text トリートメントを購入しました
-            .main-bottom__content__frame__things__logo 取引中
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text ボディーソープを購入しました
-            .main-bottom__content__frame__things__logo 取引中
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text ピアスを購入しました
-            .main-bottom__content__frame__things__logo 取引中
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text シャンプーを購入しました
-            .main-bottom__content__frame__things__logo 取引中
-          .main-top__content__frame__text ＞
-        .main-top__content__frame
-          .main-top__content__frame__image
-          .main-top__content__frame__things
-            .main-top__content__frame__things__text ティッシュカバーを購入しました
-            .main-bottom__content__frame__things__logo 取引中
-          .main-top__content__frame__text ＞
-        .main-top__index
-          .main-top__index__btn 一覧を見る
-        .main-bottom__end
-= render "footer"
+      .main-bottom
+        .main-bottom__product 購入した商品
+        .main-bottom__category
+          .main-top__category__content 取引中
+          .main-top__category__content 過去の取引
+        .main-bottom__content
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text トリートメントを購入しました
+              .main-bottom__content__frame__things__logo 取引中
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text ボディーソープを購入しました
+              .main-bottom__content__frame__things__logo 取引中
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text ピアスを購入しました
+              .main-bottom__content__frame__things__logo 取引中
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text シャンプーを購入しました
+              .main-bottom__content__frame__things__logo 取引中
+            .main-top__content__frame__text ＞
+          .main-top__content__frame
+            .main-top__content__frame__image
+            .main-top__content__frame__things
+              .main-top__content__frame__things__text ティッシュカバーを購入しました
+              .main-bottom__content__frame__things__logo 取引中
+            .main-top__content__frame__text ＞
+          .main-top__index
+            .main-top__index__btn 一覧を見る
+          .main-bottom__end
+  = render "footer"

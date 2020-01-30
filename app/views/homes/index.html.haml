@@ -10,7 +10,6 @@
         .like-things__frame__text いいね！した商品
         .like-things__frame__text-1 すべて見る >
       .like-things__frame__info
-
         - @product.each do |product|
           = link_to product_path(product.id) do
             .like-things__frame__info__product__frame
@@ -34,8 +33,6 @@
         .ladynew-border__text レディース新着アイテム
         .ladynew-border__text-1 もっと見る >
       = render "product"
-      -# .contents.row
-        -# %img{src: "#{@products_image.image}"}
   .ladynew
     .ladynew-border
       .ladynew-border__text
@@ -49,12 +46,12 @@
         .ladynew-border__text-1 もっと見る >
       = render "product"
 
-  .ladynew-end
-    .ladynew-end-border
-      .ladynew-end-border__text
-        .ladynew-end-border__text おもちゃ・ホビー・グッズ新着アイテム
-        .ladynew-end-border__text-1 もっと見る >
-      = render "product-end"
+  .ladynew
+    .ladynew-border
+      .ladynew-border__text
+        .ladynew-border__text おもちゃ・ホビー・グッズ新着アイテム
+        .ladynew-border__text-1 もっと見る >
+      = render "product"
 
   .category
     .category-border
@@ -86,11 +83,11 @@
         .ladynew-border__text-1 もっと見る >
       = render "product"
 
-  .ladynew-end
-    .ladynew-end-border
-      .ladynew-end-border__text
-        .ladynew-end-border__text ナイキ新着アイテム
-        .ladynew-end-border__text-1 もっと見る >
-      = render "product-end"
+  .ladynew
+    .ladynew-border
+      .ladynew-border__text
+        .ladynew-border__text ナイキ新着アイテム
+        .ladynew-border__text-1 もっと見る >
+      = render "product"
 
   = render "footer"
