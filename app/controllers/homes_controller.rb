@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
 
   def index
+    @product = Product.order(created_at: "DESC").limit(5)
     @products = Product.order(created_at: "DESC").limit(10)
   end
 
