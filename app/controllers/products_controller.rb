@@ -31,10 +31,9 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    @address = Address.find(current_user.id)
     @product = Product.find_by(id: params[:id])
     @user = User.find(@product.users_id)
-   
+    @address = Address.find(current_user.id)
     @product_image = ProductsImage.find_by(product_id: params[:id])
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
