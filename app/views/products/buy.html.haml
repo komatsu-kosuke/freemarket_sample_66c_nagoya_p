@@ -12,7 +12,8 @@
         .buy__frame__product__right__price
           .buy__frame__product__right__price__logo ￥
           .buy__frame__product__right__price__en
-            = @product.price
+            = number_with_delimiter @product.price
+            = @product.progress
           .buy__frame__product__right__price__tax （税込）
           .buy__frame__product__right__price__shipping 送料込み
     .buy__frame__low
@@ -21,9 +22,10 @@
           .buy__frame__low__price__border__text 支払い金額
           .buy__frame__low__price__border__en ￥
           .buy__frame__low__price__border__num
-            = @product.price
+            = number_with_delimiter(@product.price)
         .buy__frame__low__price__check ポイントを使用（所持ポイント: P0）
-
+        = form_for(@product, url: pay_product_path , method: :post) do |f|
+          = f.select :progress, Product.progresses.keys, {}, class:"hidden"
 
 
       .buy__frame__low__card
@@ -41,24 +43,23 @@
 
 
 
-
+    
       .buy__frame__low__shipping
-        .buy__frame__low__shipping__left
-          .buy__frame__low__shipping__left__text 配送先
-          .buy__frame__low__shipping__left__yuubin
-            = @address.zipcode
-          .buy__frame__low__shipping__left__house
-            = @address.prefecture
-            = @address.city
-            = @address.district
-            = @address.building
-          .buy__frame__low__shipping__left__user
-            = @user.familyname
-            = @user.firstname
-        = link_to "変更する", edit_account_path, class: "buy__frame__low__shippng__right"
-      .buy__frame__low__btn
-        = form_tag(action: :pay, method: :post) do
-          %button 購入する
+        = form_for(@product, url: pay_product_path , method: :post) do |f|
+          .buy__frame__low__shipping__left
+            .buy__frame__low__shipping__left__text 配送先
+            .buy__frame__low__shipping__left__yuubin
+              = @address.zipcode
+            .buy__frame__low__shipping__left__house
+              = @address.prefecture
+              = @address.city
+              = @address.district
+              = @address.building
+            .buy__frame__low__shipping__left__user
+              = @user.familyname
+              = @user.firstname
+          = link_to "変更する", edit_account_path, class: "buy__frame__low__shippng__right"
+          %button{class: "buy__frame__low__btn"} 購入する
 .single-footer
   .single-footer-box
     .single-footer-box-top

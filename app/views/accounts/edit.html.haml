@@ -21,21 +21,24 @@
         .indent__main__box__3__name
           お名前
         .indent__main__box__3__input
-          = @user.familyname
-          = @user.firstname
+          = current_user.familyname
+          = current_user.firstname
       .indent__main__box__4
         .indent__main__box__4__name
           お名前 カナ
         .indent__main__box__4__input
-          = @user.familyname_kana
-          = @user.firstname_kana
+          = current_user.familyname_kana
+          = current_user.firstname_kana
       .indent__main__box__5
         .indent__main__box__5__name
           生年月日
         .indent__main__box__5__input
-          = @user.birthyear
-          = @user.birthmonth
-          = @user.birthday
+          = current_user.birthyear
+          %span 年
+          = current_user.birthmonth
+          %span 月
+          = current_user.birthday
+          %span 日
       .indent__main__box__6
         .indent__main__box__6__name
           郵便番号

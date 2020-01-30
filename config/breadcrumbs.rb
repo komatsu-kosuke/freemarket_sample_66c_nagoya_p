@@ -8,7 +8,9 @@ crumb :mypage do
 end
 
 crumb :profile do
+  
   link "プロフィール", profile_home_path(current_user.id)
+
   parent :mypage
 end
 
@@ -44,6 +46,7 @@ end
 
 crumb :logout do
   link "ログアウト"
+
   parent :mypage
 end
 # crumb :projects do

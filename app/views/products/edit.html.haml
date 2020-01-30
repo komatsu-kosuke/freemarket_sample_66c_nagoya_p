@@ -3,7 +3,7 @@
 
 .main-new
   .main-frame
-    = form_for(@product, url: product_path) do |f|
+    = form_for(@product, url: product_path, method:'patch') do |f|
       .main-frame__infomation 商品の情報を入力
       .main-frame__image
         = f.fields_for :products_images do |i|
@@ -11,7 +11,12 @@
             .main-frame__image__text__trading 出品画像
             .main-frame__image__text__btn 必須
           .main-frame__image__upload 最大10枚までアップロードできます
-          = i.file_field :image, :placeholder => "#{@product_image.image}", class: "main-frame__image__up"
+          #image-box
+            .js-file_group{"data-index" => "#{i.index}"}
+              = i.file_field :image, class: "main-frame__image__up"
+              %br/
+              %span.js-remove 削除
+
       .main-frame__product
         .main-frame__product__name
           .main-frame__product__name__border
@@ -35,7 +40,7 @@
             .main-frame__show__right__category__btn 必須
           = f.select :status, ["新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"], {:prompt => "---"}, {class: "category-frame__end"}
       .main-frame__deli
-        .main-frame__deli__left 
+        .main-frame__deli__left
           .main-frame__deli__left__text 配送について
           .main-frame__deli__left__logo ？
         .main-frame__deli__right
@@ -86,8 +91,8 @@
           .main-frame__text__info__ten また、出品をもちまして
           .main-frame__text__info__link 加盟店規約
           .main-frame__text__info__ten に同意したことになります。
-      = f.submit "出品する", class: "main-frame__btn"
-      = link_to "もどる", homes_path, class: "main-frame__back"
+      = f.submit "編集する", class: "main-frame__btn"
+      
 .single-footer
   .single-footer-box
     .single-footer-box-top

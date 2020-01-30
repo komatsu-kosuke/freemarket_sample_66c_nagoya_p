@@ -9,22 +9,25 @@
 
 
 .mypage
-  = render "side-bar"
+  = render "homes/side-bar"
   .credit__main2
     .credit__main2__top
       登録クレジットカード情報
     .credit__main3__top
       クレジットカード一覧
     .credit__main3__number
+      .credit__main3__number__mark
       = "**** **** **** " + @default_card_information.last4
       .credit__main3__delete
         = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
           %input{ type: "hidden", name: "card_id", value: "" }
-          %button 削除する
+          %button{ class: "credit__main3__delete__btn" } 削除する
     .credit__main3__date
-      - exp_month = @default_card_information.exp_month.to_s
-      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-      = exp_month + " / " + exp_year
+      有効期限 :
+      .credit__main3__date__text
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(0,4)
+        = " 西暦 " + exp_year + " 年 " + exp_month + " 月 "
     .credit__main3__footer
       支払い方法について  ＞
 
