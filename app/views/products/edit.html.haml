@@ -13,10 +13,10 @@
           .main-frame__image__upload 最大10枚までアップロードできます
           #image-box
             .js-file_group{"data-index" => "#{i.index}"}
-              = i.file_field :image, :placeholder => "#{@product_image.image}", class: "main-frame__image__up"
+              = i.file_field :image, class: "main-frame__image__up"
               %br/
               %span.js-remove 削除
-          
+
       .main-frame__product
         .main-frame__product__name
           .main-frame__product__name__border
@@ -91,8 +91,8 @@
           .main-frame__text__info__ten また、出品をもちまして
           .main-frame__text__info__link 加盟店規約
           .main-frame__text__info__ten に同意したことになります。
-      = f.submit "出品する", class: "main-frame__btn"
-      = link_to "もどる", homes_path, class: "main-frame__back"
+      = f.submit "編集する", class: "main-frame__btn"
+      
 .single-footer
   .single-footer-box
     .single-footer-box-top

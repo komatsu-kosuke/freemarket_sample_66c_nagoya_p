@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       @product_image = ProductsImage.find_by(product_id: params[:id])
       @shipping = Shipping.find_by(product_id: params[:id])
-      if @product_image.destroy && @shipping.destroy && @product.destroy
+      if @product.destroy
       else
         redirect_back(fallback_location: root_path)
       end
@@ -72,7 +72,9 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @shipping = Shipping.find_by(product_id: params[:id])
-    @product_image = ProductsImage.find_by(product_id: params[:id])
+    @product_image = ProductsImage.where(product_id: params[:id])
+    @product_image.destroy_all
+    @product.products_images.build
   end
 
   def update
@@ -89,7 +91,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :status, :users_id, :category_id, :brand_id, :size_id, shipping_attributes:[:fee_burden, :prefecture_from, :period_before_shipping, :_destroy], products_images_attributes:[:image, :_destroy]).merge(users_id: current_user.id)
+    params.require(:product).permit(:name, :description, :price, :status, :users_id, :category_id, :brand_id, :size_id, :progress, shipping_attributes:[:fee_burden, :prefecture_from, :period_before_shipping], products_images_attributes:[:image, :_destroy]).merge(users_id: current_user.id)
   end
 
 end
