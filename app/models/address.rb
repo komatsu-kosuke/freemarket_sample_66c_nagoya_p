@@ -5,6 +5,8 @@ class Address < ApplicationRecord
   VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
 
+  
+
   validates :zipcode, presence: true, length: { maximum: 8 }
   validates :prefecture, presence: { message: 'を選択してください'}
   validates :city, presence: true, length: { maximum: 50 }
@@ -19,3 +21,4 @@ class Address < ApplicationRecord
   #   validates :building
   # end
 end
+
