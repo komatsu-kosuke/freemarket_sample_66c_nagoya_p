@@ -2,12 +2,19 @@
 // ↓キャンペーンスライド
 
 
-.image-slide {
+.slide{
   height: 400px;
   width: 100%;
-  background-color: yellow;
-  background: image-url("slide.jpg") center top/cover no-repeat;
 }
+.slide {
+  position:relative;
+}
+  .slide_img{
+    position:absolute;
+    left:0;
+    top:0;
+  }
+
 
 // ↓いいねした商品
 
@@ -41,7 +48,6 @@
     &__info {
       height: 150px;
       display: flex;
-      
       position: relative;
       &__product {
         width: 150px;

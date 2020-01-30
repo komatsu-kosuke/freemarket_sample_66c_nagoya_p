@@ -3,17 +3,47 @@ crumb :root do
 end
 
 crumb :mypage do
-  link "マイページ", home_path
+  link "マイページ", home_path(current_user.id)
   parent :root
 end
 
 crumb :profile do
-  link "プロフィール編集", profile_home_path
+  link "プロフィール", profile_home_path(current_user.id)
   parent :mypage
 end
 
+crumb :profile1 do
+  link "本人情報"
+  parent :mypage
+end
+
+crumb :credit do
+  link "支払い方法", credit_home_path(current_user.id)
+  parent :mypage
+end
+
+crumb :creditcard do
+  link "クレジットカード情報入力"
+  parent :credit
+end
+
 crumb :exhibition do
-  link "商品出品", accounts_path
+  link "出品した商品"
+  parent :mypage
+end
+
+crumb :exhibition1 do
+  link "取引中の商品"
+  parent :mypage
+end
+
+crumb :exhibition2 do
+  link "売却済みの商品"
+  parent :mypage
+end
+
+crumb :logout do
+  link "ログアウト"
   parent :mypage
 end
 # crumb :projects do
