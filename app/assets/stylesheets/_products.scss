@@ -18,6 +18,7 @@
     background-color: white;
     margin: 0 auto;
     padding: 30px 45px;
+    position: relative;
     &_title {
       height: 50px;
       width: 100%;
@@ -47,7 +48,8 @@
           &_t {
             width: 300px;
             height: 300px;
-            
+            display: flex;
+            justify-content: flex-start;
           }
         }
         &_bottom {
@@ -57,7 +59,7 @@
           &_1 {
             height: 100%;
             width: 60px;
-            background: image-url("ringo.jpg") center top/cover no-repeat;
+            background-color: whitesmoke;
           }
         }
       }
@@ -88,7 +90,7 @@
             justify-content: center;
             text-align: center;
             font-size: 13px;
-            
+            color: #00bfff;
           }
         }
         &_2 {
@@ -112,7 +114,7 @@
             justify-content: center;
             text-align: center;
             font-size: 13px;
-            
+            color: #00bfff;
           }
         }
         &_3 {
@@ -212,8 +214,8 @@
     &_buy_btn {
       height: 60px;
       width: 100%;
-      background-color: rgb(255, 35, 35);
-      font-size: 25px;
+      background-color: #DC143CE8;
+      font-size: 20px;
       font-weight: bold;
       margin-top: 15px;
       display: flex;
@@ -285,7 +287,7 @@
     &_caution {
       height: 50px;
       width: 100%;
-      background-color: rgb(249, 255, 159);
+      background-color: rgba(249, 255, 159, 0.527);
       font-size: 14px;
       display: flex;
       align-items: center;
@@ -436,6 +438,7 @@
   background-color: rgb(245, 245, 245);
   width: 100%;
   height: 100%;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
   &__frame {
     width: 700px;
     margin: 0 auto;
@@ -509,6 +512,9 @@
         justify-content: space-between;
         border-bottom: 0.5px solid;
         border-color: #f5f5f5;
+        & a {
+          color: #00bfff;
+        }
         &__left {
           &__text-1 {
             font-weight: bold;
@@ -546,6 +552,9 @@
         justify-content: space-between;
         border-bottom: 0.5px solid;
         border-color: #f5f5f5;
+        & a {
+          color: #00bfff;
+        }
         &__left {
           &__text {
             font-weight: bold;
@@ -565,6 +574,7 @@
         }
         &__right {
           font-size: 15px;
+          
         }
       }
       &__btn {
@@ -574,10 +584,37 @@
         line-height: 50px;
         color: white;
         font-weight: bold;
-        background-color: rgb(245, 1, 1);
+        background-color: #DC143CE8;
         margin-top: 30px;
         margin-bottom: 40px;
+        font-size: 17px;
       }
     }
+  }
+}
+.hidden {
+  display: none;
+}
+.ribbon {
+  width: 5px;
+  height: 5px;
+  position: relative;
+  position: absolute;
+  top: 144px;
+  left: 405px;
+  border-top: 130px solid #DC143CE8;
+  border-right: 130px solid transparent;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  &__text {
+    width: 100px;
+    height: 50px;
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    bottom: 65px;
+    left: 15px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
   }
 }

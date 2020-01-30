@@ -25,6 +25,7 @@
     padding: 30px;
     margin: 0 auto;
     background-color: white;
+    position: relative;
     &__text {
       height: 40px;
       line-height: 20px;
@@ -279,4 +280,27 @@
   width: 200px;
   height: 180px;
   margin-right: 12px;
+}
+
+.ribbon-2 {
+  width: 5px;
+  height: 5px;
+  position: relative;
+  border-top: 70px solid #DC143CE8;
+  border-right: 70px solid transparent;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  position: absolute;
+  bottom: 75px;
+  &__text {
+    width: 100px;
+    height: 50px;
+    transform: rotate(-45deg);
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    bottom: 32px;
+    left: 7px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+  }
 }

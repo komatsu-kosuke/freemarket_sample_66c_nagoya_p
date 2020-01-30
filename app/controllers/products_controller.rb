@@ -31,9 +31,10 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    @user = User.find(params[:id])
-    @product = Product.find(params[:id])
-    @address = Address.find(params[:id])
+    @address = Address.find(current_user.id)
+    @product = Product.find_by(id: params[:id])
+    @user = User.find(@product.users_id)
+   
     @product_image = ProductsImage.find_by(product_id: params[:id])
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
@@ -43,13 +44,14 @@ class ProductsController < ApplicationController
 
   def pay
     @product = Product.find(params[:id])
-    @card = Card.find(params[:id])
+    @card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
     amount: @product.price,
     customer: @card.customer_id, 
     currency: 'jpy',
     )
+    @product = @product.update(progress: 2, buyer_id: current_user.id)
     redirect_to action: 'done' 
   end
 

@@ -7,7 +7,7 @@
           .ladynew-border__frame__things-image__frame
             .ladynew-border__frame__things-image__frame__logo ¥
             .ladynew-border__frame__things-image__frame__price
-              = product.price
+              = number_with_delimiter(product.price)
           .ladynew-border__frame__things-text
             = product.name
 

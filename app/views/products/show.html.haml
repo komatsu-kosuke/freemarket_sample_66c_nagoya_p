@@ -21,7 +21,7 @@
           .product_main_contents_price_a
             ¥
           .product_main_contents_price_money
-            = @product.price
+            = number_with_delimiter(@product.price)
           .product_main_contents_price_tax
             (税込)
           .product_main_contents_price_fee
@@ -54,13 +54,16 @@
           .product_main_contents_price_a
             ¥
           .product_main_contents_price_money
-            = @product.price
+            = number_with_delimiter(@product.price)
           .product_main_contents_price_tax
             (税込)
           .product_main_contents_price_fee
             送料込み
         .product_main_contents_text
-        = link_to "購入画面に進む", buy_product_path, class: "product_main_contents_buy_btn"
+        - if @product.progress == "交渉中"  
+          = link_to "#{current_user.nickname}さんが購入済みです", root_path, class: "product_main_contents_buy_btn"
+        - else
+          = link_to "購入画面に進む", buy_product_path, class: "product_main_contents_buy_btn"
         .product_main_contents_description
           = @product.description
         .product_main_contents_item_btn
@@ -93,4 +96,8 @@
           %i.fab.fa-twitter-square
         .product_main_sns_box_line
           %i.fab.fa-line
+  - if @product.progress == "交渉中"
+    .ribbon
+      .ribbon__text
+        SOLD
 = render "homes/footer"
