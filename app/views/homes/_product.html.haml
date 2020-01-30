@@ -1,11 +1,22 @@
 .ladynew-border__frame
   - @products.each do |product|
-    = link_to product_path(product.id) do
-      .ladynew-border__frame__things
-        .ladynew-border__frame__things__frame
-          .ladynew-border__frame__things__frame__logo ¥
-          .ladynew-border__frame__things__frame__price
-            = product.price
-        = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
-        .ladynew-border__frame__things__text
-          = product.name
+    - unless user_signed_in?
+      = link_to signup_index_path(product.id) do
+        .ladynew-border__frame__things
+          .ladynew-border__frame__things__frame
+            .ladynew-border__frame__things__frame__logo ¥
+            .ladynew-border__frame__things__frame__price
+              = product.price
+          = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
+          .ladynew-border__frame__things__text
+            = product.name
+    - else
+      = link_to product_path(product.id) do
+        .ladynew-border__frame__things
+          .ladynew-border__frame__things__frame
+            .ladynew-border__frame__things__frame__logo ¥
+            .ladynew-border__frame__things__frame__price
+              = product.price
+          = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
+          .ladynew-border__frame__things__text
+            = product.name
