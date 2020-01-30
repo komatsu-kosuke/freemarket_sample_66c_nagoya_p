@@ -4,6 +4,7 @@
 .main-new
   .main-frame
     = form_for(@product, url: products_path) do |f|
+      = f.select :progress, Product.progresses.keys, {}, class:"hidden"
       .main-frame__infomation 商品の情報を入力
       .main-frame__image
         = f.fields_for :products_images do |i|

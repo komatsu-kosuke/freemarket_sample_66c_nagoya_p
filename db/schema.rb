@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 125500113055006) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "zipcode", null: false
+    t.string "zipcode", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "district", null: false
@@ -91,10 +91,12 @@ ActiveRecord::Schema.define(version: 125500113055006) do
     t.bigint "category_id"
     t.bigint "brand_id"
     t.bigint "size_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "progress", null: false
+    t.integer "progress", default: 1, null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["size_id"], name: "index_products_on_size_id"
     t.index ["users_id"], name: "index_products_on_users_id"
