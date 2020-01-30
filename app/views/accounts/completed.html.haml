@@ -1,21 +1,21 @@
-.wraper
+.wrapper
   .sell-btn
     .sell-btn__text 出品
     %i.fas.fa-camera
-= render "homes/header"
+  = render "homes/header"
 
-- breadcrumb :exhibition2, class: "breadcrumbs"
-= breadcrumbs pretext: "",separator: " &rsaquo; "
+  - breadcrumb :mypage, class: "breadcrumbs"
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
 
-.mypage
-  = render "homes/side-bar"
-  .exhibition
-    .exhibition__header
-      出品した商品
-    .exhibition__main
-      = link_to '出品中', listing_account_path, class: "exhibition__main__left3"
-      = link_to '取引中', listing_progress_account_path, class: "exhibition__main__center"
-      = link_to '売却済み', completed_account_path, class: "exhibition__main__right3"
-    .exhibition__footer
-    
-= render "homes/footer"
+  .mypage
+    = render "homes/side-bar"
+    .exhibition
+      .exhibition__header
+        出品した商品
+      .exhibition__main
+        = link_to '出品中', listing_account_path, class: "exhibition__main__left3"
+        = link_to '取引中', listing_progress_account_path, class: "exhibition__main__center"
+        = link_to '売却済み', completed_account_path, class: "exhibition__main__right3"
+      .exhibition__footer
+      
+  = render "homes/footer"

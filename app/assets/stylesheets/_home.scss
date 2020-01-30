@@ -22,7 +22,6 @@
 .like-things {
   height: 240px;
   padding-top: 30px;
-  padding-bottom: 30px;
   width: 100%;
   background-color: rgb(248, 247, 247);
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
@@ -54,8 +53,6 @@
         width: 150px;
         height: 50px;
         padding-top: 100px;
-        background: image-url("ringo.jpg") center top/cover no-repeat;
-
         &__frame {
           line-height: 30px;
           height: 30px;
@@ -65,13 +62,12 @@
           border-top-right-radius: 30px;
           border-bottom-right-radius: 30px;
           margin-top: 100px;
+          margin-left: 25px;
           display: flex;
           justify-content: center;
           position: absolute;
-
           top: 10px;
           font-size: 13px;
-          
           &__logo {
             color: white;
           }
@@ -91,11 +87,12 @@
   height: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
+  margin-top: 30px;
   background-color: white;
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
   &-border {
-    height:100px;
-    width:600px;
+    height: 100px;
+    width: 600px;
     margin: 0 auto;
     &__text {
       font-size: 25px;
@@ -122,87 +119,11 @@
 // ↓レディース新着アイテム
 
 .ladynew {
-  height:600px;
   background-color: rgb(248, 247, 247);
-  padding-top: 50px;
+  padding-top: 30px;
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
   &-border {
-    height: 600px;
-    width: 1060px;
-    margin: 0 auto;
-    &__text {
-      height: 60px;
-      line-height: 60px;
-      color: black;
-      font-size: 23px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      background-color: white;
-      &-1 {
-        color: rgb(45, 128, 196);
-        font-weight: bold;
-        font-size: 15px;
-      }
-    }
-    &__frame {
-      width: 1060px;
-      height:250px;
-      margin-bottom: 15px;
-      background-color: white;
-      position: relative;
-      &__things {
-        width: 200px;
-        background-color: white;
-        display: flex;
-        & a {
-          text-decoration: none;
-          color: rgba(0, 0, 0, 0.76);
-          background-color: white;
-        }
-        &-image {
-
-          height: 50px;
-          padding-top: 130px;
-
-          &__frame {
-            line-height: 30px;
-            height: 30px;
-            width: 80px;
-            background-color:rgba(0, 0, 0, 0.404);
-            font-size: 13px;
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
-            display: flex;
-            position: absolute;
-            top: 10px;
-            &__logo {
-              color: white;
-              margin-right: 5px;
-            }
-            &__price {
-              color: white;
-            }
-          }
-        }
-      &-text {
-        padding: 10px;
-        font-size: 15px;
-      }
-      }
-    }
-  }
-}
-
-.ladynew-end {
-  height:600px;
-  background-color: rgb(248, 247, 247);
-  padding-top: 50px;
-  padding-bottom: 50px;
-  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
-  &-border {
-    height: 600px;
-    width: 1060px;
+    width: 1000px;
     margin: 0 auto;
     &__text {
       height: 60px;
@@ -219,22 +140,42 @@
       }
     }
     &__frame {
-      height:250px;
-      margin-bottom: 15px;
-      background-color: rgb(248, 247, 247);
+      height: 500px;
+      width: 1025px;
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      & a {
+        text-decoration: none;
+      }
       &__things {
+        height: 250px;
         width: 180px;
-        background-color: white;
-        &-image {
-          height: 50px;
-          padding-top: 130px;
-          background: image-url("ringo.jpg") center top/cover no-repeat;
+        margin-right: 25px;
+        position: relative;
+        &__image {
+          height: 180px;
+          width: 180px;
         }
-        &-text {
+        &__frame {
+          line-height: 30px;
+          height: 30px;
+          width: 80px;
+          margin-top: 140px;
+          background-color:rgba(0, 0, 0, 0.404);
+          color: white;
+          font-size: 13px;
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+        }
+        &__text {
+          background-color: white;
+          color: rgba(0, 0, 0, 0.76);
           padding: 10px;
           font-size: 15px;
+          height: 30px;
         }
       }
     }
@@ -271,22 +212,7 @@
   }
 }
 
-.wrapper {
-  position: relative;
-  overflow: scroll;
-}
 
-
-.product__image {
-  width: 150px;
-  height: 100%;
-  margin-right: 40px;
-}
-.product__image2 {
-  width: 200px;
-  height: 180px;
-  margin-right: 12px;
-}
 
 .ribbon-2 {
   width: 5px;
@@ -310,3 +236,4 @@
     letter-spacing: 0.15em;
   }
 }
+

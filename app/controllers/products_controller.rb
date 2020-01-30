@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
     @category = Category.find(@product.category_id)
     @shipping = Shipping.find_by(product_id: params[:id])
     @product_image = ProductsImage.find_by(product_id: params[:id])
+    @products_images = @product.products_images.limit(5)
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "card", action: "new"
