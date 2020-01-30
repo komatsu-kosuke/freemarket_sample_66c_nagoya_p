@@ -71,9 +71,9 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @shipping = Shipping.find_by(product_id: params[:id])
-    @product_image = ProductsImage.where(product_id: params[:id])
-    @product_image.destroy_all
+    @shipping = @product.shipping
+    @products_images = @product.products_images
+    @products_images.destroy_all
     @product.products_images.build
   end
 
