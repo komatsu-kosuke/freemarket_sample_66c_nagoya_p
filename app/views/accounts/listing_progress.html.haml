@@ -17,15 +17,18 @@
         = link_to '購入済み', listing_progress_account_path, class: "exhibition__main__center2"
         = link_to '売却済み', completed_account_path, class: "exhibition__main__right"
       .exhibition__footer
-        - if @product[0][:progress] == "交渉中"
-          - @product.each do |product|
-            = link_to product_path(product.id), class: "exhibition__footer__box" do
-              .exhibition__footer__box__image
-                = image_tag "#{product.products_images.slice(0).image}", class: "exhibition__footer__box__image__box" 
-                .exhibition__footer__box__image__text
-                  = product.name
-                  .exhibition__footer__box__image__status
-                    購入済
-              .exhibition__footer__box__arrow >
+        - unless @product.blank?
+          - if @product[0].progress == "交渉中"
+            - @product.each do |product|
+              = link_to product_path(product.id), class: "exhibition__footer__box" do
+                .exhibition__footer__box__image
+                  = image_tag "#{product.products_images.slice(0).image}", class: "exhibition__footer__box__image__box" 
+                  .exhibition__footer__box__image__text
+                    = product.name
+                    .exhibition__footer__box__image__status
+                      購入済
+                .exhibition__footer__box__arrow >
+          - else
+            .exhibition__footer
 
   = render "homes/footer"

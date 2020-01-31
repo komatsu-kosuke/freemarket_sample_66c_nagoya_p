@@ -9,7 +9,6 @@ class AccountsController < ApplicationController
 
   def listing_progress
     @product = Product.where(progress: "交渉中",buyer_id: current_user.id).order(created_at: "DESC").limit(10)
-    
    
     # @product = Product.find(params[:id])
   end
