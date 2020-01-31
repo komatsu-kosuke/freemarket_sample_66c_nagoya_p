@@ -21,12 +21,11 @@
           - @product.each do |product|
             = link_to product_path(product.id), class: "exhibition__footer__box" do
               .exhibition__footer__box__image
-                - product.products_images.each do |image|
-                  = image_tag "#{image.image}", class: "exhibition__footer__box__image__box" 
-                  .exhibition__footer__box__image__text
-                    = product.name
-                    .exhibition__footer__box__image__status
-                      購入済
+                = image_tag "#{product.products_images.slice(0).image}", class: "exhibition__footer__box__image__box" 
+                .exhibition__footer__box__image__text
+                  = product.name
+                  .exhibition__footer__box__image__status
+                    購入済
               .exhibition__footer__box__arrow >
 
   = render "homes/footer"
