@@ -18,7 +18,7 @@ class AccountsController < ApplicationController
 
   def edit
     @user = User.find(current_user.id)
-    @address = Address.find(current_user.id)
+    @address = Address.find_by(user_id: current_user.id)
   end
 
   def update

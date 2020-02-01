@@ -21,7 +21,7 @@
   .single-main__box
     .single-main__box-top
       電話番号の確認
-    = form_for(@user,url: root_path, method: :get) do |f|
+    = form_for(@user,url: adress_path, method: :get) do |f|
       .phone-main__box-bottom
         .phone-main__box-bottom__inner
           .phone-main__box-bottom__inner__text
@@ -33,3 +33,4 @@
             電話番号は本人確認や本人確認や不正利用本人確認や不正利用防止のために不正利用防止のために利用します。
             他のユーザーに他のユーザーに公開されることはありません。
       
+= render "signup/footer"

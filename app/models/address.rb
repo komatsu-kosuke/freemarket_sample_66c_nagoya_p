@@ -11,7 +11,7 @@ class Address < ApplicationRecord
   validates :prefecture, presence: { message: 'を選択してください'}
   validates :city, presence: true, length: { maximum: 50 }
   validates :district, presence: true, length: { maximum: 100 }
-  validates :building, presence: true, length: { maximum: 50 }
+  validates :building, length: { maximum: 50 }
 
   # with_options presence: true do
   #   validates :zipcode

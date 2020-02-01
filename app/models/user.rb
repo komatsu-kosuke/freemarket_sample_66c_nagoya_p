@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :tradings
   has_many :comments
-  has_many :address
+  has_one :address
   has_many :cards
   
   
@@ -31,25 +31,5 @@ class User < ApplicationRecord
   validates :birthmonth, presence: true
   validates :birthday, presence: true
 
-  validates :phonenumber, presence: true, format: { with: /\A\d{10,11}\z/, message: 'の入力が正しくありません'}
-
-  
-
-  
-  # with_options presence: true do
-    # validates :nickname ,presence: true
-  #   validates :email
-  #   validates :password, length: { minimum: 6 }
-  #   validates :encrypted_password, length: { minimum: 6 }
-  #   validates :address
-  #   validates :familyname
-  #   validates :firstname
-  #   validates :familyname_kana
-  #   validates :firstname_kana
-  #   validates :birthyear
-  #   validates :birthmonth
-  #   validates :birthday
-  #   validates :phonenumber
-  # end
   
 end

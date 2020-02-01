@@ -1,71 +1,95 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   
+  # STEP1 登録方法
+  def new
+    @user = User.new
+   
+  end
 
-  # GET /resource/sign_up
-  # def new
-  #   @user = User.new
-  # end
+  # STEP2 個人情報入力
+  def create
+    @user = User.new(user_params)
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render :new and return
+    end
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    render "sms"
+  end
 
-  # POST /resource
-  # def create
-  #   @user = User.new(sign_up_params)
-  #   unless @user.valid?
-  #     flash.now[:alert] = @user.errors.full_messages
-  #     render :new and return
-  #   end
-  #   session["devise.regist_data"] = {user: @user.attributes}
-  #   session["devise.regist_data"][:user]["password"] = params[:user][:password]
-  #   @address = @user.build_address
-  #   render :new_address
-  # end
+  # STEP3 電話番号入力画面
+  def sms
+  end
+  
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
 
-  # PUT /resource
-  # def update
-  #   super
-  # end
+  # STEP4 住所入力
+  def adress
+    session["devise.regist_data"]["user"]["phonenumber"] = params[:user][:phonenumber]
+    @user = User.new(user_params)
+    @address = @user.build_address
+  end
 
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def address_create
+    @user = User.new(session["devise.regist_data"]["user"])
+    
+    @address = Address.new(address_params)
+    @user.build_address(@address.attributes)
+    @user.save!
+    render 'adress' unless @address.valid?
+    sign_in(:user, @user)
+    
+  end
+  
+  private
 
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+  def user_params
+    params.require(:user).permit(
+      :nickname,
+      :email,
+      :password,
+      :password_confirmation,
+      :phonenumber,
+      :encrypted_password,
+      :familyname,
+      :firstname,
+      :familyname_kana,
+      :firstname_kana,
+      :birthyear,
+      :birthmonth,
+      :birthday
+    )
+  end
 
-  # protected
+  def address_params
+    params.require(:address).permit(
+      :zipcode,
+      :prefecture,
+      :city,
+      :district,
+      :building,
+    )
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
-
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
-
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
-
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :nickname,
+                                                        :email,
+                                                        :password,
+                                                        :password_confirmation,
+                                                        :phonenumber,
+                                                        :encrypted_password,
+                                                        :familyname,
+                                                        :firstname,
+                                                        :familyname_kana,
+                                                        :firstname_kana,
+                                                        :birthyear,
+                                                        :birthmonth,
+                                                        :birthday])
+  end
 end

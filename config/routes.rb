@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'sms', to: 'users/registrations#sms'
+    get 'adress', to: 'users/registrations#adress'
+    post 'create', to: 'users/registrations#create'
+    post 'address_create', to: 'users/registrations#address_create'
+  end
+  
 
   root to: 'homes#index'
-
-  resources :signup, only: [:index, :create] do
-    collection do
-      get 'registration'
-      get 'sms'
-      get 'adress'
-    end
-  end
 
   resources :homes, only: [:index, :show, :edit, :update] do
     member do
