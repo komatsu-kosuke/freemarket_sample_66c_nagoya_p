@@ -32,10 +32,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # STEP4 住所入力
   def adress
     session["devise.regist_data"]["user"]["phonenumber"] = params[:user][:phonenumber]
-    binding.pry
     @user = User.new(user_params)
     @address = @user.build_address
-    render 'sms' unless @user.valid?
   end
 
   def address_create

@@ -31,6 +31,5 @@ class User < ApplicationRecord
   validates :birthmonth, presence: true
   validates :birthday, presence: true
 
-  validates :phonenumber, presence: true, format: { with: /\A\d{10,11}\z/, message: 'の入力が正しくありません'}
   
 end
