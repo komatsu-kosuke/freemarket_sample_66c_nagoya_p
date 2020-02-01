@@ -21,7 +21,7 @@
       .like-things__frame__info
         - @product.each do |product|
           - unless user_signed_in?
-            = link_to signup_index_path(product.id) do
+            = link_to new_user_registration_path(product.id) do
               .like-things__frame__info__product__frame
                 .like-things__frame__info__product__frame__logo ￥
                 .like-things__frame__info__product__frame__price

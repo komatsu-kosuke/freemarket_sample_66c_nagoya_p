@@ -1,7 +1,7 @@
 .ladynew-border__frame
   - @products.each do |product|
     - unless user_signed_in?
-      = link_to signup_index_path(product.id) do
+      = link_to new_user_registration_path(product.id) do
         .ladynew-border__frame__things
           .ladynew-border__frame__things__frame
             .ladynew-border__frame__things__frame__logo ¥
