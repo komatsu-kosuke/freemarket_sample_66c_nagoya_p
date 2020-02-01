@@ -117,3 +117,4 @@ class SignupController < ApplicationController
 #     ).merge(user_id: @user_id.id)
 #   end
 # end
+end
