@@ -8,7 +8,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # STEP1 登録方法
   def new
     @user = User.new
-   
   end
 
   # STEP2 個人情報入力

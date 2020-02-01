@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 20, message: 'を20文字以内にしてください' }, profanity_filter: true
   validates :email, presence: true, uniqueness: { message: 'はすでに使用されています'}
   # validates :password, presence: true, length: { in: 7..128, message: 'を7桁以上にしてください' }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
-  validates :encrypted_password, presence: true, length: { in: 7..128, message: 'を7桁以上にしてください' }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :encrypted_password, presence: true, length: { in: 7..128, message: 'を7桁以上にしてください' }
   validates :familyname, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, profanity_filter: true
   validates :firstname, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, profanity_filter: true
   validates :familyname_kana, presence: true, length: { maximum: 35, message: 'を35文字以内にしてください' }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}, profanity_filter: true
