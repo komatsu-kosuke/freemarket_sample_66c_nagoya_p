@@ -4,7 +4,7 @@
     .single-main__box-top
       新規会員登録
     .single-main__box-bottom
-      = link_to '/signup/registration', class: 'single-main__box-bottom__mail' do
+      = link_to new_user_registration_path, class: 'single-main__box-bottom__mail' do
         .single-main__box-bottom__logo
           %i.far.fa-envelope
         .single-main__box-bottom__text
@@ -19,4 +19,3 @@
           %i.fab.fa-facebook-square
         .single-main__box-bottom__text_g
           Googleで登録する
-= render "footer"

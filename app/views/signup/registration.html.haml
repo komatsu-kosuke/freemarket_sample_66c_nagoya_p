@@ -22,7 +22,7 @@
   .second-main__box
     .second-main__box-top
       会員情報入力
-    = form_for(@user,url: sms_signup_index_path, method: :get) do |f|
+    = form_for(@user,url: root_path, method: :get) do |f|
       .second-main__box-bottom
         .second-main__box-bottom__inner
           .second-main__box-bottom__text
@@ -97,6 +97,6 @@
           .second-main__box-bottom__text-3
             This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
 -# = render "error"
-= render "footer"
+
 
 

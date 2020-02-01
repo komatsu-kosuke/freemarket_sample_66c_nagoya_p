@@ -1,0 +1,27 @@
+.single-header
+  .single-header-box
+    = link_to '', root_path, class: "single-header-box__logo"
+    .progress
+      .progress__text
+        会員情報入力
+      .progress__box
+      .progress__bar
+      .progress__text2
+        電話番号認証
+      .progress__box
+      .progress__bar
+      .progress__text3
+        住所入力
+      .progress__box
+      .progress__bar
+      .progress__text4
+        登録完了
+      .progress__box
+.single-main
+  .single-main__box
+    .single-main__box-top
+      新規会員登録完了
+    .single-main__box-bottom
+      .create-text
+        = link_to 'アプリを始める', '/'
+= render "signup/footer"
