@@ -1,26 +1,26 @@
 .ladynew-border__frame
-  - @products.each do |product|
-    - unless user_signed_in?
-      = link_to new_user_registration_path(product.id) do
-        .ladynew-border__frame__things
-          .ladynew-border__frame__things__frame
-            .ladynew-border__frame__things__frame__logo ¥
-            .ladynew-border__frame__things__frame__price
-              = number_with_delimiter(product.price)
-          = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
-          .ladynew-border__frame__things__text
-            = product.name
-    - else
-      = link_to product_path(product.id) do
-        .ladynew-border__frame__things
-          .ladynew-border__frame__things__frame
-            .ladynew-border__frame__things__frame__logo ¥
-            .ladynew-border__frame__things__frame__price
-              = number_with_delimiter(product.price)
-          = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
-          .ladynew-border__frame__things__text
-            = product.name
-          - if product.progress == "交渉中"
-            .ribbon-3
-              .ribbon-3__text
-                SOLD
+  -# - @products.each do |product|
+  -#   - unless user_signed_in?
+  -#     = link_to new_user_registration_path(product.id) do
+  -#       .ladynew-border__frame__things
+  -#         .ladynew-border__frame__things__frame
+  -#           .ladynew-border__frame__things__frame__logo ¥
+  -#           .ladynew-border__frame__things__frame__price
+  -#             = number_with_delimiter(product.price)
+  -#         = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
+  -#         .ladynew-border__frame__things__text
+  -#           = product.name
+  -#   - else
+  -#     = link_to product_path(product.id) do
+  -#       .ladynew-border__frame__things
+  -#         .ladynew-border__frame__things__frame
+  -#           .ladynew-border__frame__things__frame__logo ¥
+  -#           .ladynew-border__frame__things__frame__price
+  -#             = number_with_delimiter(product.price)
+  -#         = image_tag "#{product.products_images.slice(0).image}", class: "ladynew-border__frame__things__image"
+  -#         .ladynew-border__frame__things__text
+  -#           = product.name
+  -#         - if product.progress == "交渉中"
+  -#           .ribbon-3
+  -#             .ribbon-3__text
+  -#               SOLD
