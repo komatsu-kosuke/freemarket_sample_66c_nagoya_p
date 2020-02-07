@@ -19,14 +19,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    
     render "sms"
+    # renderの謎を探る
   end
 
   # STEP3 電話番号入力画面
   def sms
   end
-  
-
 
   # STEP4 住所入力
   def adress
